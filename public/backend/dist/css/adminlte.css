@@ -70,6 +70,7 @@ body {
   background-color: #ffffff;
 }
 
+
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
@@ -1527,7 +1528,7 @@ pre code {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
-  background-color: transparent;
+  background-color: #fff;
 }
 
 .table th,
@@ -1573,47 +1574,47 @@ pre code {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #fff;
 }
 
 .table-hover tbody tr:hover {
   color: #212529;
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: #fff;
 }
 
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #b8daff;
+  background-color: #fff;
 }
 
 .table-primary th,
 .table-primary td,
 .table-primary thead th,
 .table-primary tbody + tbody {
-  border-color: #7abaff;
+  border-color: #fff;
 }
 
 .table-hover .table-primary:hover {
-  background-color: #9fcdff;
+  background-color: #fff;
 }
 
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
-  background-color: #9fcdff;
+  background-color: #fff;
 }
 
 .table-secondary,
 .table-secondary > th,
 .table-secondary > td {
-  background-color: #d6d8db;
+  background-color: #fff;
 }
 
 .table-secondary th,
 .table-secondary td,
 .table-secondary thead th,
 .table-secondary tbody + tbody {
-  border-color: #b3b7bb;
+  border-color: #fff;
 }
 
 .table-hover .table-secondary:hover {
@@ -12213,12 +12214,7 @@ body,
   .sidebar-mini.sidebar-collapse .main-sidebar:hover .brand-image, .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused .brand-image {
     margin-right: .5rem;
   }
-  .sidebar-mini.sidebar-collapse .main-sidebar:hover .sidebar-form,
-  .sidebar-mini.sidebar-collapse .main-sidebar:hover .user-panel > .info, .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused .sidebar-form,
-  .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused .user-panel > .info {
-    display: block !important;
-    -webkit-transform: translateZ(0);
-  }
+
   .sidebar-mini.sidebar-collapse .main-sidebar:hover .nav-sidebar > .nav-item > .nav-link > span, .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused .nav-sidebar > .nav-item > .nav-link > span {
     display: inline-block !important;
   }
@@ -12320,12 +12316,7 @@ body,
   .sidebar-mini-md.sidebar-collapse .main-sidebar:hover .brand-image, .sidebar-mini-md.sidebar-collapse .main-sidebar.sidebar-focused .brand-image {
     margin-right: .5rem;
   }
-  .sidebar-mini-md.sidebar-collapse .main-sidebar:hover .sidebar-form,
-  .sidebar-mini-md.sidebar-collapse .main-sidebar:hover .user-panel > .info, .sidebar-mini-md.sidebar-collapse .main-sidebar.sidebar-focused .sidebar-form,
-  .sidebar-mini-md.sidebar-collapse .main-sidebar.sidebar-focused .user-panel > .info {
-    display: block !important;
-    -webkit-transform: translateZ(0);
-  }
+
   .sidebar-mini-md.sidebar-collapse .main-sidebar:hover .nav-sidebar > .nav-item > .nav-link > span, .sidebar-mini-md.sidebar-collapse .main-sidebar.sidebar-focused .nav-sidebar > .nav-item > .nav-link > span {
     display: inline-block !important;
   }
@@ -22733,7 +22724,7 @@ html.maximized-card {
 .projects .table-avatar img {
   border-radius: 50%;
   display: inline;
-  width: 2.5rem;
+
 }
 
 .projects .project-state {

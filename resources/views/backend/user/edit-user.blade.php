@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('content')
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper bg-white">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -39,7 +39,7 @@
                 <form method="post" action="{{route('users.update', $editData->id)}}" id="myForm">
                     @csrf
                     <div class="form-row">
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-6">
                             <label for="usertype">Rol de Usuario</label>
                             <select name="usertype" id="usertype" class="form-control">
                                 <option value="">Seleccionar Rol</option>
@@ -51,12 +51,12 @@
                         <label for="name">Nombre</label>
                         <input type="text" name="name" class="form-control" value="{{ $editData->name }}">
                     </div>
-                    <div class="form-group col-md-7 offset-2">
+                    <div class="form-group col-md-7">
                         <label for="email">Email</label>
                       <input type="email" name="email" class="form-control" value="{{ $editData->email }}">
                     </div>
                   </div>
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-12 py-5">
                         <input type="submit" value="Actualizar" class="btn btn-primary">
                     </div>
                 </form>
