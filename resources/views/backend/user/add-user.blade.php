@@ -50,14 +50,14 @@
                     <div class="form-group col-md-6">
                         <label for="name">Nombre</label>
                         <input type="text" name="name" class="form-control">
-                        <font style="red">
+                        <font style="color:red">
                         {{ ($errors->has('name')) ? ($errors->first('name')):'' }}
                         </font>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
                       <input type="email" name="email" class="form-control">
-                      <font style="red">
+                      <font style="color:red">
                       {{ ($errors->has('email')) ? ($errors->first('email')):'' }}
                       </font>
                     </div>
@@ -66,6 +66,9 @@
                     <div class="form-group col-md-6">
                       <label for="password">Contraseña</label>
                       <input type="password" name="password" class="form-control">
+                      <font style="color:red">
+                        {{ ($errors->has('password')) ? ($errors->first('password')):'' }}
+                        </font>
                   </div>
                   <div class="form-group col-md-6">
                       <label for="password">Confirmar Contraseña</label>
@@ -94,8 +97,12 @@
 $(document).ready(function (){
   $('#myForm').validate({
     rules:{
+      name:{
+        required:true,
+      },
       usertype: {
         required: true,
+        equalTo: '#usertype',
       },
       email: {
         required:true,

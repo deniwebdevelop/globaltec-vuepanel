@@ -45,7 +45,7 @@
                             <input type="text" name="name" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="mobile_no">Telefono </label>
+                            <label for="mobile_no">Telefono</label>
                             <input type="text" name="mobile_no" class="form-control">
                         </div>
                         <div class="form-group col-md-6">

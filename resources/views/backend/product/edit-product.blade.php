@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm 6">
-                    <h1 class="m-0 text-white">Administrar Clientes</h1>
+        
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Cliente</li>
+                        <li class="breadcrumb-item active">Producto</li>
                     </ol>
                 </div><!-- /.col-->
              </div><!-- /.row -->
@@ -30,34 +30,49 @@
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header">
-                    <h3>Agregar Cliente
-                        <a href="{{ route('customers.view') }}" class="btn btn-success float-right btn-sm">
-                            Lista de Clientes
+                    <h3 class="font-weight-lighter">Editar Producto
+                        <a href="{{ route('products.store') }}" class="btn btn-success float-right btn-sm">
+                            Lista de Productos
                         </a>
                     </h3>
                 </div><!-- /.Card Header -->
                 <div class="card-body">
-                    <form method="post" action="{{ route('customers.store') }}" id="myForm" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('products.update', $editData->id) }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="name">Nombre del Cliente</label>
-                            <input type="text" name="name" class="form-control">
+                          <label for="name">Nombre del Proveedor</label>
+                        <select name="supplier_id" class="form-control">
+                          <option value="">Seleccionar Proveedor</option>
+                          @foreach ($suppliers as $supplier)
+                          <option value="{{ $supplier->id }}" {{ ($editData->supplier_id==$supplier->id)?"selected":'' }}>{{ $supplier->name }}</option>
+                          @endforeach
+                        </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="mobile_no">Telefono</label>
-                            <input type="text" name="mobile_no" class="form-control">
+                            <label for="unit_id">Unidad</label>
+                            <select name="unit_id" class="form-control">
+                              <option value="">Seleccionar Unidad</option>
+                              @foreach ($units as $unit)
+                              <option value="{{ $unit->id }}" {{ ($editData->unit_id==$unit->id)?"selected":'' }}>{{ $unit->name }}</option>
+                              @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control">
+                            <label for="category_id">Categoria</label>
+                            <select name="category_id" class="form-control">
+                              <option value="">Seleccionar Categoria</option>
+                              @foreach ($categories as $category)
+                              <option value="{{ $category->id }}" {{ ($editData->category_id==$category->id)?"selected":'' }}>{{ $category->name }}</option>
+                              @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="address">Direccion</label>
-                            <input type="text" name="address" class="form-control">
+                            <label for="name">Producto</label>
+                            <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
+                        <input type="submit" value="Actualizar" class="btn btn-primary">
                         </div>
                     </div>
                     </form>
@@ -81,31 +96,18 @@
           name: {
             required: true,
           },
-          mobile_no: {
+          supplier_id: {
             required:true,
           },
-          email: {
+          unit_id: {
             required:true,
-            email:true,
           },
-          address: {
+          category_id: {
             required: true,
           }
         },
         messages: {
-            name: {
-                required: "Debe ingresar nombre",
-            },
-            mobile_no: {
-                required: "Debe ingresar un telefono",
-            },
-            email: {
-                required: "Debe ingresar un email",
-                email: "Por favor ingresar un email <em>valido</em>",
-            },
-            address: {
-                required: "Debe ingresar una direccion",
-            },                
+         
         },
         errorElement: 'span',
         errorPlacement: function(error, element){

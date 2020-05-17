@@ -66,7 +66,46 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->     
-<script>
-</script>
+
+  <script type="text/javascript">
+    $(document).ready(function (){
+      $('#myForm').validate({
+        rules:{
+          current_password: {
+            required: true,
+          },
+          new_password: {
+            required:true,
+            equalTo: '#new_password',
+          },
+          confirm: {
+            required:true,
+          },
+        },
+        messages: {
+          current_password: {
+                required: "Debe ingresar su contraseña actual",
+            },
+            new_password: {
+                required: "Ingresar contraseña nueva",
+            },
+            confirm: {
+                required: "Debe confirmar su nueva contraseña",
+            },               
+        },
+        errorElement: 'span',
+        errorPlacement: function(error, element){
+          error.addClass('invalid-feedback');
+          element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass){
+          $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass){
+          $(element).removeClass('is-invalid');
+        }
+      });
+    });
+    </script>
 @endsection
  

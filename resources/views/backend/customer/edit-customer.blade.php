@@ -31,13 +31,13 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Editar Cliente
-                        <a href="{{ route('suppliers.view') }}" class="btn btn-success float-right btn-sm">
+                        <a href="{{ route('customers.view') }}" class="btn btn-success float-right btn-sm">
                             Lista de Clientes
                         </a>
                     </h3>
                 </div><!-- /.Card Header -->
                 <div class="card-body">
-                    <form method="post" action="{{ route('suppliers.update',$editData->id) }}" id="myForm" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('customers.update',$editData->id) }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -50,11 +50,11 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
-                            <input type="text" name="email" value="{{ $editData->mobile_no }}" class="form-control">
+                            <input type="email" name="email" value="{{ $editData->email }}" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="address">Direccion</label>
-                            <input type="text" name="address" value="{{ $editData->mobile_no }}" class="form-control">
+                            <input type="text" name="address" value="{{ $editData->address }}" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
                         <input type="submit" value="Actualizar" class="btn btn-primary">

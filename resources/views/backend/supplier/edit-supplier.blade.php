@@ -50,11 +50,11 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
-                            <input type="text" name="email" value="{{ $editData->mobile_no }}" class="form-control">
+                            <input type="email" name="email" value="{{ $editData->email }}" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="address">Direccion</label>
-                            <input type="text" name="address" value="{{ $editData->mobile_no }}" class="form-control">
+                            <input type="text" name="address" value="{{ $editData->address }}" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
                         <input type="submit" value="Actualizar" class="btn btn-primary">

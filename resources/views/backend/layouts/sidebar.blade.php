@@ -28,7 +28,8 @@
             </ul>
           </li>
           @endif   <!-- End Usuario -->
-             <!-- Profile -->
+
+          <!-- Profile -->
           <li class="nav-item has-treeview {{ ($prefix=='/profiles')?'menu-open':''}}">
             <a href="{{ route('profiles.view') }}" class="nav-link text-white
               {{ ($route=='profiles.view')?'active':'' }}">
@@ -77,27 +78,117 @@
               </li>
             </ul>
           </li>
+          <!-- End Suppliers -->
 
-                  <!-- Customers -->
-                  <li class="nav-item has-treeview {{ ($prefix=='/customers')?'menu-open':''}}">
-                    <a href="{{ route('customers.view') }}" class="nav-link text-white
-                      {{ ($route=='customers.view')?'active':'' }}">
-                      <i class="nav-icon fas fa-copy"></i>
-                      <p>
-                       Clientes 
-                        <i class="fas fa-angle-left right"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="{{ route('customers.view') }}" class="nav-link text-white
-                        {{ ($route=='customers.view')?'active':'' }}">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Ver Clientes</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
+          <!-- Customers -->
+          <li class="nav-item has-treeview {{ ($prefix=='/customers')?'menu-open':''}}">
+            <a href="{{ route('customers.view') }}" class="nav-link text-white
+              {{ ($route=='customers.view')?'active':'' }}">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Clientes 
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('customers.view') }}" class="nav-link text-white
+                {{ ($route=='customers.view')?'active':'' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ver Clientes</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- End Customers -->
+
+          <!-- Units -->
+          <li class="nav-item has-treeview {{ ($prefix=='/units')?'menu-open':''}}">
+            <a href="{{ route('units.view') }}" class="nav-link text-white
+              {{ ($route=='units.view')?'active':'' }}">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Unidades  
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('units.view') }}" class="nav-link text-white
+                {{ ($route=='units.view')?'active':'' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ver Unidades</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- End Units -->
+
+          <!-- Categories -->
+          <li class="nav-item has-treeview {{ ($prefix=='/categories')?'menu-open':''}}">
+            <a href="{{ route('categories.view') }}" class="nav-link text-white
+              {{ ($route=='categories.view')?'active':'' }}">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Categorias 
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('categories.view') }}" class="nav-link text-white
+                {{ ($route=='categories.view')?'active':'' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ver Categorias</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- End Categories -->          
+
+          <!-- Products -->
+          <li class="nav-item has-treeview {{ ($prefix=='/products')?'menu-open':''}}">
+            <a href="{{ route('products.view') }}" class="nav-link text-white
+              {{ ($route=='products.view')?'active':'' }}">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Productos 
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('products.view') }}" class="nav-link text-white
+                {{ ($route=='products.view')?'active':'' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ver Productos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- End Products -->
+
+          <!-- Purchase -->
+          <li class="nav-item has-treeview {{ ($prefix=='/purchase')?'menu-open':''}}">
+            <a href="" class="nav-link text-white">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Compras 
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('purchase.view') }}" class="nav-link text-white
+                {{ ($route=='purchase.view')?'active':'' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ver Compras</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- End Purchase -->
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

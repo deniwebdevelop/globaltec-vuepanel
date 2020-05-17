@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm 6">
-                    <h1 class="m-0 text-white">Administrar Clientes</h1>
+                    <h1 class="m-0 text-white">Administrar Categorias</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Cliente</li>
+                        <li class="breadcrumb-item active">Categoria</li>
                     </ol>
                 </div><!-- /.col-->
              </div><!-- /.row -->
@@ -30,34 +30,22 @@
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header">
-                    <h3>Agregar Cliente
-                        <a href="{{ route('customers.view') }}" class="btn btn-success float-right btn-sm">
-                            Lista de Clientes
+                    <h3>Editar Categoria
+                        <a href="{{ route('categories.view') }}" class="btn btn-success float-right btn-sm">
+                            Lista de Categorias
                         </a>
                     </h3>
                 </div><!-- /.Card Header -->
                 <div class="card-body">
-                    <form method="post" action="{{ route('customers.store') }}" id="myForm" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('categories.update',$editData->id) }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="name">Nombre del Cliente</label>
-                            <input type="text" name="name" class="form-control">
+                            <label for="name">Nombre de Categoria</label>
+                            <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="mobile_no">Telefono</label>
-                            <input type="text" name="mobile_no" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="address">Direccion</label>
-                            <input type="text" name="address" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
+                        <div class="form-group col-md-12">
+                        <input type="submit" value="Actualizar" class="btn btn-primary">
                         </div>
                     </div>
                     </form>
@@ -86,26 +74,14 @@
           },
           email: {
             required:true,
-            email:true,
+            email: true,
           },
           address: {
             required: true,
           }
         },
         messages: {
-            name: {
-                required: "Debe ingresar nombre",
-            },
-            mobile_no: {
-                required: "Debe ingresar un telefono",
-            },
-            email: {
-                required: "Debe ingresar un email",
-                email: "Por favor ingresar un email <em>valido</em>",
-            },
-            address: {
-                required: "Debe ingresar una direccion",
-            },                
+         
         },
         errorElement: 'span',
         errorPlacement: function(error, element){

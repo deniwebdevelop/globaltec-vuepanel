@@ -1,11 +1,11 @@
-< !DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <title>Login</title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
             id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -77,10 +77,7 @@
                 color: #fff;
             }
 
-            .login-main-text h2 {
-                font-weight: 300;
-            }
-
+  
             .btn-black {
                 background-color: #000 !important;
                 color: #fff;
@@ -89,21 +86,24 @@
     </head>
 
     <body>
-        <div class="sidenav">
-            <div class="login-main-text">
-          
-            
+        <div class="sidenav col-md-4 opacity-10">
+            <div class="login-main-text ml-5">
+    
+             <h2 class="display-4 mt-5 font-weight-lighter">GT Panel</h2>
+             <p class="opacity-6 py-5 font-weight-lighter" style="font-size: 20px;">Bienvenido</p>
+
+
             </div>
         </div>
         <div class="main">
             <div class="col-md-6 col-sm-12">
                 <div class="login-form">
-                    <h2>Global Tec Trade</h2><br>
+          
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
+    
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-6 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -117,7 +117,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-6 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -131,21 +131,21 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <input class="form-check-input col-md-6" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                    <label class="form-check-label col-md-6" for="remember">
+                                        {{ __('Recordarme') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                            <div class="col-md-6 offset-md-6">
+                                <button type="submit" class="btn btn-dark btn-black">
+                                    {{ __('Ingresar') }}
                                 </button>
                             </div>
                         </div>

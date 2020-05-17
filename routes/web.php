@@ -42,4 +42,41 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('/update/{id}', 'Backend\CustomerController@update')->name('customers.update');
             Route::get('/delete/{id}', 'Backend\CustomerController@delete')->name('customers.delete');
         });
+
+        Route::prefix('units')->group(function(){
+            Route::get('/view', 'Backend\UnitController@view')->name('units.view');
+            Route::get('/add', 'Backend\UnitController@add')->name('units.add');
+            Route::post('/store', 'Backend\UnitController@store')->name('units.store');
+            Route::get('/edit/{id}', 'Backend\UnitController@edit')->name('units.edit');
+            Route::post('/update/{id}', 'Backend\UnitController@update')->name('units.update');
+            Route::get('/delete/{id}', 'Backend\UnitController@delete')->name('units.delete');
+        });
+
+        Route::prefix('categories')->group(function(){
+            Route::get('/view', 'Backend\CategoryController@view')->name('categories.view');
+            Route::get('/add', 'Backend\CategoryController@add')->name('categories.add');
+            Route::post('/store', 'Backend\CategoryController@store')->name('categories.store');
+            Route::get('/edit/{id}', 'Backend\CategoryController@edit')->name('categories.edit');
+            Route::post('/update/{id}', 'Backend\CategoryController@update')->name('categories.update');
+            Route::get('/delete/{id}', 'Backend\CategoryController@delete')->name('categories.delete');
+        });
+
+        Route::prefix('products')->group(function(){
+            Route::get('/view', 'Backend\ProductController@view')->name('products.view');
+            Route::get('/add', 'Backend\ProductController@add')->name('products.add');
+            Route::post('/store', 'Backend\ProductController@store')->name('products.store');
+            Route::get('/edit/{id}', 'Backend\ProductController@edit')->name('products.edit');
+            Route::post('/update/{id}', 'Backend\ProductController@update')->name('products.update');
+            Route::get('/delete/{id}', 'Backend\ProductController@delete')->name('products.delete');
+        });
+
+        Route::prefix('purchase')->group(function(){
+            Route::get('/view', 'Backend\PurchaseController@view')->name('purchase.view');
+            Route::get('/add', 'Backend\PurchaseController@add')->name('purchase.add');
+            Route::post('/store', 'Backend\PurchaseController@store')->name('purchase.store');
+            Route::get('/edit/{id}', 'Backend\PurchaseController@edit')->name('purchase.edit');
+            Route::post('/update/{id}', 'Backend\PurchaseController@update')->name('purchase.update');
+            Route::get('/delete/{id}', 'Backend\PurchaseController@delete')->name('purchase.delete');          
+        });
+
 });
