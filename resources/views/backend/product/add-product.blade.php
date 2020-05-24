@@ -31,7 +31,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Agregar Producto
-                        <a href="{{ route('products.store') }}" class="btn btn-success float-right btn-sm">
+                        <a href="{{ route('products.view') }}" class="btn btn-success float-right btn-sm">
                             Lista de Productos
                         </a>
                     </h3>

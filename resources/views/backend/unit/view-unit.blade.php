@@ -50,10 +50,15 @@
                             <td>{{$key+1}}</td>
                             <td>{{$unit->name}}</td>
                             <td>
+                              @php
+                              $count_unit = App\Model\Product::where('unit_id',$unit->id)->count(); 
+                              @endphp
                                 <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('units.edit', $unit->id) }}"><i
                                 class="fa fa-edit"></i></a>
+                                @if($count_unit<1)
                                 <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('units.delete', $unit->id) }}"><i
                                     class="fa fa-trash"></i></a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

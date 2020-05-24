@@ -19,10 +19,10 @@ class ProductController extends Controller
     }
 
     public function add(){
-        $suppliers = Supplier::all();
-        $units = Unit::all();
-        $categories = Category::all();
-        return view('backend.product.add-product', compact('suppliers', 'units', 'categories'));
+        $data['suppliers'] = Supplier::all();
+        $data['units'] = Unit::all();
+        $data['categories'] = Category::all();
+        return view('backend.product.add-product', $data);
     }
 
     public function store(Request $request){

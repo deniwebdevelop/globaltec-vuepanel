@@ -44,7 +44,7 @@
                             <th>Telefono</th>
                             <th>Email</th>
                             <th>Direccion</th>
-                            <th>Action</th>
+                            <th style="12%;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
