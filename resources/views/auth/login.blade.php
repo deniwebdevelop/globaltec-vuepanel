@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Login Template</title>
+        <title>Login</title>
         <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
@@ -25,7 +25,7 @@
                       <div class="brand-wrapper py-4">
                             <h2 style="font-family: 'Satisfy', cursive; font-size:40px;">Global Tec Trade</h2>
                       </div>
-                      <p class="login-card-description">Ingresa a tu cuenta</p>
+                      <p class="login-card-description">Bienvenido</p>
                       <form method="POST" action="{{ route('login') }}">
                         @csrf
                           <div class="form-group">
@@ -51,7 +51,7 @@
                             {{ __('Ingresar') }}
                         </button>
                         </form><br>
-                        <p>Bienvenido</p>
+                        <p>Ingresa a tu cuenta</p>
 
                         <nav class="login-card-footer-nav">
                           <a class="text-decoration-none" href="http://www.globaltectrade.com.ar" target="_blank">Todos los derechos reservados ©️ Global Tec Trade</a>
