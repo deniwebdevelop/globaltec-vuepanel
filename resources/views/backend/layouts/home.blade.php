@@ -27,7 +27,7 @@
           <div class="row">
  
           
-            <div class="col-md-6 py-1">
+            <div class="col-md-3 py-5">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -42,7 +42,7 @@
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-md-6 py-1">
+            <div class="col-md-3 py-5">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -59,7 +59,7 @@
 
   
             <!-- ./col -->
-            <div class="col-md-6 py-1">
+            <div class="col-md-3 py-5">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -75,7 +75,7 @@
             </div>
             <!-- ./col -->
 
-            <div class="col-md-6 py-1">
+            <div class="col-md-3 py-5">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -93,7 +93,7 @@
 
             <div class="col-md-3 py-5">
               <!-- small box -->
-              <div class="small-box bg-gradient-yellow">
+              <div class="small-box bg-gradient-light">
                 <div class="inner">
                   <h3 class="text-dark">Productos</h3>
   
@@ -109,7 +109,7 @@
             <!-- ./col -->
             <div class="col-md-3 py-5">
               <!-- small box -->
-              <div class="small-box bg-gradient-yellow">
+              <div class="small-box bg-gradient-light">
                 <div class="inner">
                   <h3 class="text-dark">Stock</h3>
   
@@ -124,7 +124,7 @@
 
             <div class="col-md-3 py-5">
               <!-- small box -->
-              <div class="small-box bg-gradient-yellow">
+              <div class="small-box bg-gradient-light">
                 <div class="inner">
                   <h3>Categorias</h3>
   
@@ -140,7 +140,7 @@
 
             <div class="col-md-3 py-5">
               <!-- small box -->
-              <div class="small-box bg-gradient-yellow">
+              <div class="small-box bg-gradient-light">
                 <div class="inner">
                   <h3>Unidades</h3>
   
