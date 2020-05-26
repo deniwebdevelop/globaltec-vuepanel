@@ -60,7 +60,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-collapse layout-fixed" style="background-image: linear-gradient(200deg, rgba(9, 9, 59, 0.836)40%, rgba(8, 8, 61, 0.822) 70%);">
+  <aside class="main-sidebar sidebar-collapse layout-fixed" style="background-image: linear-gradient(200deg, rgba(5, 5, 29, 0.836)40%, rgba(8, 8, 61, 0.822) 70%);">
     <!-- Brand Logo -->
     <a href="{{ route('home') }}" class="brand-link text-center" style="border-bottom:1px solid white">
       <h2 class="brand-text text-white" style="font-family: 'Satisfy', cursive; font-size: 40px">Gtt</h2>
