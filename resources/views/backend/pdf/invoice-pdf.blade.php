@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>PDF</title>
   <link rel="stylesheet" href="{{ asset('backend/plugins/tempusdominus-bootstrap-4/css/tempusdominus-boostrap-4-min.css') }}">
 </head>
@@ -14,37 +13,14 @@
       <table width="100%">
         <tbody>
           <tr>
-            <td><strong>Numero: # {{ $invoice->invoice_no }}</strong></td>
             <td>
-              <span style="font-size: 20px;">Global Tec Trade<br/>
-              Buenos Aires, Argentina.
-              <span>
+              <span style="font-size: 20px;">Global Tec Trade<span>
             </td>
-            <td>
-            <span>Telefono: 1010-1010<br/>
-                Whatsapp: 11 1010-1010
-            </span>
-          </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-<div class="row">
-  <div class="col-md-12">
-    <table>
-      <tbody>
-        <tr>
-          <td width="50%"></td>
-          <td>
-            <u><strong><span class="text-center" style="font-size: 15px;">Factura</span></strong></u>
-          </td>
-          <td width="30%"></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 <div class="row">
     <div class="col-md-12">
     @php
@@ -113,6 +89,8 @@
           </tr>
       </tbody>   
   </table> 
+
+
   </div>
 </div>
 </div>

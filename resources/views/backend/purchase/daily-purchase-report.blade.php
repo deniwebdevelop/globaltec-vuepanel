@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-
+                    <h1 class="m-0 text-dark">Compras | Resumen</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Facturacion</li>
+                        <li class="breadcrumb-item active">Compras</li>
                         <li class="breadcrumb-item active">Resumen</li>
                     </ol>
                 </div><!-- /.col -->
@@ -37,7 +37,7 @@
                         </div><!-- /.card-header -->
 
                         <div class="card-body">
-                            <form action="{{ route('invoice.daily.report.pdf') }}" target="_blank" method="GET" id="myForm">
+                            <form action="{{ route('purchase.report.pdf') }}" target="_blank" method="GET" id="myForm">
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label>Fecha Inicio</label>

@@ -28,7 +28,7 @@
           <!-- Left col -->
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="c offset-1ard">
+            <div class="card">
               <div class="card-header">
                  <h3 class="p-1 font-weight-light">Categorias
                      <a class="btn btn-success float-right btn-sm" href="{{ route('categories.add') }}"><i class="fa fa-plus-circle p-2"></i>Agregar Categoria</a>
@@ -39,15 +39,17 @@
                 <table id="example1" class="table table-bordered table-hover">
                     <thead class="thead">
                         <tr>
-                            <th>Codigo</th>
-                            <th>Nombre</th>
+                            <th style="display: none">Codigo</th>
+                            <th>Tipo Categoria</th>
+                            <th width="70%">Nombre</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($allData as $key => $category)
                         <tr>
-                            <td>{{$key+1}}</td>
+                            <td style="display: none">{{$key+1}}</td>
+                            <td>{{$category->type}}</td>
                             <td>{{$category->name}}</td>
                             <td>
                               @php

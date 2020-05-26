@@ -16,15 +16,24 @@ class CreateCustomersTable extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('mobile_no');
+            $table->string('company')->nullable();
+            $table->string('mobile_no')->nullable();
+            $table->string('mobile_two')->nullable();
+            $table->string('mobile_three')->nullable();
             $table->string('email')->nullable();
+            $table->string('position')->nullable();
+            $table->string('city')->nullable();
             $table->string('address');
+            $table->string('postal')->nullable();
+            $table->string('cuit')->nullable();
+            $table->string('website')->nullable();
             $table->tinyInteger('status')->default('1');
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

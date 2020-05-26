@@ -39,15 +39,15 @@
                 <table id="example1" class="table table-bordered table-hover">
                     <thead class="thead">
                         <tr>
-                            <th>Codigo</th>
-                            <th>Nombre</th>
-                            <th>Action</th>
+                            <th style="display: none;">Codigo</th>
+                            <th width="80%">Nombre</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($allData as $key => $unit)
                         <tr>
-                            <td>{{$key+1}}</td>
+                            <td style="display: none;">{{$key+1}}</td>
                             <td>{{$unit->name}}</td>
                             <td>
                               @php

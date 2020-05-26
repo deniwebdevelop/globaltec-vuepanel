@@ -7,13 +7,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-
+         
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item">Stock</li>
-                        <li class="breadcrumb-item">Reporte</li>
+                        <li class="breadcrumb-item active">Clientes</li>
+                        <li class="breadcrumb-item active">Reporte</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -40,23 +40,23 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12">
-                                <strong>Proveedor</strong>
-                                <input type="radio" name="supplier_product_wise" value="supplier_wise"
+                                <strong>Reporte Deuda</strong>
+                                <input type="radio" name="customer_wise_report" value="customer_wise_credit"
                                     class="search_value"> &nbsp;&nbsp;
-                                <strong>Producto</strong>
-                                <input type="radio" name="supplier_product_wise" value="product_wise"
+                                <strong>Reporte Pago</strong>
+                                <input type="radio" name="customer_wise_report" value="customer_wise_paid"
                                     class="search_value">
                             </div>
                         </div>
-                        <div class="show_supplier" style="display: none;">
-                            <form method="GET" action="{{ route('stock.report.supplier.wise.pdf') }}" id="supplierWiseForm" target="_blank">
+                        <div class="show_credit" style="display: none;">
+                            <form method="GET" action="{{ route('customers.wise.credit.report') }}" id="customerCreditForm" target="_blank">
                                 <div class="form-row">
                                     <div class="col-sm-8">
-                                        <label>Nombre Proveedor</label>
-                                        <select name="supplier_id" class="form-control select2">
-                                            <option value="">Seleccionar Proveedor</option>
-                                            @foreach ($suppliers as $supplier)
-                                            <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                                        <label>Nombre Cliente</label>
+                                        <select name="customer_id" class="form-control select2">
+                                            <option value="">Seleccionar Cliente</option>
+                                            @foreach ($customers as $customer)
+                                            <option value="{{ $customer->id }}">{{ $customer->name }}{{ $customer->mobile_no }}-{{ $customer->address }}-{{ $customer->email }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -66,25 +66,16 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="show_product" style="display: none;">
-                            <form method="GET" action="{{ route('stock.report.product.wise.pdf') }}" id="productWiseForm" target="_blank">
+                        <div class="show_paid" style="display: none;">
+                            <form method="GET" action="{{ route('customers.wise.paid.report') }}" id="customerPaidForm" target="_blank">
                                 <div class="form-row">
-                                    <div class="col-sm-4">
-                                        <label>Categoria</label>
-                                        <select name="category_id" id="category_id" class="form-control select2">
-                                          <option value="">Seleccionar Categoria</option>
-                                          @foreach($categories as $category)
-                                          <option value="{{$category->id}}">{{$category->name}}</option>
-                                          @endforeach
-                                        </select>
-                                      </div>
-                  
-                                      <div class="col-sm-6">
-                                        <label>Producto</label>
-                                        <select name="product_id" id="product_id" class="form-control select2">
-                                          <option value="">Seleccionar Producto</option>
-                                        </select>
-                                      </div>
+                                    <label>Nombre Cliente</label>
+                                    <select name="customer_id" class="form-control select2">
+                                        <option value="">Seleccionar Cliente</option>
+                                        @foreach ($customers as $customer)
+                                        <option value="{{ $customer->id }}">{{ $customer->name }}{{ $customer->mobile_no }}-{{ $customer->address }}</option>
+                                        @endforeach
+                                    </select>
                                     <div class="col-sm-2" style="padding-top: 29px;">
                                         <button type="submit" class="btn btn-primary btn-sm">Buscar</button>
                                     </div>
@@ -110,25 +101,25 @@
 <script type="text/javascript">
 $(document).on('change','.search_value', function(){
   var search_value = $(this).val();
-  if(search_value == 'supplier_wise'){
-    $('.show_supplier').show();
+  if(search_value == 'customer_wise_credit'){
+    $('.show_credit').show();
   }else{
-    $('.show_supplier').hide(); 
+    $('.show_credit').hide(); 
   }
-  if(search_value == 'product_wise'){
-      $('.show_product').show();
+  if(search_value == 'customer_wise_paid'){
+      $('.show_paid').show();
   }else{
-      $('.show_product').hide();
+      $('.show_paid').hide();
   }
 });
 </script>
 
 <script type="text/javascript">
   $(document).ready(function () {
-    $('#supplierWiseForm').validate({
+    $('#customerCreditForm').validate({
         ignore: [],
         errorPlacement: function (error, element) {
-            if (element.attr("name") == "supplier_id") {
+            if (element.attr("name") == "customer_id") {
                 error.insertAfter(element.next());
             } else {
                 error.insertAfter(element);
@@ -137,7 +128,7 @@ $(document).on('change','.search_value', function(){
         errorClass: 'text-danger',
         validClass: 'text-success',
         rules: {
-            supplier_id: {
+            customer_id: {
                 required: true,
             }
         },
@@ -151,26 +142,19 @@ $(document).on('change','.search_value', function(){
 
 <script type="text/javascript">
     $(document).ready(function () {
-      $('#productWiseForm').validate({
+      $('#customerPaidForm').validate({
           ignore: [],
           errorPlacement: function (error, element) {
-              if (element.attr("name") == "category_id") {
+              if (element.attr("name") == "customer_id") {
                   error.insertAfter(element.next());
-              } 
-              else if (element.attr("name") == "product_id") {
-                  error.insertAfter(element.next());
-              }
-               else {
+              }else{
                   error.insertAfter(element);
               }
           },
           errorClass: 'text-danger',
           validClass: 'text-success',
           rules: {
-              category_id: {
-                  required: true,
-              },
-              product_id: {
+              customer_id: {
                   required: true,
               }
           },

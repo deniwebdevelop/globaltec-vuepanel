@@ -41,6 +41,10 @@
                         @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
+                            <label for="type">Tipo Categoria</label>
+                            <input type="text" name="type" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
                             <label for="name">Nombre de Categoria</label>
                             <input type="text" name="name" class="form-control">
                         </div>
@@ -68,7 +72,10 @@
         rules:{
           category: {
             required: true,
-          },
+          }
+          type: {
+              required:true,
+          }
         },
         messages: {
           category: 'Debe ingresar una categoria',

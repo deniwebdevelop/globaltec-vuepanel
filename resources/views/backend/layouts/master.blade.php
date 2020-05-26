@@ -48,6 +48,7 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <div class="dropdown-divider"></div>
           <a href="{{ route('profiles.view') }}" class="dropdown-item dropdown-footer">Mi Perfil</a>
+          <a href="{{ route('profiles.password.view') }}" class="dropdown-item dropdown-footer">Cambiar Contraseña</a>
           <a href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
           class="dropdown-item dropdown-footer">Salir</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -59,14 +60,14 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-collapse layout-fixed" style="background-image: linear-gradient(200deg, rgba(77, 76, 128, 0.863)90%, rgba(248, 251, 255, 0.8) 10%);">
+  <aside class="main-sidebar sidebar-collapse layout-fixed" style="background-image: linear-gradient(200deg, rgba(9, 9, 59, 0.836)40%, rgba(8, 8, 61, 0.822) 70%);">
     <!-- Brand Logo -->
-    <a href="{{ route('home') }}" class="brand-link text-center">
-      <span class="brand-text font-weight-light text-white">GT Panel</span>
+    <a href="{{ route('home') }}" class="brand-link text-center" style="border-bottom:1px solid white">
+      <h2 class="brand-text text-white" style="font-family: 'Satisfy', cursive; font-size: 40px">Gtt</h2>
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar mt-4">
 
     @include('backend.layouts.sidebar')
     </div>

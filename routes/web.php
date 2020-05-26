@@ -1,22 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -55,8 +38,8 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/edit/{id}','Backend\CustomerController@edit')->name('customers.edit');
 		Route::post('/update/{id}','Backend\CustomerController@update')->name('customers.update');
 		Route::get('/delete/{id}','Backend\CustomerController@delete')->name('customers.delete');
-		Route::get('/credit','Backend\CustomerController@crditCustomer')->name('customers.credit');
-		Route::get('/credit/pdf','Backend\CustomerController@crditCustomerPdf')->name('customers.credit.pdf');
+		Route::get('/credit','Backend\CustomerController@creditCustomer')->name('customers.credit');
+		Route::get('/credit/pdf','Backend\CustomerController@creditCustomerPdf')->name('customers.credit.pdf');
 		Route::get('/invoice/edit/{invoice_id}','Backend\CustomerController@editInvoice')->name('customers.edit.invoice');
 		Route::post('/invoice/update/{invoice_id}','Backend\CustomerController@updateInvoice')->name('customers.update.invoice');
 		Route::get('/invoice/details/pdf/{invoice_id}','Backend\CustomerController@invoiceDetailsPdf')->name('invoice.details.pdf');
@@ -131,5 +114,4 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/report/product/wise/pdf', 'Backend\StockController@productWisePdf')->name('stock.report.product.wise.pdf');
 	});
 });
-
 

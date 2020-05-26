@@ -67,7 +67,7 @@ class InvoiceController extends Controller
                         $invoice_details->selling_qty = $request->selling_qty[$i];
                         $invoice_details->unit_price = $request->unit_price[$i];
                         $invoice_details->selling_price = $request->selling_price[$i];
-                        $invoice_details->status = '1';
+                        $invoice_details->status = '0';
                         $invoice_details->save();
                     }
                     if($request->customer_id == '0'){
@@ -118,7 +118,6 @@ class InvoiceController extends Controller
         InvoiceDetail::where('invoice_id',$invoice->id)->delete();
         Payment::where('invoice_id',$invoice->id)->delete();
         PaymentDetail::where('invoice_id',$invoice->id)->delete();
-        Session::flash('success');
         return redirect()->route('invoice.pending.list');
     }
 
@@ -130,7 +129,6 @@ class InvoiceController extends Controller
 
     public function approve($id){
         $invoice = Invoice::with(['invoice_details'])->find($id);
-        Session::flash('success');
         return view('backend.invoice.invoice-approve', compact('invoice'));
     }
 
@@ -152,10 +150,8 @@ class InvoiceController extends Controller
                 $product->quantity = ((float)$product->quantity)-((float)$request->selling_qty[$key]);
                 $product->save();
             }
-
             $invoice->save();
         });
-        Session::flash('success');
         return redirect()->route('invoice.pending.list');
     }
 

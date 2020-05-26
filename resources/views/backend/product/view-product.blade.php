@@ -38,9 +38,9 @@
               </div><!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-hover">
-                    <thead class="thead">
+                  <thead class="thead">
                         <tr>
-                            <th>Codigo</th>
+                            <th style="display: none">Codigo</th>
                             <th>Proveedor</th>
                             <th>Categoria</th>
                             <th>Nombre</th>
@@ -51,7 +51,7 @@
                     <tbody>
                     @foreach($allData as $key => $product)
                         <tr>
-                            <td>{{ $key+1 }}</td>
+                            <td style="display: none">{{ $key+1 }}</td>
                             <td>{{ $product['supplier']['name']}}</td>
                             <td>{{ $product['category']['name']}}</td>
                             <td>{{ $product->name }}</td>

@@ -36,15 +36,23 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
-                    <thead class="thead">
+                <table id="example1" class="table table-hover table-responsive" width="100%">
+                    <thead style="font-size: 14px">
                         <tr>
                             <th>Codigo</th>
                             <th>Nombre</th>
+                            <th>Empresa</th>
                             <th>Telefono</th>
+                            <th>Telefono 2</th>
+                            <th>Telefono 3</th>
                             <th>Email</th>
+                            <th>Puesto</th>
+                            <th>Ciudad</th>
                             <th>Direccion</th>
-                            <th style="12%;">Action</th>
+                            <th>Codigo Postal</th>
+                            <th>Cuit</th>
+                            <th>Website</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,9 +60,17 @@
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$customer->name}}</td>
+                            <td>{{ $customer->company }}</td>
                             <td>{{$customer->mobile_no}}</td>
+                            <td>{{$customer->mobile_two}}</td>
+                            <td>{{$customer->mobile_three}}</td>
                             <td>{{$customer->email}}</td>
+                            <td>{{$customer->position}}</td>
+                            <td>{{$customer->city}}</td>
                             <td>{{$customer->address}}</td>
+                            <td>{{$customer->postal }}</td>
+                            <td>{{$customer->cuit}}</td>
+                            <td>{{$customer->website}}</td>
                             <td>
                                 <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit', $customer->id) }}"><i
                                 class="fa fa-edit"></i></a>

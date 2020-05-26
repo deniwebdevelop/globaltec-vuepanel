@@ -45,18 +45,50 @@
                             <input type="text" name="name" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="company">Empresa</label>
+                            <input type="text" name="company" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
                             <label for="mobile_no">Telefono</label>
                             <input type="text" name="mobile_no" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="mobile_two">Telefono 2</label>
+                            <input type="text" name="mobile_two" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="mobile_three">Telefono 3</label>
+                            <input type="text" name="mobile_three" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
                             <input type="text" name="email" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="position">Puesto</label>
+                            <input type="text" name="position" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="city">Ciudad</label>
+                            <input type="text" name="city" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
                             <label for="address">Direccion</label>
                             <input type="text" name="address" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="postal">Codigo Postal</label>
+                            <input type="text" name="postal" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cuit">Cuit</label>
+                            <input type="text" name="cuit" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="website">Website</label>
+                            <input type="text" name="website" class="form-control">
+                        </div>
+                        <div class="form-group col-md-12">
                         <input type="submit" value="Agregar" class="btn btn-primary">
                         </div>
                     </div>

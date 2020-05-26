@@ -21,6 +21,7 @@ class CategoryController extends Controller
 
     public function store(Request $request){
         $category = new Category();
+        $category->type = $request->type;
         $category->name = $request->name;
         $category->created_by = Auth::user()->id;
         $category->save();
@@ -35,6 +36,7 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id){
         $category = Category::find($id);
+        $category->type = $request->type;
         $category->name = $request->name;
         $category->updated_by = Auth::user()->id;
         $category->save();

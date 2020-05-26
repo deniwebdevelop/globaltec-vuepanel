@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Productos</li> 
+              <li class="breadcrumb-item active">Stock</li> 
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -30,9 +30,9 @@
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card">
               <div class="card-header">
-                 <h3 class="p-1 font-weight-light">Lista Productos
+                 <h3 class="p-1 font-weight-light">Stock
                     <a class="btn btn-success float-right btn-sm"  href="{{ route('stock.report.pdf') }}" target="_blank">
-                    <i class="fa fa-plus-download p-2"></i>Descargar PDF</a>
+                    <i class="fa fa-download p-2"></i>Descargar PDF</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->
@@ -44,20 +44,27 @@
                             <th>Proveedor</th>
                             <th>Categoria</th>
                             <th>Producto</th>
+                            <th>Entrante</th>
+                            <th>Saliente</th>
                             <th>Stock</th>
                             <th>Unidad</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($allData as $key => $product)
+                    @php
+                        $buying_total = App\Model\Purchase::where('category_id',$product->category_id)->where('product_id',$product->id)->where('status','1')->sum('buying_qty');
+                        $selling_total = App\Model\InvoiceDetail::where('category_id',$product->category_id)->where('product_id',$product->id)->where('status','1')->sum('selling_qty');
+                    @endphp
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td>{{ $product['supplier']['name']}}</td>
                             <td>{{ $product['category']['name']}}</td>
                             <td>{{ $product->name }}</td>
+                            <td>{{ $buying_total }}</td>
+                            <td>{{ $selling_total }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ $product['unit']['name']}}</td>
-            
                         </tr>
                     @endforeach
                     </tbody>

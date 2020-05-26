@@ -39,7 +39,7 @@
                 <table id="example1" class="table table-bordered table-hover">
                     <thead class="thead">
                         <tr>
-                            <th>Codigo</th>
+                            <th >Codigo</th>
                             <th>Nombre</th>
                             <th>Telefono</th>
                             <th>Email</th>

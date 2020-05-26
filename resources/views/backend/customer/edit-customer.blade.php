@@ -7,12 +7,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm 6">
-                    <h1 class="m-0 text-white">Administrar Clientes</h1>
+
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Cliente</li>
+                        <li class="breadcrumb-item">Cliente</li>
+                        <li class="breadcrumb-item">Editar</li>
                     </ol>
                 </div><!-- /.col-->
              </div><!-- /.row -->
@@ -30,9 +31,9 @@
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header">
-                    <h3>Editar Cliente
+                    <h3>Editar
                         <a href="{{ route('customers.view') }}" class="btn btn-success float-right btn-sm">
-                            Lista de Clientes
+                            Clientes
                         </a>
                     </h3>
                 </div><!-- /.Card Header -->
@@ -45,17 +46,49 @@
                             <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="mobile_no">Telefono </label>
+                          <label for="company">Empresa</label>
+                          <input type="text" name="company" value="{{ $editData->company }}" class="form-control">
+                      </div>
+                        <div class="form-group col-md-6">
+                            <label for="mobile_no">Telefono</label>
                             <input type="text" name="mobile_no" value="{{ $editData->mobile_no }}" class="form-control">
                         </div>
+                        <div class="form-group col-md-6">
+                          <label for="mobile_two">Telefono 2</label>
+                          <input type="text" name="mobile_two" value="{{ $editData->mobile_two}}" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="mobile_three">Telefono 3</label>
+                          <input type="text" name="mobile_three" value="{{ $editData->mobile_three }}" class="form-control">
+                      </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
                             <input type="email" name="email" value="{{ $editData->email }}" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
+                          <label for="position">Puesto</label>
+                          <input type="text" name="position" value="{{ $editData->position }}" class="form-control">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="city">Ciudad</label>
+                        <input type="text" name="city" value="{{ $editData->city }}" class="form-control">
+                    </div>
+                        <div class="form-group col-md-6">
                             <label for="address">Direccion</label>
                             <input type="text" name="address" value="{{ $editData->address }}" class="form-control">
                         </div>
+                        <div class="form-group col-md-6">
+                          <label for="postal">Codigo Postal</label>
+                          <input type="text" name="postal" value="{{ $editData->postal }}" class="form-control">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="cuit">Cuit</label>
+                        <input type="text" name="cuit" value="{{ $editData->cuit }}" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="website">Website</label>
+                      <input type="text" name="website" value="{{ $editData->website }}" class="form-control">
+                  </div>
                         <div class="form-group col-md-6">
                         <input type="submit" value="Actualizar" class="btn btn-primary">
                         </div>
