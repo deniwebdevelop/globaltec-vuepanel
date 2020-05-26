@@ -63,10 +63,28 @@
                             <select name="category_id" class="form-control">
                               <option value="">Seleccionar Categoria</option>
                               @foreach ($categories as $category)
-                              <option value="{{ $category->id }}" {{ ($editData->category_id==$category->id)?"selected":'' }}>{{ $category->name }}</option>
+                              <option value="{{ $category->id }}" {{ ($editData->category_id==$category->id)?"selected":'' }}>{{ $category->type }}</option>
                               @endforeach
                             </select>
                         </div>
+                        <div class="form-group col-md-6">
+                          <label for="brand">Marca</label>
+                          <input type="text" name="brand" class="form-control">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="model">Modelo</label>
+                        <input type="text" name="model" class="form-control">
+                    </div>
+                        <div class="form-group col-md-6">
+                          <label for="coin">Moneda</label>
+                          <select name="coin" class="form-control">
+                            <option value="">Seleccionar Moneda</option>
+                            <option value="ARS">ARS</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                          </select>
+                      </div>
                         <div class="form-group col-md-6">
                             <label for="name">Producto</label>
                             <input type="text" name="name" value="{{ $editData->name }}" class="form-control">

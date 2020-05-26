@@ -19,6 +19,9 @@ class CreateProductsTable extends Migration
             $table->integer('unit_id');
             $table->integer('category_id');
             $table->string('name');
+            $table->string('brand');
+            $table->string('model');
+            $table->string('coin');
             $table->double('quantity')->default('0');
             $table->tinyInteger('status')->default('1');
             $table->integer('created_by')->nullable();

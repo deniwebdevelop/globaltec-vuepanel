@@ -31,6 +31,9 @@ class ProductController extends Controller
         $product->unit_id = $request->unit_id;
         $product->category_id = $request->category_id;
         $product->name = $request->name;
+        $product->brand = $request->brand;
+        $product->model = $request->model;
+        $product->coin = $request->coin;
         $product->quantity = '0';
         $product->created_by = Auth::user()->id;
         $product->save();
@@ -52,6 +55,9 @@ class ProductController extends Controller
         $product->unit_id = $request->unit_id;
         $product->category_id = $request->category_id;
         $product->name = $request->name;
+        $product->brand = $request->brand;
+        $product->model = $request->model;
+        $product->coin = $request->coin;
         $product->updated_by = Auth::user()->id;
         $product->save();
         Session::flash('success');

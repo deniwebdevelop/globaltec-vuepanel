@@ -44,6 +44,9 @@
                             <th>Proveedor</th>
                             <th>Categoria</th>
                             <th>Nombre</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Moneda</th>
                             <th>Unidad</th>
                             <th style="width: 12%;">Action</th>
                         </tr>
@@ -55,6 +58,9 @@
                             <td>{{ $product['supplier']['name']}}</td>
                             <td>{{ $product['category']['name']}}</td>
                             <td>{{ $product->name }}</td>
+                            <td>{{ $product->brand }}</td>
+                            <td>{{ $product->model }}</td>
+                            <td>{{ $product->coin }}</td>
                             <td>{{ $product['unit']['name']}}</td>
                             @php
                             $count_product = App\Model\Purchase::where('product_id',$product->id)->count(); 

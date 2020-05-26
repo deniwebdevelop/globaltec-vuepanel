@@ -30,6 +30,30 @@
             @endif
             <!-- End Usuario -->
 
+
+
+            <!-- Suppliers -->
+            <li class="nav-item has-treeview {{ ($prefix=='/suppliers')?'menu-open':''}}">
+                <a href="{{ route('suppliers.view') }}" class="nav-link text-white">
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>
+                        Proveedores
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('suppliers.view') }}" class="nav-link text-white
+                    {{ ($route=='suppliers.view')?'active':'' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Ver Proveedores</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Suppliers -->
+
+
             <!-- Customers -->
             <li class="nav-item has-treeview {{ ($prefix=='/customers')?'menu-open':''}}">
                 <a href="{{ route('customers.view') }}" class="nav-link text-white">
@@ -74,10 +98,10 @@
 
             <!-- Facturacion -->
             <li class="nav-item has-treeview {{ ($prefix=='/invoice')?'menu-open':''}}">
-                <a href="#" class="nav-link text-light">
+                <a href="#" class="nav-link text-white">
                     <i class="nav-icon fas fa-copy"></i>
                     <p>
-                        Facturacion
+                        Ventas
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
@@ -87,7 +111,7 @@
                         <a href="{{ route('invoice.view') }}" class="nav-link text-white
                   {{ ($route=='invoice.view')?'active':'' }}">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Ver Facturacion</p>
+                            <p>Facturacion</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -116,28 +140,6 @@
             </li>
             <!-- End Facturacion -->
 
-
-
-            <!-- Suppliers -->
-            <li class="nav-item has-treeview {{ ($prefix=='/suppliers')?'menu-open':''}}">
-                <a href="{{ route('suppliers.view') }}" class="nav-link text-white">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>
-                        Proveedores
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('suppliers.view') }}" class="nav-link text-white
-                    {{ ($route=='suppliers.view')?'active':'' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Ver Proveedores</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- End Suppliers -->
 
 
             <!-- Purchase -->

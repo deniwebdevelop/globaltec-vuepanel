@@ -36,8 +36,8 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-hover table-responsive" width="100%">
-                  <thead style="font-size: 14px">
+                <table id="example1" class="table table-bordered table-hover">
+                  <thead class="thead">
                         <tr>
                             <th>SL.</th>
                             <th>Rol</th>
