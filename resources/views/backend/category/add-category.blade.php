@@ -70,15 +70,20 @@
     $(document).ready(function (){
       $('#myForm').validate({
         rules:{
-          category: {
-            required: true,
-          }
           type: {
-              required:true,
+            required: true,
+          },
+          name: {
+              required: true,
           }
         },
         messages: {
-          category: 'Debe ingresar una categoria',
+            type: {
+                required: "Debe ingresar un tipo de categoria",
+            },
+            name: {
+                required: "Debe ingresar un nombre",
+            },
         },
         errorElement: 'span',
         errorPlacement: function(error, element){

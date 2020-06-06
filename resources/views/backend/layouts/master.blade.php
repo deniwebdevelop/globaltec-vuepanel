@@ -1,52 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>GT Panel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="{{ asset('backend/plugins/fontawesome-free/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/plugins/jqvmap/jqvmap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/plugins/daterangepicker/daterangepicker.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/plugins/summernote/summernote-bs4.css') }}">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('backend/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-  <script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>
-  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css">
-  <link rel="stylesheet" href="{{ asset('backend/plugins/select2/css/select2.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+@include('backend.layouts.head')
 </head>
-
-<body class="hold-transition sidebar-mini layout-fixed font-weight-lighter">
+<body class="hold-transition sidebar-mini sidebar-collapse">
 <div class="wrapper">
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-light navbar-white text-dark border-transparent">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light border-0">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link text-dark" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('home') }}" class="nav-link">Home</a>
       </li>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Notifications Dropdown Menu -->
+      <!-- Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link text-dark" data-toggle="dropdown" href="#">
           <span>{{ Auth::user()->name }}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <div class="dropdown-divider"></div>
+          <a href="{{ route('users.view') }}" class="dropdown-item dropdown-footer">Usuarios</a>
           <a href="{{ route('profiles.view') }}" class="dropdown-item dropdown-footer">Mi Perfil</a>
           <a href="{{ route('profiles.password.view') }}" class="dropdown-item dropdown-footer">Cambiar Contraseña</a>
           <a href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
@@ -60,9 +40,9 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-collapse layout-fixed" style="background-image: linear-gradient(200deg, #0b0730 20%, rgba(87, 13, 13, 0.829)100%);">
+  <aside class="main-sidebar bg-black elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('home') }}" class="brand-link text-center" style="border-bottom:1px solid white">
+    <a href="{{ route('home') }}" class="brand-link text-center">
       <h2 class="brand-text text-white" style="font-family: 'Satisfy', cursive; font-size: 40px">Gtt</h2>
     </a>
 
@@ -73,17 +53,11 @@
     </div>
     <!-- /.sidebar -->
   </aside> 
-@yield('content')
-  <footer class="main-footer border-top-0  font-weight-lighter" style="background-color: #fff;">
-    <strong>Copyright &copy; 2020 <a target="_blank" class="text-green" href="http://www.globaltectrade.com.ar">Global Tec Trade</a></strong>
-    <div class="float-right d-none d-sm-inline-block font-weight-lighter">
-      <b>Designed & Developed by</b> <b class="text-green"> Deni</b>
-    </div>
-  </footer>
-</div>
+@yield('content')</div>
 <!-- ./wrapper -->
 
 <!-- Scripts -->
+<script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('backend/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <script>
 $.widget.bridge('uibutton', $.ui.button)
@@ -196,7 +170,7 @@ $(function(){
 
 @if(Session::has('success'))
 <script>
-toastr.success('Success')
+toastr.success('Actualizado')
 </script> 
 @endif
 

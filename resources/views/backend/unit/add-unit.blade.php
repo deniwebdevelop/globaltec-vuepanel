@@ -66,12 +66,14 @@
     $(document).ready(function (){
       $('#myForm').validate({
         rules:{
-          unit: {
+          name: {
             required: true,
-          }, 
+          }
         },
         messages: {
-            unit: 'Debe ingresar una unidad',
+            name: {
+                required: "Debe ingresar un nombre",
+            },
         },
         errorElement: 'span',
         errorPlacement: function(error, element){

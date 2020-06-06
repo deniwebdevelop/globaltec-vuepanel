@@ -89,7 +89,7 @@
                             <option value="GBP">GBP</option>
                           </select>
                       </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                         <input type="submit" value="Agregar" class="btn btn-primary">
                         </div>
                     </div>
@@ -108,37 +108,60 @@
 <!-- /.content-wrapper -->
 
 <script type="text/javascript">
-    $(document).ready(function (){
-      $('#myForm').validate({
-        rules:{
-          name: {
+  $(document).ready(function (){
+    $('#myForm').validate({
+      rules:{
+        supplier_id: {
+          required: true,
+        },
+        unit_id: {
             required: true,
-          },
+        },
+        category_id: {
+            required: true,
+        },
+        name: {
+            required: true,
+        },
+        brand: {
+            required: true,
+        },
+        model: {
+            required: true,
+        }
+      },
+      messages: {
           supplier_id: {
-            required:true,
+              required: "Debe seleccionar un proveedor",
           },
           unit_id: {
-            required:true,
+              required: "Debe ingresar una unidad",
           },
           category_id: {
-            required: true,
-          }
-        },
-        messages: {
-         
-        },
-        errorElement: 'span',
-        errorPlacement: function(error, element){
-          error.addClass('invalid-feedback');
-          element.closest('.form-group').append(error);
-        },
-        highlight: function (element, errorClass, validClass){
-          $(element).addClass('is-invalid');
-        },
-        unhighlight: function (element, errorClass, validClass){
-          $(element).removeClass('is-invalid');
-        }
-      });
+              required: "Debe ingresar una categoria",
+          },
+          name: {
+              required: "Debe ingresar un nombre",
+          },
+          brand: {
+              required: "Debe ingresar una marca",
+          },
+          model: {
+              required: "Debe ingresar un modelo",
+          },
+      },
+      errorElement: 'span',
+      errorPlacement: function(error, element){
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass){
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass){
+        $(element).removeClass('is-invalid');
+      }
     });
-    </script>
+  });
+  </script>
 @endsection

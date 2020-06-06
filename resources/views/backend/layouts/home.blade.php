@@ -27,7 +27,7 @@
           <div class="row">
  
           
-            <div class="col-md-3 py-5">
+            <div class="col-md-6 py-1">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -42,7 +42,7 @@
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-md-3 py-5">
+            <div class="col-md-6 py-1">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -59,7 +59,7 @@
 
   
             <!-- ./col -->
-            <div class="col-md-3 py-5">
+            <div class="col-md-6 py-1">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -75,7 +75,7 @@
             </div>
             <!-- ./col -->
 
-            <div class="col-md-3 py-5">
+            <div class="col-md-6 py-1">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -91,7 +91,7 @@
             </div>
 
 
-            <div class="col-md-3 py-5">
+            <div class="col-md-6 py-1">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -107,7 +107,7 @@
             </div>
             <!-- ./col -->
             <!-- ./col -->
-            <div class="col-md-3 py-5">
+            <div class="col-md-6 py-1">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -122,7 +122,7 @@
               </div>
             </div>
 
-            <div class="col-md-3 py-5">
+            <div class="col-md-6 py-1">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
@@ -138,7 +138,7 @@
             </div>
             <!-- ./col -->
 
-            <div class="col-md-3 py-5">
+            <div class="col-md-6 py-1">
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">

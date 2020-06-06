@@ -37,7 +37,7 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-hover table-responsive" width="100%">
+                <table id="example1" class="table table-hover" width="100%">
                   <thead style="font-size: 14px">
                         <tr>
                             <th>Codigo</th>
@@ -51,7 +51,7 @@
                             <th>Precio Unitario</th>
                             <th>Total</th>
                             <th>Estado</th>
-                            <th style="width: 12%;">Action</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>

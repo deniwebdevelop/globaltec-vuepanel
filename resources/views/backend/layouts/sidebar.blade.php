@@ -122,13 +122,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('invoice.print.list') }}" class="nav-link text-white
-                  {{ ($route=='invoice.print.list')?'active':''  }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Imprimir</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{ route('invoice.daily.report') }}" class="nav-link text-white
                   {{ ($route=='invoice.daily.report')?'active':''  }}">
                             <i class="far fa-circle nav-icon"></i>
