@@ -7,13 +7,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Ventas | Facturacion</h1>
+  
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
               <li class="breadcrumb-item active">Ventas</li>
-              <li class="breadcrumb-item active">Facturacion</li>
+              <li class="breadcrumb-item active">Presupuestos</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -31,14 +31,14 @@
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card">
               <div class="card-header">
-                <h3>Agregar Factura
-                  <a class="btn btn-success float-right btn-sm" href="{{route('invoice.view')}}"><i class="fa fa-list"></i> Ver Facturas</a>
+                <h3>Agregar Presupuesto
+                  <a class="btn btn-success float-right btn-sm" href="{{route('invoice.view')}}"><i class="fa fa-list"></i> Ver Presupuestos</a>
                 </h3>
               </div><!-- /.card-header -->
 
               <div class="card-body">
                 <div class="form-row">
-                <div class="form-row col-md-1">
+                <div class="form-group col-md-1">
                     <label>Numero</label>
                     <input type="text" name="invoice_no" id="invoice_no" class="form-control form-control-sm" value="{{ $invoice_no }}"  
                     readonly style="background-color: #D8FDBA">
@@ -89,7 +89,7 @@
                         <th>Unidades</th>
                         <th width="17%">Precio Unitario</th>
                         <th width="17%">Precio Total</th>
-                        <th width="10%">Action</th>
+                        <th width="10%">Accion</th>
                       </tr>
                     </thead>
                     <tbody id="addRow" class="addRow">
@@ -117,7 +117,7 @@
                   <br/>
                   <div class="form-row">
                     <div class="form-group col-md-12">
-                      <textarea name="description" class="form-control" id="descriptcion" placeholder="Agregar Descripcion"></textarea>
+                      <textarea name="description" class="form-control" id="description" placeholder="Agregar Descripcion"></textarea>
                     </div>
                   </div>
 
@@ -134,7 +134,7 @@
                     </div>
                     <div class="form-group col-md-9">
                       <label>Cliente</label>
-                      <select name="customer_id" id="customer_id" class="form-control form-control-sm select2">
+                      <select name="customer_id" id="customer_id" class="form-control form-control-sm">
                         <option value="">Seleccionar Cliente</option>
                         @foreach ($customers as $customer)
                         <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->mobile_no }}-{{ $customer->address }})</option>
@@ -147,20 +147,56 @@
                   <div class="form-row new_customer" style="display: none;">
                     <div class="form-group col-md-4">
                       <input type="text" name="name" id="name" class="form-control form-control-sm"
-                      placeholder="Ingregsar Cliente">
+                      placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <input type="text" name="company" id="company" class="form-control form-control-sm"
+                      placeholder="Empresa">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="mobile_no" id="mobile_no" class="form-control form-control-sm"
-                      placeholder="Ingresar Telefono">
+                      placeholder="Telefono">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <input type="text" name="mobile_two" id="mobile_two" class="form-control form-control-sm"
+                      placeholder="Telefono 2">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <input type="text" name="mobile_three" id="mobile_three" class="form-control form-control-sm"
+                      placeholder="Telefono 3">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <input type="text" name="email" id="email" class="form-control form-control-sm"
+                      placeholder="E-mail">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <input type="text" name="position" id="position" class="form-control form-control-sm"
+                      placeholder="Puesto">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <input type="text" name="city" id="city" class="form-control form-control-sm"
+                      placeholder="Ciudad">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="address" id="address" class="form-control form-control-sm"
-                      placeholder="Ingresar Direccion">
+                      placeholder="Direccion">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <input type="text" name="postal" id="postal" class="form-control form-control-sm"
+                      placeholder="Codigo Postal">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <input type="text" name="cuit" id="cuit" class="form-control form-control-sm"
+                      placeholder="Cuit">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <input type="text" name="website" id="website" class="form-control form-control-sm"
+                      placeholder="Website">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary" id="storeButton">Agregar Factura</button>
+                    <button type="submit" class="btn btn-primary" id="storeButton">Agregar Presupuesto</button>
                   </div>
                 </form>
               </div>
@@ -181,7 +217,6 @@
   <script id="document-template" type="text/x-handlebars-template">
     <tr class="delete_add_more_item" id="delete_add_more_item">
       <input type="hidden" name="date" value="@{{date}}">
-      @{{ date }}
       <input type="hidden" name="invoice_no" value="@{{invoice_no}}">
       <td>
         <input type="hidden" name="category_id[]" value="@{{category_id}}">
@@ -286,7 +321,7 @@
           type:"GET",
           data:{category_id:category_id},
           success:function(data){
-            var html = '<option value="">Select Product</option>';
+            var html = '<option value="">Seleccionar Producto</option>';
             $.each(data,function(key,v){
               html +='<option value="'+v.id+'">'+v.name+'</option>';
             });
@@ -327,7 +362,7 @@ $(document).on('change','#customer_id',function(){
     if(customer_id == '0'){
       $('.new_customer').show();
     }else{
-      $('.paid_amount').hide();
+      $('.new_customer').hide();
     }
 });
 </script>

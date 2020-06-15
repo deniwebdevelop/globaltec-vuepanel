@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm 6">
-                    <h1 class="m-0 text-white">Administrar Clientes</h1>
+              
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -31,9 +31,10 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Agregar Cliente
-                        <a href="{{ route('customers.view') }}" class="btn btn-success float-right btn-sm">
+                        <a href="{{ route('customers.view') }}" class="btn text-white float-right btn-sm" style="background: linear-gradient(200deg, #0f522c 20%, rgba(9, 136, 47, 0.829)100%)"></i>
                             Lista de Clientes
                         </a>
+                    </h3>
                     </h3>
                 </div><!-- /.Card Header -->
                 <div class="card-body">

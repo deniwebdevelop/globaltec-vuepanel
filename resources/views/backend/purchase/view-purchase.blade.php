@@ -32,7 +32,7 @@
               <div class="card-header">
                  <h3 class="p-1 font-weight-light">Compras
                     <a class="btn btn-success float-right btn-sm"
-                    href="{{ route('purchase.add') }}"><i class="fa fa-plus-circle p-2"></i>Agregar Compra</a>
+                    href="{{ route('purchase.add') }}"><i class="fa fa-plus-circle mr-2"></i>Agregar Compra</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->
@@ -40,7 +40,7 @@
                 <table id="example1" class="table table-hover" width="100%">
                   <thead style="font-size: 14px">
                         <tr>
-                            <th>Codigo</th>
+                            <th style="display: none">Codigo</th>
                             <th>OC</th>
                             <th>Fecha</th>
                             <th>Proveedor</th>
@@ -57,7 +57,7 @@
                     <tbody>
                     @foreach($allData as $key => $purchase)
                         <tr>
-                            <td>{{$key+1}}</td>
+                            <td style="display: none">{{$key+1}}</td>
                             <td>{{ $purchase->purchase_no }}</td>
                             <td>{{ date('d/m/Y',strtotime($purchase->date)) }}</td>
                             <td>{{ $purchase['supplier']['name'] }}</td>
@@ -72,9 +72,9 @@
                             <td>{{ $purchase->buying_price }}</td>
                             <td>
                               @if($purchase->status=='0')
-                              <span style="background: #FC4236;padding:5px">Pendiente</span>
+                              <span style="background: #FC4236;padding:5px;"><a class="text-white" href="{{ route('purchase.pending.list') }}">Pendiente</a></span>
                               @elseif($purchase->status=='1')
-                              <span style="background: #5EAB00;pagging:5px">Pago Recibido</span>
+                              <span style="background: #5EAB00;pagging:5px">Pago Realizado</span>
                               @endif
                             </td>
                             <td>

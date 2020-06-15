@@ -4,6 +4,12 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/todo/', 'TodoController@index');
+Route::get('/todo/create', 'TodoController@create')->name('todo.create');;
+Route::get('/todo/edit', 'TodoController@edit');
+Route::post('/todo/store', 'TodoController@store')->name('todo.store');
+
+
 Route::group(['middleware'=>'auth'],function(){
 	Route::prefix('users')->group(function(){
 		Route::get('/view','Backend\UserController@view')->name('users.view');
@@ -106,6 +112,15 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/daily/report/pdf','Backend\InvoiceController@dailyReportPdf')->name('invoice.daily.report.pdf');
 	});
 
+	Route::prefix('repair')->group(function(){
+		Route::get('/view','Backend\RepairController@view')->name('repair.view');
+		Route::get('/add','Backend\RepairController@add')->name('repair.add');
+		Route::post('/store','Backend\RepairController@store')->name('repair.store');
+
+		Route::get('/delete/{id}','Backend\RepairController@delete')->name('repair.delete');
+
+	});
+
 	Route::prefix('stock')->group(function(){
 		Route::get('/report', 'Backend\StockController@stockReport')->name('stock.report');
 		Route::get('/report/pdf', 'Backend\StockController@stockReportPdf')->name('stock.report.pdf');
@@ -114,4 +129,3 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/report/product/wise/pdf', 'Backend\StockController@productWisePdf')->name('stock.report.product.wise.pdf');
 	});
 });
-

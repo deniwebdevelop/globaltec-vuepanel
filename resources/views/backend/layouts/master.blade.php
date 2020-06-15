@@ -40,7 +40,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar bg-black elevation-4">
+  <aside class="main-sidebar bg-black elevation-4" style="background-image: linear-gradient(200deg, #0b0730 20%, rgba(87, 13, 13, 0.829)100%);">
     <!-- Brand Logo -->
     <a href="{{ route('home') }}" class="brand-link text-center">
       <h2 class="brand-text text-white" style="font-family: 'Satisfy', cursive; font-size: 40px">Gtt</h2>

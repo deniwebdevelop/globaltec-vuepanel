@@ -22,9 +22,17 @@ class SupplierController extends Controller
     public function store(Request $request){
         $supplier = new Supplier();
         $supplier->name = $request->name;
+        $supplier->company = $request->company;
         $supplier->mobile_no = $request->mobile_no;
+        $supplier->mobile_two = $request->mobile_two;
+        $supplier->mobile_three = $request->mobile_three;
         $supplier->email = $request->email;
+        $supplier->position = $request->position;
+        $supplier->city = $request->city;
         $supplier->address = $request->address;
+        $supplier->postal = $request->postal;
+        $supplier->cuit = $request->cuit;
+        $supplier->website = $request->website;
         $supplier->created_by = Auth::user()->id;
         $supplier->save();
         Session::flash('success');
@@ -39,9 +47,17 @@ class SupplierController extends Controller
     public function update(Request $request, $id){
         $supplier = Supplier::find($id);
         $supplier->name = $request->name;
+        $supplier->company = $request->company;
         $supplier->mobile_no = $request->mobile_no;
+        $supplier->mobile_two = $request->mobile_two;
+        $supplier->mobile_three = $request->mobile_three;
         $supplier->email = $request->email;
+        $supplier->position = $request->position;
+        $supplier->city = $request->city;
         $supplier->address = $request->address;
+        $supplier->postal = $request->postal;
+        $supplier->cuit = $request->cuit;
+        $supplier->website = $request->website;
         $supplier->updated_by = Auth::user()->id;
         $supplier->save();
         Session::flash('success');

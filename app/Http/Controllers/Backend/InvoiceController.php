@@ -73,8 +73,17 @@ class InvoiceController extends Controller
                     if($request->customer_id == '0'){
                         $customer = new Customer();
                         $customer->name = $request->name;
+                        $customer->company = $request->company;
                         $customer->mobile_no = $request->mobile_no;
+                        $customer->mobile_two = $request->mobile_two;
+                        $customer->mobile_three = $request->mobile_three;
+                        $customer->email = $request->email;
+                        $customer->position = $request->position;
+                        $customer->city = $request->city;
                         $customer->address = $request->address;
+                        $customer->postal = $request->postal;
+                        $customer->cuit = $request->cuit;
+                        $customer->website = $request->website;
                         $customer->save();
                         $customer_id = $customer->id;
                     }else{
@@ -136,9 +145,7 @@ class InvoiceController extends Controller
         foreach ($request->selling_qty as $key => $val){
             $invoice_details = InvoiceDetail::where('id', $key)->first();
             $product = Product::where('id', $invoice_details->product_id)->first();
-            if($product->quantity < $request->selling_qty[$key]){
-                return redirect()->back();
-            }
+         
         }
         $invoice = Invoice::find($id);
         $invoice->approved_by = Auth::user()->id;

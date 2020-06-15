@@ -79,14 +79,14 @@
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
-                  <h3 class="text-dark">Facturacion<sup style="font-size: 20px"></sup></h3>
+                  <h3 class="text-dark">Presupuestos<sup style="font-size: 20px"></sup></h3>
   
-                  <a class="text-dark" href="{{ route('invoice.view') }}"><p>Ver facturas</p></a>
+                  <a class="text-dark" href="{{ route('invoice.view') }}"><p>Ver Presupuestos</p></a>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars text-dark"></i>
                 </div>
-                <a href="{{ route('invoice.add') }}" class="small-box-footer text-dark"> Nueva Factura <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('invoice.add') }}" class="small-box-footer text-dark"> Nuevo Presupuesto <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
 
@@ -111,14 +111,14 @@
               <!-- small box -->
               <div class="small-box bg-gradient-light">
                 <div class="inner">
-                  <h3 class="text-dark">Stock</h3>
+                  <h3 class="text-dark">Reparaciones</h3>
   
-                  <a class="text-dark" href="{{ route('stock.report') }}"><p>Ver Stock</p></a>
+                  <a class="text-dark" href="{{ route('repair.view') }}"><p>Ver Reparaciones</p></a>
                 </div>
                 <div class="icon">
                   <i class="ion ion-social-buffer text-dark"></i>
                 </div>
-                <a href="{{ route('stock.report') }}" class="small-box-footer text-dark"> Reporte Stock <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('repair.add') }}" class="small-box-footer text-dark"> Agregar Reparacion <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
 

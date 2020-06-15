@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm 6">
-                    <h1 class="m-0 text-white">Administrar Proveedores</h1>
+
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -30,8 +30,8 @@
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header">
-                    <h3>Agregar Proveedor
-                        <a href="{{ route('suppliers.view') }}" class="btn btn-success float-right btn-sm">
+                    <h3 class="font-weight-lighter ">Nuevo Proveedor
+                        <a href="{{ route('suppliers.view') }}" class="btn text-white float-right btn-sm" style="background: linear-gradient(200deg, #0f522c 20%, rgba(9, 136, 47, 0.829)100%)">
                             Lista de Proveedores
                         </a>
                     </h3>
@@ -40,25 +40,57 @@
                     <form method="post" action="{{ route('suppliers.store') }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="name">Nombre del Proveedor</label>
-                            <input type="text" name="name" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="mobile_no">Telefono</label>
-                            <input type="text" name="mobile_no" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="address">Direccion</label>
-                            <input type="text" name="address" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
-                        </div>
+                      <div class="form-group col-md-6">
+                        <label for="name">Nombre del Proveedor</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="company">Empresa</label>
+                        <input type="text" name="company" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="mobile_no">Telefono</label>
+                        <input type="text" name="mobile_no" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="mobile_two">Telefono 2</label>
+                        <input type="text" name="mobile_two" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="mobile_three">Telefono 3</label>
+                        <input type="text" name="mobile_three" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="position">Puesto</label>
+                        <input type="text" name="position" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="city">Ciudad</label>
+                        <input type="text" name="city" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="address">Direccion</label>
+                        <input type="text" name="address" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="postal">Codigo Postal</label>
+                        <input type="text" name="postal" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="cuit">Cuit</label>
+                        <input type="text" name="cuit" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="website">Website</label>
+                        <input type="text" name="website" class="form-control">
+                    </div>
+                    <div class="form-group col-md-12">
+                    <input type="submit" value="Agregar" class="btn btn-primary">
+                    </div>
                     </div>
                     </form>
                 </div><!-- /.card-body-->
@@ -93,7 +125,18 @@
           }
         },
         messages: {
-         
+          name: {
+            required: "Debe ingresar un nombre",
+          },
+          mobile_no: {
+            required: "Debe ingresar un telefono",
+          },
+          email: {
+            required:"Debe ingresar un e-mail",
+          },
+          address: {
+            required: "Debe ingresar una direccion",
+          }
         },
         errorElement: 'span',
         errorPlacement: function(error, element){
