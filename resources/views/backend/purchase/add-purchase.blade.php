@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Mange Purchase</h1>
+
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Purchase</li>
+              <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+              <li class="breadcrumb-item active">Compras</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -31,7 +31,7 @@
             <div class="card">
               <div class="card-header">
                 <h3>Agregar Compra
-                  <a class="btn btn-success float-right btn-sm" href="{{route('purchase.view')}}"><i class="fa fa-list"></i> Purchase List</a>
+                  <a class="btn btn-success float-right btn-sm" href="{{route('purchase.view')}}"><i class="fa fa-list"></i> Compras</a>
                 </h3>
               </div><!-- /.card-header -->
 
@@ -39,7 +39,7 @@
                   <div class="form-row">
                     <div class="form-group col-md-4">
                       <label>Fecha</label>
-                      <input type="text" name="date" id="date" class="form-control datepicker form-control-sm" placeholder="YYYY-MM-DD" readonly>
+                      <input type="text" name="date" id="date" class="form-control datepicker form-control-sm" placeholder="DD-MM-YYYY" readonly>
                     </div>
                     <div class="form-group col-md-4">
                       <label>Numero OC</label>
@@ -50,7 +50,7 @@
                       <select name="supplier_id" id="supplier_id" class="form-control select2">
                         <option value="">Seleccionar Proveedor</option>
                         @foreach($suppliers as $supplier)
-                        <option value="{{$supplier->id}}">{{$supplier->name}}</option>
+                        <option value="{{$supplier->id}}">{{$supplier->company}}</option>
                         @endforeach
                       </select>
                     </div>
@@ -80,7 +80,7 @@
                       <tr>
                         <th>Categoria</th>
                         <th>Producto</th>
-                        <th width="7%">Unidades/Kg</th>
+                        <th width="7%">Cantidad</th>
                         <th width="10%">Precio Unitario</th>
                         <th>Descripcion</th>
                         <th width="10%">Total</th>
@@ -233,7 +233,7 @@
           type:"GET",
           data:{supplier_id:supplier_id},
           success:function(data){
-            var html = '<option value="">Select Category</option>';
+            var html = '<option value="">Seleccionar Categoria</option>';
             $.each(data,function(key,v){
               html +='<option value="'+v.category_id+'">'+v.category.name+'</option>';
             });
@@ -253,7 +253,7 @@
           type:"GET",
           data:{category_id:category_id},
           success:function(data){
-            var html = '<option value="">Select Product</option>';
+            var html = '<option value="">Seleccionar Producto</option>';
             $.each(data,function(key,v){
               html +='<option value="'+v.id+'">'+v.name+'</option>';
             });
@@ -302,7 +302,7 @@
   <script>
       $('.datepicker').datepicker({
           uiLibrary: 'bootstrap4',
-          format :'yyyy-mm-dd'
+          format :'dd-mm-yyyy'
       });
   </script>
 

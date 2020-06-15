@@ -35,7 +35,7 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-hover table-responsive" width="100%">
+                <table id="example1" class="table table-hover" width="100%">
                   <thead style="font-size: 14px">
                         <tr>
                             <th>Codigo</th>
@@ -49,7 +49,7 @@
                             <th>Precio Unitario</th>
                             <th>Total OC</th>
                             <th>Estado</th>
-                            <th style="width: 12%">Action</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,7 +72,7 @@
                               @if($purchase->status=='0')
                               <span style="background: #FC4236;padding:5px">Pendiente</span>
                               @elseif($purchase->status=='1')
-                              <span style="background: #5EAB00;pagging:5px">Pago Recibido</span>
+                              <span style="background: #5EAB00;pagging:5px">Pago Realizado</span>
                               @endif
                             </td>
                             <td>

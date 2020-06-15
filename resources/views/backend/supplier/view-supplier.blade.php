@@ -31,40 +31,51 @@
             <div class="card">
               <div class="card-header">
                  <h3 class="p-1 font-weight-light">Proveedores
-                     <a class="btn btn-success float-right btn-sm" href="{{ route('suppliers.add') }}"><i class="fa fa-plus-circle p-2"></i>Agregar Proveedor</a>
+                     <a class="btn float-right btn-sm text-white" style="background: linear-gradient(200deg, #07061a 20%, rgba(75, 32, 32, 0.829)100%);" href="{{ route('suppliers.add') }}"><i class="fa fa-plus-circle mr-2"></i>Agregar</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
-                    <thead class="thead">
+                <table id="example1" class="table table-hover" width="100%">
+                    <thead style="font-size: 14px">
                         <tr>
-                            <th >Codigo</th>
+                            <th style="display: none">Codigo</th>
                             <th>Nombre</th>
+                            <th>Empresa</th>
                             <th>Telefono</th>
+                            <th>Telefono 2</th>
+                            <th>Telefono 3</th>
                             <th>Email</th>
+                            <th>Puesto</th>
+                            <th>Ciudad</th>
                             <th>Direccion</th>
-                            <th style="width: 12%;">Action</th>
+                            <th>Codigo Postal</th>
+                            <th>Cuit</th>
+                            <th>Website</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($allData as $key => $supplier)
                         <tr>
-                            <td>{{$key+1}}</td>
+                            <td style="display: none">{{$key+1}}</td>
                             <td>{{$supplier->name}}</td>
+                            <td>{{$supplier->company }}</td>
                             <td>{{$supplier->mobile_no}}</td>
+                            <td>{{$supplier->mobile_two}}</td>
+                            <td>{{$supplier->mobile_three}}</td>
                             <td>{{$supplier->email}}</td>
+                            <td>{{$supplier->position}}</td>
+                            <td>{{$supplier->city}}</td>
                             <td>{{$supplier->address}}</td>
-                            @php
-                               $count_supplier = App\Model\Product::where('supplier_id',$supplier->id)->count(); 
-                            @endphp
+                            <td>{{$supplier->postal }}</td>
+                            <td>{{$supplier->cuit}}</td>
+                            <td>{{$supplier->website}}</td>
                             <td>
                                 <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('suppliers.edit', $supplier->id) }}"><i
                                 class="fa fa-edit"></i></a>
-                                @if($count_supplier<1) 
                                 <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('suppliers.delete', $supplier->id) }}"><i
                                     class="fa fa-trash"></i></a>
-                                  @endif
                             </td>
                         </tr>
                     @endforeach
@@ -83,4 +94,3 @@
   </div>
   <!-- /.content-wrapper -->     
 @endsection
- 

@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm 6">
-                    <h1 class="m-0 text-white">Administrar Unidades</h1>
+                
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Unidad</li>
+                        <li class="breadcrumb-item active">Reparaciones</li>
                     </ol>
                 </div><!-- /.col-->
              </div><!-- /.row -->
@@ -30,25 +30,13 @@
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header">
-                    <h3>Agregar Unidad
-                        <a href="{{ route('units.view') }}" class="btn btn-success float-right btn-sm"><i class="fa fa-list"></i> Ver Unidades</a>
-
+                    <h3>Editar Reparacion
+                        <a href="{{ route('repair.view') }}" class="btn btn-success float-right btn-sm">
+                           Reperaciones
                         </a>
                     </h3>
                 </div><!-- /.Card Header -->
-                <div class="card-body">
-                    <form method="post" action="{{ route('units.store') }}" id="myForm" enctype="multipart/form-data">
-                        @csrf
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="name">Nombre</label>
-                            <input type="text" name="name" class="form-control">
-                        </div>
-                        <div class="form-group col-md-12">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
-                        </div>
-                    </div>
-                    </form>
+
                 </div><!-- /.card-body-->
             </div>
             <!-- /.card -->
@@ -68,12 +56,20 @@
         rules:{
           name: {
             required: true,
+          },
+          mobile_no: {
+            required:true,
+          },
+          email: {
+            required:true,
+            email: true,
+          },
+          address: {
+            required: true,
           }
         },
         messages: {
-            name: {
-                required: "Debe ingresar un nombre",
-            },
+         
         },
         errorElement: 'span',
         errorPlacement: function(error, element){

@@ -30,7 +30,7 @@
                     <!-- Custom tabs (Charts with tabs)-->
                     <div class="card">
                         <div class="card-header">
-                            <h3>Factura Numero #{{ $invoice->invoice_no }}({{ date('d-m-Y',strtotime($invoice->date))}})
+                            <h3>Presupuesto #{{ $invoice->invoice_no }}({{ date('d-m-Y',strtotime($invoice->date))}})
                                 <a class="btn btn-success float-right btn-sm"
                                     href="{{ route('invoice.pending.list') }}"><i class="fa fa-list"></i>Pendientes</a>
                             </h3>
