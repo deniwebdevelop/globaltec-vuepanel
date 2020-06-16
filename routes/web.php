@@ -4,10 +4,12 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/todo/', 'TodoController@index');
-Route::get('/todo/create', 'TodoController@create')->name('todo.create');;
-Route::get('/todo/edit', 'TodoController@edit');
-Route::post('/todo/store', 'TodoController@store')->name('todo.store');
+
+
+
+Route::get('/get-category','Backend\DefaultController@getCategory')->name('get-category');
+Route::get('/get-product','Backend\DefaultController@getProduct')->name('get-product');
+Route::get('/get-stock','Backend\DefaultController@getStock')->name('check-product-stock');
 
 
 Route::group(['middleware'=>'auth'],function(){
@@ -94,10 +96,6 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/report/pdf','Backend\PurchaseController@purchaseReportPdf')->name('purchase.report.pdf');
 	});
 
-	Route::get('/get-category','Backend\DefaultController@getCategory')->name('get-category');
-	Route::get('/get-product','Backend\DefaultController@getProduct')->name('get-product');
-	Route::get('/get-stock','Backend\DefaultController@getStock')->name('check-product-stock');
-
 	Route::prefix('invoice')->group(function(){
 		Route::get('/view','Backend\InvoiceController@view')->name('invoice.view');
 		Route::get('/add','Backend\InvoiceController@add')->name('invoice.add');
@@ -110,15 +108,6 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/print/{id}','Backend\InvoiceController@printInvoice')->name('invoice.print');
 		Route::get('/daily/report','Backend\InvoiceController@dailyReport')->name('invoice.daily.report');
 		Route::get('/daily/report/pdf','Backend\InvoiceController@dailyReportPdf')->name('invoice.daily.report.pdf');
-	});
-
-	Route::prefix('repair')->group(function(){
-		Route::get('/view','Backend\RepairController@view')->name('repair.view');
-		Route::get('/add','Backend\RepairController@add')->name('repair.add');
-		Route::post('/store','Backend\RepairController@store')->name('repair.store');
-
-		Route::get('/delete/{id}','Backend\RepairController@delete')->name('repair.delete');
-
 	});
 
 	Route::prefix('stock')->group(function(){
