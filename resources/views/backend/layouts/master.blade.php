@@ -6,15 +6,13 @@
 <body class="hold-transition sidebar-mini sidebar-collapse">
 <div class="wrapper">
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light border-0">
+  <nav class="main-header navbar navbar-expand border-0 navbar-white text-dark">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link text-dark" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('home') }}" class="nav-link">Home</a>
-      </li>
+ 
     </ul>
 
     <!-- Right navbar links -->
@@ -40,14 +38,14 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar bg-black elevation-4" style="background-image: linear-gradient(200deg, #0b0730 20%, rgba(87, 13, 13, 0.829)100%);">
+  <aside class="main-sidebar" style="background-image: linear-gradient(200deg, #fff 100%, rgba(59, 35, 167, 0.856)100%);">
     <!-- Brand Logo -->
     <a href="{{ route('home') }}" class="brand-link text-center">
-      <h2 class="brand-text text-white" style="font-family: 'Satisfy', cursive; font-size: 40px">Gtt</h2>
+      <h3 class="brand-text" style="color:#0c0847ea; font-weight:lighter; font-size:1.5vm;">GTT</h3>
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar mt-4">
+    <div class="sidebar">
 
     @include('backend.layouts.sidebar')
     </div>
@@ -82,6 +80,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{ asset('backend/dist/js/handlebars.min.js') }}"></script>
 <script src="{{ asset('js/toastr.min.js') }}"></script>
 <script src="{{ asset('backend/plugins/select2/js/select2.full.min.js') }}"></script>
+
 <script>
   $(function () {
     $("#example1").DataTable();
@@ -106,8 +105,8 @@ $.widget.bridge('uibutton', $.ui.button)
       text: "Se eliminara para siempre!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#070525ce',
+      cancelButtonColor: '',
       confirmButtonText: 'Si, eliminar!'
     }).then((result) => {
       if (result.value) {
@@ -133,8 +132,8 @@ $(function(){
       text: "Aprobar",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#070525ce',
+      cancelButtonColor: '',
       confirmButtonText: 'Si, aprobar'
     }).then(result) => {
       if (result.value) {

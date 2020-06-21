@@ -1747,14 +1747,14 @@
 			// Backwards compatibility - if there is no sEmptyTable given, then use the same as
 			// sZeroRecords - assuming that is given.
 			if ( ! lang.sEmptyTable && zeroRecords &&
-				defaults.sEmptyTable === "No data available in table" )
+				defaults.sEmptyTable === "No hay informacion en la tabla" )
 			{
 				_fnMap( lang, lang, 'sZeroRecords', 'sEmptyTable' );
 			}
 	
 			// Likewise with loading records
 			if ( ! lang.sLoadingRecords && zeroRecords &&
-				defaults.sLoadingRecords === "Loading..." )
+				defaults.sLoadingRecords === "Cargando..." )
 			{
 				_fnMap( lang, lang, 'sZeroRecords', 'sLoadingRecords' );
 			}
@@ -11487,7 +11487,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando 0 a 0 de 0 entries",
 	
 	
 			/**

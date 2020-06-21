@@ -29,10 +29,11 @@
         <section class="col-md-12">
             <!-- Custom Tabs -->
             <div class="card">
-                <div class="card-header">
+              <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
                     <h3 class="font-weight-lighter">Editar Producto
-                        <a href="{{ route('products.store') }}" class="btn btn-success float-right btn-sm">
-                            Lista de Productos
+                        <a href="{{ route('products.view') }}" class="btn bg-white float-right btn-sm">
+                          <i class="fa fa-list"></i>
+                             Lista de Productos
                         </a>
                     </h3>
                 </div><!-- /.Card Header -->
@@ -58,7 +59,7 @@
                               @endforeach
                             </select>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <label for="category_id">Categoria</label>
                             <select name="category_id" class="form-control">
                               <option value="">Seleccionar Categoria</option>
@@ -67,14 +68,20 @@
                               @endforeach
                             </select>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
+                          <label for="name">Producto</label>
+                          <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
+                      </div>
+                        <div class="form-group col-md-3">
                           <label for="brand">Marca</label>
                           <input type="text" name="brand" class="form-control">
                       </div>
-                      <div class="form-group col-md-6">
+                   
+                      <div class="form-group col-md-3">
                         <label for="model">Modelo</label>
                         <input type="text" name="model" class="form-control">
                     </div>
+             
                         <div class="form-group col-md-6">
                           <label for="coin">Moneda</label>
                           <select name="coin" class="form-control">
@@ -85,12 +92,9 @@
                             <option value="GBP">GBP</option>
                           </select>
                       </div>
-                        <div class="form-group col-md-6">
-                            <label for="name">Producto</label>
-                            <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                        <input type="submit" value="Actualizar" class="btn btn-primary">
+                  
+                        <div class="form-group col-md-12">
+                        <input type="submit" value="Actualizar" class="btn btn-md text-white" style="background:#030335e8">
                         </div>
                     </div>
                     </form>

@@ -28,11 +28,11 @@
           <!-- Left col -->
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
+            <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="p-1 font-weight-light">Compras
-                    <a class="btn btn-success float-right btn-sm"
-                    href="{{ route('purchase.add') }}"><i class="fa fa-plus-circle mr-2"></i>Agregar Compra</a>
+                 <h3 class="font-weight-light text-white">Compras
+                    <a class="btn bg-white float-right btn-sm"
+                    href="{{ route('purchase.add') }}"><i class="fa fa-plus-circle"></i> Agregar Compra</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->

@@ -28,10 +28,10 @@
           <!-- Left col -->
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
+            <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="p-1 font-weight-light">Clientes
-                     <a class="btn btn-success float-right btn-sm" href="{{ route('customers.add') }}"><i class="fa fa-plus-circle p-2"></i>Agregar Cliente</a>
+                 <h3 class="font-weight-light text-white">Clientes
+                     <a class="btn bg-white float-right btn-sm" href="{{ route('customers.add') }}"><i class="fa fa-plus-circle mr-2"></i> Agregar Cliente</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->
@@ -39,26 +39,26 @@
                 <table id="example1" class="table table-hover table-responsive" width="100%">
                     <thead style="font-size: 14px">
                         <tr>
-                            <th>Codigo</th>
+                            <th style="display:none ">Codigo</th>
                             <th>Nombre</th>
                             <th>Empresa</th>
                             <th>Telefono</th>
-                            <th>Telefono 2</th>
-                            <th>Telefono 3</th>
+                            <th>Tel 2</th>
+                            <th>Tel 3</th>
                             <th>Email</th>
                             <th>Puesto</th>
                             <th>Ciudad</th>
                             <th>Direccion</th>
-                            <th>Codigo Postal</th>
+                            <th>CPostal</th>
                             <th>Cuit</th>
-                            <th>Website</th>
+                            <th width="2%">Website</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($allData as $key => $customer)
                         <tr>
-                            <td>{{$key+1}}</td>
+                            <td style="display: none;">{{$key+1}}</td>
                             <td>{{$customer->name}}</td>
                             <td>{{ $customer->company }}</td>
                             <td>{{$customer->mobile_no}}</td>
@@ -72,7 +72,7 @@
                             <td>{{$customer->cuit}}</td>
                             <td>{{$customer->website}}</td>
                             <td>
-                                <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit', $customer->id) }}"><i
+                                <a title="Edit" class="btn btn-sm text-white" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);" href="{{ route('customers.edit', $customer->id) }}"><i
                                 class="fa fa-edit"></i></a>
                                 <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('customers.delete', $customer->id) }}"><i
                                     class="fa fa-trash"></i></a>

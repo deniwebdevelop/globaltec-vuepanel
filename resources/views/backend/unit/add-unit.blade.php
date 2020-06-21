@@ -29,9 +29,9 @@
         <section class="col-md-12">
             <!-- Custom Tabs -->
             <div class="card">
-                <div class="card-header">
-                    <h3>Agregar Unidad
-                        <a href="{{ route('units.view') }}" class="btn btn-success float-right btn-sm"><i class="fa fa-list"></i> Ver Unidades</a>
+                <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
+                    <h3 class="font-weight-lighter">Agregar Unidad
+                        <a href="{{ route('units.view') }}" class="btn bg-white float-right btn-sm"><i class="fa fa-list"></i> Ver Unidades</a>
 
                         </a>
                     </h3>
@@ -45,7 +45,7 @@
                             <input type="text" name="name" class="form-control">
                         </div>
                         <div class="form-group col-md-12">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
+                        <input type="submit" value="Agregar" class="btn btn-md text-white" style="background:#030335e8">
                         </div>
                     </div>
                     </form>

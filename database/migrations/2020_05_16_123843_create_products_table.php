@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('coin');
             $table->double('quantity')->default('0');
             $table->tinyInteger('status')->default('1');
+            $table->string('file')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();

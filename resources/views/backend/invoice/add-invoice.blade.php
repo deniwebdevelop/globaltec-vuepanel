@@ -30,9 +30,9 @@
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card">
-              <div class="card-header">
-                <h3>Agregar Presupuesto
-                  <a class="btn btn-success float-right btn-sm" href="{{route('invoice.view')}}"><i class="fa fa-list"></i> Ver Presupuestos</a>
+              <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
+                <h3 class="font-weight-lighter">Agregar Presupuesto
+                  <a class="btn float-right btn-sm bg-white" href="{{route('invoice.view')}}"><i class="fa fa-list"></i> Ver Presupuestos</a>
                 </h3>
               </div><!-- /.card-header -->
 
@@ -40,8 +40,8 @@
                 <div class="form-row">
                 <div class="form-group col-md-1">
                     <label>Numero</label>
-                    <input type="text" name="invoice_no" id="invoice_no" class="form-control form-control-sm" value="{{ $invoice_no }}"  
-                    readonly style="background-color: #D8FDBA">
+                    <input type="text" name="invoice_no" id="invoice_no" class="form-control form-control-sm text-white" value="{{ $invoice_no }}"  
+                    readonly style="background:#030335e8">
                   </div>
 
                     <div class="form-group col-md-2">
@@ -68,12 +68,12 @@
 
                     <div class="form-group col-md-2">
                         <label>Stock</label>
-                        <input type="text" name="current_stock_qty" id="current_stock_qty" class="form-control form-control-sm"
-                        readonly style="background-color: #D8FDBA">
+                        <input type="text" name="current_stock_qty" id="current_stock_qty" class="form-control form-control-sm text-white"
+                        readonly style="background:#030335e8">
                       </div>
 
                     <div class="form-group col-md-2" style="padding-top: 30px;">
-                      <a class="btn btn-success addeventmore btn-sm"><i class="fa fa-plus-circle"></i> Agregar Producto</a>
+                      <a class="btn text-white addeventmore btn-sm" style="background:#070525ce;"><i class="fa fa-plus-circle"></i> Agregar Producto</a>
                     </div>
                   </div>
               </div><!-- /.card-body -->
@@ -108,7 +108,7 @@
                         <td class="text-right" colspan="4">Precio Final</td>
                         <td>
                           <input type="text" name="estimated_amount" value="0" id="estimated_amount"
-                           class="form-control form-control-sm text-right estimated_amount" style="background-color: #D8FDBA" readonly>
+                           class="form-control form-control-sm text-right  text-white estimated_amount" style="background:#030335e8" readonly>
                         </td>
                         <td></td>
                     </tr>
@@ -196,7 +196,7 @@
                   </div>
 
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary" id="storeButton">Agregar Presupuesto</button>
+                    <button type="submit" class="btn btn-md text-white" style="background:#030335e8" id="storeButton">Agregar Presupuesto</button>
                   </div>
                 </form>
               </div>

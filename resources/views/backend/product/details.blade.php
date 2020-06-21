@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-    <iframe src="{{ url('storage/'.$data->file) }}" style="width: 100%; height:50vmax;"></iframe>
+    <iframe src="{{ url('storage/'.$product->file) }}" style="width: 100%; height:50vmax;"></iframe>
     </div>
 </body>
 </html>

@@ -14,19 +14,25 @@ use Session;
 class ProductController extends Controller
 {
     public function view(){ 
-        $allData = Product::all();
-        return view('backend.product.view-product', compact('allData'));
+        $file = Product::all();
+        return view('backend.product.view-product', compact('file'));
     }
 
     public function add(){
-        $data['suppliers'] = Supplier::all();
-        $data['units'] = Unit::all();
-        $data['categories'] = Category::all();
-        return view('backend.product.add-product', $data);
+        $product['suppliers'] = Supplier::all();
+        $product['units'] = Unit::all();
+        $product['categories'] = Category::all();
+        return view('backend.product.add-product', $product);
     }
 
     public function store(Request $request){
         $product = new Product();
+        if($request->file('file')){
+            $file = $request->file('file');
+            $filename = time().'.'.$file->getClientOriginalName();
+            $request->file->move('storage/', $filename);
+            $product->file = $filename;
+        }
         $product->supplier_id = $request->supplier_id;
         $product->unit_id = $request->unit_id;
         $product->category_id = $request->category_id;
@@ -39,6 +45,17 @@ class ProductController extends Controller
         $product->save();
         Session::flash('success');
         return redirect()->route('products.view');
+    }
+
+    public function show($id)
+    {
+        $product = Product::find($id);
+        return view('backend.product.details', compact('product'));
+    }
+
+
+    public function download($file){
+        return response()->download('storage/'.$file);
     }
 
     public function edit($id){

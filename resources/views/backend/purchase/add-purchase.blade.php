@@ -29,9 +29,9 @@
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card">
-              <div class="card-header">
-                <h3>Agregar Compra
-                  <a class="btn btn-success float-right btn-sm" href="{{route('purchase.view')}}"><i class="fa fa-list"></i> Compras</a>
+              <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
+                <h3 class="font-weight-lighter">Agregar Compra
+                  <a class="btn bg-white float-right btn-sm" href="{{route('purchase.view')}}"><i class="fa fa-list"></i> Lista de Compras</a>
                 </h3>
               </div><!-- /.card-header -->
 
@@ -67,7 +67,7 @@
                       </select>
                     </div>
                     <div class="form-group col-md-2" style="padding-top: 30px;">
-                      <a class="btn btn-success addeventmore btn-sm"><i class="fa fa-plus-circle"></i> Agregar Producto</a>
+                      <a class="btn text-white addeventmore btn-sm" style="background:#030335e8"><i class="fa fa-plus-circle"></i> Agregar Producto</a>
                     </div>
                   </div>
               </div><!-- /.card-body -->
@@ -94,7 +94,7 @@
                       <tr>
                         <td colspan="5"></td>
                         <td>
-                          <input type="text" name="estimated_amount" value="0" id="estimated_amount" class="form-control form-control-sm text-right estimated_amount" readonly style="background-color: #D8FDBA">
+                          <input type="text" name="estimated_amount" value="0" id="estimated_amount" class="form-control form-control-sm text-right text-white estimated_amount" readonly style="background:#030335e8">
                         </td>
                         <td></td>
                       </tr>
@@ -102,7 +102,7 @@
                   </table>
                   <br>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary" id="storeButton">Agregar</button>
+                    <button type="submit" class="btn btn-md text-white" style="background:#030335e8" id="storeButton">Agregar</button>
                   </div>
                 </form>
               </div>
