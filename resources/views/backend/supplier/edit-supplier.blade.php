@@ -41,22 +41,55 @@
                     <form method="post" action="{{ route('suppliers.update',$editData->id) }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                     <div class="form-row">
+                      <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="name">Nombre del Proveedor</label>
-                            <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="mobile_no">Telefono </label>
-                            <input type="text" name="mobile_no" value="{{ $editData->mobile_no }}" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" value="{{ $editData->email }}" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="address">Direccion</label>
-                            <input type="text" name="address" value="{{ $editData->address }}" class="form-control">
-                        </div>
+                          <label for="name">Nombre del Proveedor</label>
+                          <input type="text" name="name" class="form-control" value="{{ $editData->name }}"> 
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="company">Empresa</label>
+                          <input type="text" name="company" class="form-control" value="{{ $editData->company }}"> 
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="mobile_no">Telefono</label>
+                          <input type="text" name="mobile_no" class="form-control" value="{{ $editData->mobile_no }}">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="mobile_two">Telefono 2</label>
+                          <input type="text" name="mobile_two" class="form-control" value="{{ $editData->mobile_two }}">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="mobile_three">Telefono 3</label>
+                          <input type="text" name="mobile_three" class="form-control" value="{{ $editData->mobile_three }}">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="email">Email</label>
+                          <input type="text" name="email" class="form-control" value="{{ $editData->email }}">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="position">Puesto</label>
+                          <input type="text" name="position" class="form-control" value="{{ $editData->position }}">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="city">Ciudad</label>
+                          <input type="text" name="city" class="form-control" value="{{ $editData->city }}">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="address">Direccion</label>
+                          <input type="text" name="address" class="form-control" value="{{ $editData->address }}">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="postal">Codigo Postal</label>
+                          <input type="text" name="postal" class="form-control" value="{{ $editData->postal }}">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="cuit">Cuit</label>
+                          <input type="text" name="cuit" class="form-control" value="{{ $editData->cuit }}">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="website">Website</label>
+                          <input type="text" name="website" class="form-control" value="{{ $editData->website }}">
+                      </div>
                         <div class="form-group col-md-6">
                         <input type="submit" value="Actualizar" class="btn btn-md text-white" style="background: #070525ce;">
                         </div>
