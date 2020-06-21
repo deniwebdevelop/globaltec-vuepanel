@@ -76,11 +76,6 @@
                           <label for="brand">Marca</label>
                           <input type="text" name="brand" class="form-control">
                       </div>
-                   
-                      <div class="form-group col-md-3">
-                        <label for="model">Modelo</label>
-                        <input type="text" name="model" class="form-control">
-                    </div>
              
                         <div class="form-group col-md-6">
                           <label for="coin">Moneda</label>
@@ -117,12 +112,6 @@
         rules:{
           name: {
             required: true,
-          },
-          supplier_id: {
-            required:true,
-          },
-          unit_id: {
-            required:true,
           },
           category_id: {
             required: true,

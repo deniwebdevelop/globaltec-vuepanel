@@ -36,7 +36,7 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-striped table-responsive" width="100%">
+                <table id="example1" class="table table-striped" width="100%">
                     <thead style="font-size: 14px">
                         <tr>
                             <th style="display: none">Codigo</th>

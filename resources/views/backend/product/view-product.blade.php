@@ -42,12 +42,9 @@
                             <thead class="thead">
                                 <tr>
                                     <th style="display: none">Codigo</th>
-                                    <th>Proveedor</th>
                                     <th>Categoria</th>
                                     <th>Nombre</th>
                                     <th>Marca</th>
-                                    <th>Modelo</th>
-                                    <th>Unidad</th>
                                     <th>Moneda</th>
                                     
                                     <th style="width: 13%;">Action</th>
@@ -57,12 +54,9 @@
                                 @foreach($file as $key => $product)
                                 <tr>
                                     <td style="display: none">{{ $key+1 }}</td>
-                                    <td>{{ $product['supplier']['name']}}</td>
                                     <td>{{ $product['category']['name']}}</td>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->brand }}</td>
-                                    <td>{{ $product->model }}</td>
-                                    <td>{{ $product['unit']['name']}}</td>
                                     <td>{{ $product->coin }}</td>
                                     @php
                                     $count_product = App\Model\Purchase::where('product_id',$product->id)->count();

@@ -66,7 +66,6 @@ class RepairController extends Controller
         $data->deliver = date('Y-m-d',strtotime($request->deliver));
         $data->laboratory = $request->laboratory;
         $data->producto = $request->producto;
-        $data->modelo = $request->modelo;
         $data->marca = $request->marca;
         $data->serial = $request->serial;
         $data->labcost = $request->labcost;
@@ -131,7 +130,6 @@ class RepairController extends Controller
         $data->deliver = date('Y-m-d',strtotime($request->deliver));
         $data->laboratory = $request->laboratory;
         $data->producto = $request->producto;
-        $data->modelo = $request->modelo;
         $data->marca = $request->marca;
         $data->serial = $request->serial;
         $data->labcost = $request->labcost;

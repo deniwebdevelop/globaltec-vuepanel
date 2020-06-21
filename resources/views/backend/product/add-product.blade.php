@@ -41,25 +41,7 @@
                     <form method="post" action="{{ route('products.store') }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="name">Proveedor</label>
-                        <select name="supplier_id" class="form-control">
-                          <option value="">Seleccionar Proveedor</option>
-                          @foreach ($suppliers as $supplier)
-                          <option value="{{ $supplier->id }}">{{ $supplier->company }}</option>
-                          @endforeach
-                        </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="unit_id">Unidad</label>
-                            <select name="unit_id" class="form-control">
-                              <option value="">Seleccionar Unidad</option>
-                              @foreach ($units as $unit)
-                              <option value="{{ $unit->id }}">{{ $unit->name }}</option>
-                              @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <label for="category_id">Categoria</label>
                             <select name="category_id" class="form-control">
                               <option value="">Seleccionar Categoria</option>
@@ -68,19 +50,16 @@
                               @endforeach
                             </select>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                           <label for="name">Nombre Producto</label>
                           <input type="text" name="name" class="form-control">
                       </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                           <label for="brand">Marca</label>
                           <input type="text" name="brand" class="form-control">
                       </div>
-                      <div class="form-group col-md-6">
-                        <label for="model">Modelo</label>
-                        <input type="text" name="model" class="form-control">
-                    </div>
-                        <div class="form-group col-md-6">
+
+                        <div class="form-group col-md-3">
                           <label for="coin">Moneda</label>
                           <select name="coin" class="form-control">
                             <option value="">Seleccionar Moneda</option>
@@ -95,7 +74,7 @@
                       </div>
                       <div class="form-group col-md-12">
                         <label for="file">Archivos</label>
-                        <input type="file" name="file" multiple class="form-control py-5">
+                        <input type="file" name="file" class="form-control py-5 text-white">
                     </div>
                         <div class="form-group col-md-12">
                         <input type="submit" value="Agregar" class="btn btn-md text-white" style="background:#030335e8">
@@ -120,12 +99,6 @@
   $(document).ready(function (){
     $('#myForm').validate({
       rules:{
-        supplier_id: {
-          required: true,
-        },
-        unit_id: {
-            required: true,
-        },
         category_id: {
             required: true,
         },
@@ -135,17 +108,9 @@
         brand: {
             required: true,
         },
-        model: {
-            required: true,
-        }
       },
       messages: {
-          supplier_id: {
-              required: "Debe seleccionar un proveedor",
-          },
-          unit_id: {
-              required: "Debe ingresar una unidad",
-          },
+
           category_id: {
               required: "Debe ingresar una categoria",
           },
@@ -154,9 +119,6 @@
           },
           brand: {
               required: "Debe ingresar una marca",
-          },
-          model: {
-              required: "Debe ingresar un modelo",
           },
       },
       errorElement: 'span',

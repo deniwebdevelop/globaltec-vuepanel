@@ -46,12 +46,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('units.view') }}" class="nav-link text-dark">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Unidades</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{ route('products.view') }}" class="nav-link text-dark">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Productos</p>

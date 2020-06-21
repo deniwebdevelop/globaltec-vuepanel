@@ -76,10 +76,6 @@
                             <input type="text" name="producto" value="{{ $data->producto }}" class="form-control">
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="modelo">Modelo</label>
-                            <input type="text" name="modelo" value="{{ $data->modelo }}" class="form-control">
-                        </div>
-                        <div class="form-group col-md-3">
                             <label for="marca">Marca</label>
                             <input type="text" name="marca" value="{{ $data->marca }}" class="form-control">
                         </div>
