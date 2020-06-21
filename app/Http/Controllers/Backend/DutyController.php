@@ -82,7 +82,7 @@ class DutyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $duty = new Duty();
+        $duty = Duty::find($id);
         $duty->date = date('Y-m-d',strtotime($request->date));
         $duty->descripcion = $request->descripcion;
         $duty->status = $request->status;
