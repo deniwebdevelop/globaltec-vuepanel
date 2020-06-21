@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Facturacion</li> 
+              <li class="breadcrumb-item active">Ventas</li> 
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -28,11 +28,11 @@
           <!-- Left col -->
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
+            <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="p-1 font-weight-light">Facturacion
-                    <a class="btn btn-success float-right btn-sm"
-                    href="{{ route('invoice.add') }}"><i class="fa fa-plus-circle p-2"></i>Nueva Factura</a>
+                 <h3 class="font-weight-light text-white">Ventas
+                    <a class="btn bg-white float-right btn-sm"
+                    href="{{ route('invoice.add') }}"><i class="fa fa-plus-circle"></i> Nuevo Presupuesto</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->
@@ -40,10 +40,9 @@
                 <table id="example1" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
-                            <th>Cliente</th>
-                            <th>Factura</th>
+                            <th>Numero</th>
                             <th>Fecha</th>
+                            <th>Cliente</th>
                             <th>Descripcion</th>
                             <th>Monto</th>
                         </tr>
@@ -51,12 +50,11 @@
                     <tbody>
                       @foreach ($allData as $key => $invoice)
                       <tr>
-                        <td>{{ $key+1 }}</td>
-                        <td>{{ $invoice['payment']['customer']['name'] }}
-                            ({{ $invoice['payment']['customer']['mobile_no'] }}-{{ $invoice['payment']['customer']['address'] }})
-                        </td>
                         <td>Factura Numero{{ $invoice->invoice_no}}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
+                        <td>{{ $invoice['payment']['customer']['name'] }}
+                            ({{ $invoice['payment']['customer']['mobile_no'] }} - {{ $invoice['payment']['customer']['address'] }})
+                        </td>
                         <td>{{ $invoice->description }}</td>
                         <td>{{ $invoice['payment']['total_amount'] }}</td>
                     </tr>                          

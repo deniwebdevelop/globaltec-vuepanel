@@ -75,7 +75,7 @@
                       <input type="password" name="password2" class="form-control">
                   </div>
                   <div class="fom-group col-md-6">
-                      <input type="submit" value="Agregar" class="btn btn-primary">
+                      <input type="submit" value="Agregar" class="btn btn-md text-white" style="background:#030335e8">
                   </div>
                   </div>
            

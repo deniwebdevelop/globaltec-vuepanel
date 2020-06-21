@@ -54,7 +54,7 @@
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             <td>
-                                <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('users.edit', $user->id) }}"><i
+                                <a title="Edit" class="btn btn-sm text-white" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);" href="{{ route('users.edit', $user->id) }}"><i
                                 class="fa fa-edit"></i></a>
                                 <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('users.delete', $user->id) }}"><i
                                     class="fa fa-trash"></i></a>

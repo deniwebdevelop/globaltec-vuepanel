@@ -28,9 +28,9 @@
           <!-- Left col -->
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
+            <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="p-1 font-weight-light">Pendientes de aprobacion
+                 <h3 class="font-weight-light text-white">Pendientes de aprobacion
                    <!-- <a class="btn btn-success float-right btn-sm"
                     href="{{ route('invoice.add') }}"><i class="fa fa-plus-circle p-2"></i>Nueva Factura</a> -->
                  </h3>

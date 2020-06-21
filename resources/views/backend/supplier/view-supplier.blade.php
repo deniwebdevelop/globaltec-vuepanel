@@ -28,15 +28,15 @@
           <!-- Left col -->
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
+            <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="p-1 font-weight-light">Proveedores
-                     <a class="btn float-right btn-sm text-white" style="background: linear-gradient(200deg, #07061a 20%, rgba(75, 32, 32, 0.829)100%);" href="{{ route('suppliers.add') }}"><i class="fa fa-plus-circle mr-2"></i>Agregar</a>
+                 <h3 class="font-weight-light text-white">Proveedores
+                     <a class="btn float-right btn-sm bg-white" href="{{ route('suppliers.add') }}"><i class="fa fa-plus-circle mr-2"></i> Agregar Proveedor</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-hover" width="100%">
+                <table id="example1" class="table table-striped table-responsive" width="100%">
                     <thead style="font-size: 14px">
                         <tr>
                             <th style="display: none">Codigo</th>
@@ -72,7 +72,7 @@
                             <td>{{$supplier->cuit}}</td>
                             <td>{{$supplier->website}}</td>
                             <td>
-                                <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('suppliers.edit', $supplier->id) }}"><i
+                                <a title="Edit" class="btn btn-sm text-white" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);" href="{{ route('suppliers.edit', $supplier->id) }}"><i
                                 class="fa fa-edit"></i></a>
                                 <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('suppliers.delete', $supplier->id) }}"><i
                                     class="fa fa-trash"></i></a>

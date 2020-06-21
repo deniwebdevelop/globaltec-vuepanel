@@ -29,9 +29,10 @@
         <section class="col-md-12">
             <!-- Custom Tabs -->
             <div class="card">
-                <div class="card-header">
-                    <h3>Agregar Producto
-                        <a href="{{ route('products.view') }}" class="btn btn-success float-right btn-sm">
+                <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
+                    <h3 class="font-weight-lighter">Agregar Producto
+                        <a href="{{ route('products.view') }}" class="btn bg-white float-right btn-sm">
+                            <i class="fa fa-list"></i>
                             Lista de Productos
                         </a>
                     </h3>
@@ -84,15 +85,23 @@
                           <select name="coin" class="form-control">
                             <option value="">Seleccionar Moneda</option>
                             <option value="ARS">ARS</option>
-                            <option value="USD">USD</option>
+                            <option value="USD">USD-W</option>
+                            <option value="USDB">USD-B</option>
+                            <option value="USDT">USD-T</option>
                             <option value="EUR">EUR</option>
                             <option value="GBP">GBP</option>
+                            <option value="RBL">Real</option>
                           </select>
                       </div>
+                      <div class="form-group col-md-12">
+                        <label for="file">Archivos</label>
+                        <input type="file" name="file" multiple class="form-control py-5">
+                    </div>
                         <div class="form-group col-md-12">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
+                        <input type="submit" value="Agregar" class="btn btn-md text-white" style="background:#030335e8">
                         </div>
                     </div>
+
                     </form>
                 </div><!-- /.card-body-->
             </div>

@@ -6,7 +6,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 
-
+// Default Controller
 Route::get('/get-category','Backend\DefaultController@getCategory')->name('get-category');
 Route::get('/get-product','Backend\DefaultController@getProduct')->name('get-product');
 Route::get('/get-stock','Backend\DefaultController@getStock')->name('check-product-stock');
@@ -80,6 +80,8 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/view','Backend\ProductController@view')->name('products.view');
 		Route::get('/add','Backend\ProductController@add')->name('products.add');
 		Route::post('/store','Backend\ProductController@store')->name('products.store');
+		Route::get('/{id}', 'Backend\ProductController@show')->name('product.show');;
+		Route::get('/download/{file}', 'Backend\ProductController@download')->name('product.download');
 		Route::get('/edit/{id}','Backend\ProductController@edit')->name('products.edit');
 		Route::post('/update/{id}','Backend\ProductController@update')->name('products.update');
 		Route::get('/delete/{id}','Backend\ProductController@delete')->name('products.delete');
@@ -116,5 +118,27 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/report/supplier/product/wise', 'Backend\StockController@supplierProductWise')->name('stock.report.supplier.product.wise');
 		Route::get('/report/supplier/wise/pdf', 'Backend\StockController@supplierWisePdf')->name('stock.report.supplier.wise.pdf');
 		Route::get('/report/product/wise/pdf', 'Backend\StockController@productWisePdf')->name('stock.report.product.wise.pdf');
+	});
+
+	Route::prefix('repair')->group(function(){
+		Route::get('create', 'Backend\RepairController@create')->name('repair.create');
+		Route::post('', 'Backend\RepairController@store')->name('repair.store');;
+		Route::get('', 'Backend\RepairController@index')->name('repair.index');;
+		Route::get('/{id}', 'Backend\RepairController@show')->name('repair.show');;
+		Route::get('/download/{file}', 'Backend\RepairController@download')->name('repair.download');
+		Route::get('/edit/{id}','Backend\RepairController@edit')->name('repair.edit');
+		Route::post('/update/{id}','Backend\RepairController@update')->name('repair.update');
+		Route::get('/delete/{id}','Backend\RepairController@destroy')->name('repair.delete');
+	});
+
+
+	Route::prefix('duty')->group(function(){
+		Route::get('create', 'Backend\DutyController@create')->name('duty.create');
+		Route::post('', 'Backend\DutyController@store')->name('duty.store');;
+		Route::get('', 'Backend\DutyController@index')->name('duty.index');;
+		Route::get('/{id}', 'Backend\DutyController@show')->name('duty.show');;
+		Route::get('/edit/{id}','Backend\DutyController@edit')->name('duty.edit');
+		Route::post('/update/{id}','Backend\DutyController@update')->name('duty.update');
+		Route::get('/delete/{id}','Backend\DutyController@destroy')->name('duty.delete');
 	});
 });

@@ -29,10 +29,10 @@
           <!-- Left col -->
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
+            <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="p-1 font-weight-light">Pago Pendiente
-                     <a class="btn btn-success float-right btn-sm" href="{{ route('customers.credit.pdf') }}" target="_blank"><i class="fa fa-download p-2"></i>Descargar PDF</a>
+                 <h3 class="font-weight-light text-white">Pago Pendiente
+                     <a class="btn bg-white float-right btn-sm" href="{{ route('customers.credit.pdf') }}" target="_blank"><i class="fa fa-download"></i> Descargar PDF</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->

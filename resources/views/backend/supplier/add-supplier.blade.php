@@ -6,12 +6,9 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm 6">
-
-                </div><!-- /.col -->
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-dark">Home</a></li>
                         <li class="breadcrumb-item active">Proveedor</li>
                     </ol>
                 </div><!-- /.col-->
@@ -29,9 +26,10 @@
         <section class="col-md-12">
             <!-- Custom Tabs -->
             <div class="card">
-                <div class="card-header">
-                    <h3 class="font-weight-lighter ">Nuevo Proveedor
-                        <a href="{{ route('suppliers.view') }}" class="btn text-white float-right btn-sm" style="background: linear-gradient(200deg, #0f522c 20%, rgba(9, 136, 47, 0.829)100%)">
+              <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
+                    <h3 class="font-weight-lighter text-white"> Nuevo Proveedor
+                        <a href="{{ route('suppliers.view') }}" class="btn bg-white float-right btn-sm">
+                          <i class="fa fa-list"></i>
                             Lista de Proveedores
                         </a>
                     </h3>
@@ -89,7 +87,7 @@
                         <input type="text" name="website" class="form-control">
                     </div>
                     <div class="form-group col-md-12">
-                    <input type="submit" value="Agregar" class="btn btn-primary">
+                    <input type="submit" value="Agregar" class="btn btn-md text-white"  style="background:#070525ce">
                     </div>
                     </div>
                     </form>

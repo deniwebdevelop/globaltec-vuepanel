@@ -29,9 +29,10 @@
         <section class="col-md-12">
             <!-- Custom Tabs -->
             <div class="card">
-                <div class="card-header">
-                    <h3>Editar Proveedor
-                        <a href="{{ route('suppliers.view') }}" class="btn btn-success float-right btn-sm">
+              <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
+                <h3 class="font-weight-lighter text-white">Editar Proveedor
+                        <a href="{{ route('suppliers.view') }}" class="btn bg-white float-right btn-sm">
+                          <i class="fa fa-list"></i>
                             Lista de Proveedores
                         </a>
                     </h3>
@@ -57,7 +58,7 @@
                             <input type="text" name="address" value="{{ $editData->address }}" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
-                        <input type="submit" value="Actualizar" class="btn btn-primary">
+                        <input type="submit" value="Actualizar" class="btn btn-md text-white" style="background: #070525ce;">
                         </div>
                     </div>
                     </form>

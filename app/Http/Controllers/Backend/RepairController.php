@@ -6,75 +6,155 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Repair;
 use Auth;
+use DB;
 use Session;
 
 class RepairController extends Controller
 {
-    public function view(){ 
-        $allData = Repair::all();
-        return view('backend.repair.view-repair', compact('allData'));
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $file = Repair::all();
+        return view('backend.repair.view-repair', compact('file'));
     }
 
-    public function add(){
-        return view('backend.repair.add-repair');
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $repair_data = Repair::orderBy('id', 'desc')->first();
+        if($repair_data == null){
+            $firstReg = '4999';
+            $data['repair_no'] = $firstReg+1;
+        }else{
+            $repair_data = Repair::orderBy('id', 'desc')->first()->repair_no;
+            $data['repair_no'] = $repair_data+1;
+        }
+        $data['admission'] = date('Y-m-d');
+        return view('backend.repair.create', $data);
+        
     }
 
-    public function store(Request $request){
-        $repair = new Repair();
-        $repair->number = $request->number;
-        $repair->lab = $request->lab;
-        $repair->entry = $request->entry;
-        $repair->sent = $request->sent;
-        $repair->dev = $request->dev;
-        $repair->deliver = $request->deliver;
-        $repair->serial = $request->serial;
-        $repair->labcost = $request->labcost;
-        $repair->sparecost = $request->sparecost;
-        $repair->shipcost = $request->shipcost;
-        $repair->markup = $request->markup;
-        $repair->file = $request->file;
-        $repair->created_by = Auth::user()->id;
-        $repair->save();
+  
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $data = new Repair;
+        if($request->file('file')){
+            $file = $request->file('file');
+            $filename = time().'.'.$file->getClientOriginalName();
+            $request->file->move('storage/', $filename);
+            $data->file = $filename;
+        }
+        $data->repair_no = $request->repair_no;
+        $data->admission = date('Y-m-d',strtotime($request->admission));
+        $data->labsent = date('Y-m-d',strtotime($request->labsent));
+        $data->labreturn = date('Y-m-d',strtotime($request->labreturn));
+        $data->deliver = date('Y-m-d',strtotime($request->deliver));
+        $data->laboratory = $request->laboratory;
+        $data->producto = $request->producto;
+        $data->modelo = $request->modelo;
+        $data->marca = $request->marca;
+        $data->serial = $request->serial;
+        $data->labcost = $request->labcost;
+        $data->repaircost = $request->repaircost;
+        $data->transportcost = $request->transportcost;
+        $data->markup = $request->markup;
+        $data->repair_total = $request->repair_total;
+        $data->status = $request->status;
+        $data->save();
         Session::flash('success');
-        return redirect()->route('repair.view');
+        return redirect()->route('repair.index');
     }
 
-    public function edit($id){
-        $editData = Repair::find($id);
-        return view('backend.repair.edit-repair', compact('editData'));
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $data = Repair::find($id);
+        return view('backend.repair.details', compact('data'));
     }
 
-    public function update(Request $request, $id){
-        $repair = Repair::find($id);
-        $repair->repair_no = $request->repair_no;
-        $repair->lab = $request->lab;
-        $repair->entry = $request->entry;
-        $repair->sent = $request->sent;
-        $repair->dev = $request->dev;
-        $repair->deliver = $request->deliver;
-        $repair->serial = $request->serial;
-        $repair->labcost = $request->labcost;
-        $repair->sparecost = $request->sparecost;
-        $repair->shipcost = $request->shipcost;
-        $repair->markup = $request->markup;
-        $repair->file = $request->file;
-        $repair->created_by = Auth::user()->id;
-        $repair->save();
+
+    public function download($file){
+        return response()->download('storage/'.$file);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $data = Repair::find($id);
+        return view('backend.repair.edit', compact('data'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $data = Repair::find($id);
+        if($request->file('file')){
+            $file = $request->file('file');
+            $filename = time().'.'.$file->getClientOriginalName();
+            $request->file->move('storage/', $filename);
+            $data->file = $filename;
+        }
+        $data->admission = date('Y-m-d',strtotime($request->admission));
+        $data->labsent = date('Y-m-d',strtotime($request->labsent));
+        $data->labreturn = date('Y-m-d',strtotime($request->labreturn));
+        $data->deliver = date('Y-m-d',strtotime($request->deliver));
+        $data->laboratory = $request->laboratory;
+        $data->producto = $request->producto;
+        $data->modelo = $request->modelo;
+        $data->marca = $request->marca;
+        $data->serial = $request->serial;
+        $data->labcost = $request->labcost;
+        $data->repaircost = $request->repaircost;
+        $data->transportcost = $request->transportcost;
+        $data->markup = $request->markup;
+        $data->repair_total = $request->repair_total;
+        $data->status = $request->status;
+        $data->save();
         Session::flash('success');
-        return redirect()->route('reapair.view');
+        return redirect()->route('repair.index');   
     }
 
-    public function delete($id){
-        $repair = Repair::find($id);
-        $repair->delete();
-        return redirect()->route('repair.view');
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $data = Repair::find($id);
+        $data->delete();
+        return redirect()->route('repair.index');
     }
 }
-
-
-
-
-
-
-
-
