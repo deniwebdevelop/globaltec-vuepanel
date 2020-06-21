@@ -28,10 +28,10 @@
           <!-- Left col -->
           <section class="col-md-12">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
+            <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="p-1 font-weight-light">Agregar Usuario
-                     <a class="btn btn-success float-right btn-sm" href="{{ route('users.view') }}"><i class="fa fa-list p-2"></i>Lista de Usuarios</a>
+                 <h3 class="font-weight-light text-white">Agregar Usuario
+                     <a class="btn bg-white float-right btn-sm" href="{{ route('users.view') }}"><i class="fa fa-list"></i> Lista de Usuarios</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->

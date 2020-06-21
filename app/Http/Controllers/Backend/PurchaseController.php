@@ -21,8 +21,8 @@ class PurchaseController extends Controller
     }
 
     public function add(){
-    	$data['suppliers'] = Supplier::all();
-    	$data['units'] = Unit::all();
+        $data['suppliers'] = Supplier::all();
+        $data['products'] = Product::all();
     	$data['categories'] = Category::all();
     	return view('backend.purchase.add-purchase',$data);
     }

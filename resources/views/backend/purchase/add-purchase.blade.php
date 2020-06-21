@@ -58,12 +58,18 @@
                       <label>Categoria</label>
                       <select name="category_id" id="category_id" class="form-control select2">
                         <option value="">Seleccionar Categoria</option>
+                        @foreach($categories as $data)
+                        <option value="{{$data->id}}">{{$data->name}}</option>
+                        @endforeach
                       </select>
                     </div>
                     <div class="form-group col-md-6">
                       <label>Producto</label>
                       <select name="product_id" id="product_id" class="form-control select2">
                         <option value="">Seleccionar Producto</option>
+                        @foreach($products as $data)
+                        <option value="{{$data->id}}">{{$data->name}} - {{ $data->brand }}</option>
+                        @endforeach
                       </select>
                     </div>
                     <div class="form-group col-md-2" style="padding-top: 30px;">
@@ -224,45 +230,6 @@
     });
   </script>
 
-  <script type="text/javascript">
-    $(function(){
-      $(document).on('change','#supplier_id',function(){
-        var supplier_id = $(this).val();
-        $.ajax({
-          url:"{{route('get-category')}}",
-          type:"GET",
-          data:{supplier_id:supplier_id},
-          success:function(data){
-            var html = '<option value="">Seleccionar Categoria</option>';
-            $.each(data,function(key,v){
-              html +='<option value="'+v.category_id+'">'+v.category.name+'</option>';
-            });
-            $('#category_id').html(html);
-          }
-        });
-      });
-    });
-  </script>
-
-  <script type="text/javascript">
-    $(function(){
-      $(document).on('change','#category_id',function(){
-        var category_id = $(this).val();
-        $.ajax({
-          url:"{{route('get-product')}}",
-          type:"GET",
-          data:{category_id:category_id},
-          success:function(data){
-            var html = '<option value="">Seleccionar Producto</option>';
-            $.each(data,function(key,v){
-              html +='<option value="'+v.id+'">'+v.name+'</option>';
-            });
-            $('#product_id').html(html);
-          }
-        });
-      });
-    });
-  </script>
 
   <script type="text/javascript">
     $(document).ready(function () {

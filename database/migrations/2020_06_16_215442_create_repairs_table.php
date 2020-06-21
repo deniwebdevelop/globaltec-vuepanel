@@ -22,7 +22,6 @@ class CreateRepairsTable extends Migration
             $table->date('deliver');
             $table->string('laboratory');
             $table->string('producto');
-            $table->string('modelo');
             $table->string('marca');
             $table->string('serial');
             $table->decimal('labcost');

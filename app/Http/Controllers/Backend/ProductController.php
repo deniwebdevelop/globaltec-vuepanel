@@ -19,8 +19,6 @@ class ProductController extends Controller
     }
 
     public function add(){
-        $product['suppliers'] = Supplier::all();
-        $product['units'] = Unit::all();
         $product['categories'] = Category::all();
         return view('backend.product.add-product', $product);
     }
@@ -33,12 +31,9 @@ class ProductController extends Controller
             $request->file->move('storage/', $filename);
             $product->file = $filename;
         }
-        $product->supplier_id = $request->supplier_id;
-        $product->unit_id = $request->unit_id;
         $product->category_id = $request->category_id;
         $product->name = $request->name;
         $product->brand = $request->brand;
-        $product->model = $request->model;
         $product->coin = $request->coin;
         $product->quantity = '0';
         $product->created_by = Auth::user()->id;
@@ -60,20 +55,15 @@ class ProductController extends Controller
 
     public function edit($id){
         $data['editData'] = Product::find($id);
-        $data['suppliers'] = Supplier::all();
-        $data['units'] = Unit::all();
         $data['categories'] = Category::all();
         return view('backend.product.edit-product', $data);
     }
 
     public function update(Request $request, $id){
         $product = Product::find($id);
-        $product->supplier_id = $request->supplier_id;
-        $product->unit_id = $request->unit_id;
         $product->category_id = $request->category_id;
         $product->name = $request->name;
         $product->brand = $request->brand;
-        $product->model = $request->model;
         $product->coin = $request->coin;
         $product->updated_by = Auth::user()->id;
         $product->save();

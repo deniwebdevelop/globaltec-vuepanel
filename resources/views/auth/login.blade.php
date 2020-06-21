@@ -13,16 +13,16 @@
  
     </head>
     <body>
-        <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <main class="d-flex align-items-center min-vh-100">
             <div class="container">
               <div class="card login-card">
-                <div class="row no-gutters">
+                <div class="row">
                   <div class="col-md-5">
                     <img src="{{ asset('frontend/assets/images/jungle.jpg') }}" alt="login" class="login-card-img">
                   </div>
-                  <div class="col-md-5" style="margin-left: 90px;">
+                  <div class="col-md-6 offset-1">
                     <div class="card-body">
-                      <div class="brand-wrapper py-4">
+                      <div class="brand-wrapper">
                             <h2 style="font-family: 'Satisfy', cursive; font-size:40px;">Global Tec Trade</h2>
                       </div>
                       <p class="login-card-description"></p>

@@ -147,51 +147,51 @@
                   <div class="form-row new_customer" style="display: none;">
                     <div class="form-group col-md-4">
                       <input type="text" name="name" id="name" class="form-control form-control-sm"
-                      placeholder="Nombre">
+                      placeholder="Nombre" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="company" id="company" class="form-control form-control-sm"
-                      placeholder="Empresa">
+                      placeholder="Empresa" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="mobile_no" id="mobile_no" class="form-control form-control-sm"
-                      placeholder="Telefono">
+                      placeholder="Telefono" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="mobile_two" id="mobile_two" class="form-control form-control-sm"
-                      placeholder="Telefono 2">
+                      placeholder="Telefono 2" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="mobile_three" id="mobile_three" class="form-control form-control-sm"
-                      placeholder="Telefono 3">
+                      placeholder="Telefono 3" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="email" id="email" class="form-control form-control-sm"
-                      placeholder="E-mail">
+                      placeholder="E-mail" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="position" id="position" class="form-control form-control-sm"
-                      placeholder="Puesto">
+                      placeholder="Puesto" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="city" id="city" class="form-control form-control-sm"
-                      placeholder="Ciudad">
+                      placeholder="Ciudad" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="address" id="address" class="form-control form-control-sm"
-                      placeholder="Direccion">
+                      placeholder="Direccion" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="postal" id="postal" class="form-control form-control-sm"
-                      placeholder="Codigo Postal">
+                      placeholder="Codigo Postal" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="cuit" id="cuit" class="form-control form-control-sm"
-                      placeholder="Cuit">
+                      placeholder="Cuit" required>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="website" id="website" class="form-control form-control-sm"
-                      placeholder="Website">
+                      placeholder="Website" required>
                     </div>
                   </div>
 

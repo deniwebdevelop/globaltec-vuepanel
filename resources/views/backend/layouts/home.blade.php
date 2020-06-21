@@ -14,7 +14,7 @@
           <!-- Small boxes (Stat box) -->
           <div class="row mt-5">
                 <!-- ./col -->
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <!-- small box -->
                   <div class="small-box ">
                     <div class="inner">
@@ -29,7 +29,7 @@
                   </div>
                 </div>
                 <!-- ./col -->
-            <div class="col-md-4">
+            <div class="col-md-6">
               <!-- small box -->
               <div class="small-box">
                 <div class="inner">
@@ -49,7 +49,7 @@
 
   
             <!-- ./col -->
-            <div class="col-md-4">
+            <div class="col-md-6">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -65,7 +65,7 @@
             </div>
             <!-- ./col -->
 
-            <div class="col-md-4">
+            <div class="col-md-6">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -81,7 +81,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -96,7 +96,7 @@
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -112,7 +112,7 @@
             </div>
 
             
-            <div class="col-md-4">
+            <div class="col-md-6">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -128,7 +128,7 @@
             </div>
             <!-- ./col -->
 
-            <div class="col-md-4">
+            <div class="col-md-6">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -143,24 +143,6 @@
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-md-4">
-              <!-- small box -->
-              <div class="small-box ">
-                <div class="inner">
-                  <h3 class="text-white">Unidades</h3>
-  
-                 <a class="text-white" href="{{ route('units.view') }}"><p>Ver Unidades</p></a> 
-                </div>
-                <div class="icon">
-                  <i class="ion ion-bag text-white"></i>
-                </div>
-                <a href="{{ route('units.add') }}" class="small-box-footer text-white bg-white"> Nueva Unidad <i class="fas fa-arrow-circle-up"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-
- 
-
           <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->
       </section>

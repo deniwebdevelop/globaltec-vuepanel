@@ -41,7 +41,7 @@
   <aside class="main-sidebar" style="background-image: linear-gradient(200deg, #fff 100%, rgba(59, 35, 167, 0.856)100%);">
     <!-- Brand Logo -->
     <a href="{{ route('home') }}" class="brand-link text-center">
-      <h3 class="brand-text" style="color:#0c0847ea; font-weight:lighter; font-size:1.5vm;">GTT</h3>
+      <h5 class="brand-text text-dark"><i class="fa fa-globe brand-logo text-dark mt-4" aria-hidden="true"></i> Global Tec Trade</h5>
     </a>
 
     <!-- Sidebar -->

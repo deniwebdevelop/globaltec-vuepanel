@@ -47,7 +47,6 @@
                             <th width="9%">Cliente</th>
                             <th>Laboratorio</th>
                             <th>Producto</th>
-                            <th>Modelo</th>
                             <th>Marca</th>
                             <th>Serial</th>
                             <th>Total</th>
@@ -67,7 +66,6 @@
                             <td>{{$data->deliver}}</td>
                             <td>{{ $data->laboratory }}</td>
                             <td>{{ $data->producto }}</td>
-                            <td>{{ $data->modelo }}</td>
                             <td>{{ $data->marca }}</td>
                             <td>{{ $data->serial }}</td>
                             <td>{{ $data->repair_total }}</td>
