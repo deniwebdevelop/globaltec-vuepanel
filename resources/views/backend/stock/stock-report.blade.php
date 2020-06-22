@@ -31,8 +31,6 @@
             <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
                  <h3 class="font-weight-light text-white">Stock
-                    <a class="btn bg-white float-right btn-sm"  href="{{ route('stock.report.pdf') }}" target="_blank">
-                    <i class="fa fa-download"></i> Descargar PDF</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->
