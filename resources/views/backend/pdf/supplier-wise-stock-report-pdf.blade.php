@@ -55,10 +55,9 @@
                 @foreach($allData as $key => $product)
                 <tr>
                     <td>{{ $key+1 }}</td>
-                    <td>{{ $product['category']['name']}}</td>
+                    <td>{{ $product['category']['name']['type']}}</td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->quantity }}</td>
-                    <td>{{ $product['unit']['name']}}</td>
                 </tr>
                 @endforeach
                 </tbody>

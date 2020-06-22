@@ -41,13 +41,11 @@
                     <thead class="thead">
                         <tr>
                             <th>Codigo</th>
-                            <th>Proveedor</th>
                             <th>Categoria</th>
                             <th>Producto</th>
                             <th>Entrante</th>
                             <th>Saliente</th>
                             <th>Stock</th>
-                            <th>Unidad</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,13 +56,11 @@
                     @endphp
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $product['supplier']['name']}}</td>
                             <td>{{ $product['category']['name']}}</td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $buying_total }}</td>
                             <td>{{ $selling_total }}</td>
                             <td>{{ $product->quantity }}</td>
-                            <td>{{ $product['unit']['name']}}</td>
                         </tr>
                     @endforeach
                     </tbody>

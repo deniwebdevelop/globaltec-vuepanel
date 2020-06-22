@@ -43,13 +43,11 @@
             <table border="1" width="100%">
                 <thead>
                     <tr>
-                        <th>Proveedor</th>
                         <th>Categoria</th>
                         <th>Producto</th>
                         <th>Entrante</th>
                         <th>Saliente</th>
                         <th>Stock</th>
-                        <th>Unidad</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,13 +56,11 @@
                     $selling_total = App\Model\InvoiceDetail::where('category_id',$product->category_id)->where('product_id',$product->id)->where('status','1')->sum('selling_qty');
                     @endphp
                 <tr>
-                    <td>{{ $product['supplier']['name'] }}</td>
-                    <td>{{ $product['category']['name']}}</td>
+                    <td>{{ $product['category']['type']['name']}}</td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $buying_total }}</td>
                     <td>{{ $selling_total }}</td>
                     <td>{{ $product->quantity }}</td>
-                    <td>{{ $product['unit']['name']}}</td>
                 </tr>
                 </tbody>
             </table>
