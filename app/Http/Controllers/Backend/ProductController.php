@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Product;
-use App\Model\Supplier;
-use App\Model\Unit;
 use App\Model\Category;
 use Auth;
 use Session;
@@ -47,7 +45,6 @@ class ProductController extends Controller
         $product = Product::find($id);
         return view('backend.product.details', compact('product'));
     }
-
 
     public function download($file){
         return response()->download('storage/'.$file);
