@@ -41,30 +41,12 @@
                     <form method="post" action="{{ route('products.update', $editData->id) }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="name">Nombre del Proveedor</label>
-                        <select name="supplier_id" class="form-control">
-                          <option value="">Seleccionar Proveedor</option>
-                          @foreach ($suppliers as $supplier)
-                          <option value="{{ $supplier->id }}" {{ ($editData->supplier_id==$supplier->id)?"selected":'' }}>{{ $supplier->name }}</option>
-                          @endforeach
-                        </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="unit_id">Unidad</label>
-                            <select name="unit_id" class="form-control">
-                              <option value="">Seleccionar Unidad</option>
-                              @foreach ($units as $unit)
-                              <option value="{{ $unit->id }}" {{ ($editData->unit_id==$unit->id)?"selected":'' }}>{{ $unit->name }}</option>
-                              @endforeach
-                            </select>
-                        </div>
                         <div class="form-group col-md-3">
                             <label for="category_id">Categoria</label>
                             <select name="category_id" class="form-control">
                               <option value="">Seleccionar Categoria</option>
                               @foreach ($categories as $category)
-                              <option value="{{ $category->id }}" {{ ($editData->category_id==$category->id)?"selected":'' }}>{{ $category->type }}</option>
+                              <option value="{{ $category->id }}" {{ ($editData->category_id==$category->id)?"selected":'' }}>{{ $category->type }} | {{ $category->name }}</option>
                               @endforeach
                             </select>
                         </div>
@@ -74,7 +56,7 @@
                       </div>
                         <div class="form-group col-md-3">
                           <label for="brand">Marca</label>
-                          <input type="text" name="brand" class="form-control">
+                          <input type="text" name="brand" class="form-control" value="{{ $editData->brand }}">
                       </div>
              
                         <div class="form-group col-md-6">

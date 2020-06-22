@@ -126,7 +126,7 @@ $.widget.bridge('uibutton', $.ui.button)
 $(function(){
   $(document).on('click','#approve',function(e){
     e.preventDefault();
-    var link - $(this).attr("href");
+    var link = $(this).attr("href");
     Swal.fire({
       title: 'Estas seguro?',
       text: "Aprobar",
