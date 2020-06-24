@@ -60,7 +60,7 @@
                             <td style="display: none">{{$key+1}}</td>
                             <td>{{ $purchase->purchase_no }}</td>
                             <td>{{ date('d/m/Y',strtotime($purchase->date)) }}</td>
-                            <td>{{ $purchase['supplier']['name'] }}</td>
+                            <td>{{ $purchase['customer']['name'] }}</td>
                             <td>{{ $purchase['category']['name']}}</td>
                             <td>{{ $purchase['product']['name']}}</td>
                             <td>{{ $purchase->description}}</td>

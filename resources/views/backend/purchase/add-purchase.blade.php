@@ -47,10 +47,10 @@
                     </div>
                     <div class="form-group col-md-4">
                       <label>Proveedor</label>
-                      <select name="supplier_id" id="supplier_id" class="form-control select2">
+                      <select name="customer_id" id="customer_id" class="form-control select2">
                         <option value="">Seleccionar Proveedor</option>
-                        @foreach($suppliers as $supplier)
-                        <option value="{{$supplier->id}}">{{$supplier->company}}</option>
+                        @foreach($customers as $customer)
+                        <option value="{{$customer->id}}">{{$customer->company}}</option>
                         @endforeach
                       </select>
                     </div>
@@ -130,7 +130,7 @@
     <tr class="delete_add_more_item" id="delete_add_more_item">
       <input type="hidden" name="date[]" value="@{{date}}">
       <input type="hidden" name="purchase_no[]" value="@{{purchase_no}}">
-      <input type="hidden" name="supplier_id[]" value="@{{supplier_id}}">
+      <input type="hidden" name="customer_Id[]" value="@{{customer_id}}">
       <td>
         <input type="hidden" name="category_id[]" value="@{{category_id}}">
         @{{category_name}}
@@ -161,39 +161,17 @@
       $(document).on("click",".addeventmore", function () {
         var date  = $('#date').val();
         var purchase_no  = $('#purchase_no').val();
-        var supplier_id  = $('#supplier_id').val();
+        var customer_id  = $('#customer_id').val();
         var category_id  = $('#category_id').val();
         var category_name = $('#category_id').find('option:selected').text();
         var product_id  = $('#product_id').val();
         var product_name  = $('#product_id').find('option:selected').text();
-
-        if(date==''){
-          $.notify("Date is required", {globalPosition: 'top right',className: 'error'});
-          return false;
-        }
-        if(purchase_no==''){
-          $.notify("Purchase no is required", {globalPosition: 'top right',className: 'error'});
-          return false;
-        }
-        if(supplier_id==''){
-          $.notify("Supplier is required", {globalPosition: 'top right',className: 'error'});
-          return false;
-        }
-        if(category_id==''){
-        $.notify("Category is required", {globalPosition: 'top right',className: 'error'});
-        return false;
-        }
-        if(product_id==''){
-          $.notify("Product is required", {globalPosition: 'top right',className: 'error'});
-          return false;
-        }
-
         var source = $("#document-template").html();
         var template = Handlebars.compile(source);
         var data= {
                   date:date,
                   purchase_no:purchase_no,
-                  supplier_id:supplier_id,
+                  customer_id:customer_id,
                   category_id:category_id,
                   category_name:category_name,
                   product_id:product_id,
@@ -230,40 +208,59 @@
     });
   </script>
 
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $('#myForm').validate({
-        rules: {
-          name: {
-            required: true,
-          },
-          supplier_id: {
-            required: true,
-          },
-          unit_id: {
-            required: true,
-          },
-          category_id: {
-            required: true,
-          }
+<script type="text/javascript">
+  $(document).ready(function (){
+    $('#myForm').validate({
+      rules:{
+        date: {
+          required: true,
         },
-        messages: {
-          
+        purchase_no: {
+          required:true,
         },
-        errorElement: 'span',
-        errorPlacement: function (error, element) {
-          error.addClass('invalid-feedback');
-          element.closest('.form-group').append(error);
+        category_id: {
+          required:true,
+          email: true,
         },
-        highlight: function (element, errorClass, validClass) {
-          $(element).addClass('is-invalid');
+        customer_id: {
+          required:true,
+          email: true,
         },
-        unhighlight: function (element, errorClass, validClass) {
-          $(element).removeClass('is-invalid');
+        product_id: {
+          required: true,
         }
-      });
+      },
+      messages: {
+        date: {
+          required: "Debe ingresar un nombre",
+        },
+        purchase_no: {
+          required: "Debe ingresar un telefono",
+        },
+        category_id: {
+          required:"Debe ingresar un e-mail",
+        },
+        customer_id: {
+          required:true,
+          email: true,
+        },
+        product_id: {
+          required: "Debe ingresar una direccion",
+        }
+      },
+      errorElement: 'span',
+      errorPlacement: function(error, element){
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass){
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass){
+        $(element).removeClass('is-invalid');
+      }
     });
+  });
   </script>
 
   <script>
