@@ -30,9 +30,9 @@
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
-                    <h3 class="font-weight-lighter">Agregar Cliente
+                    <h3 class="font-weight-lighter">Agregar Contacto
                         <a href="{{ route('customers.view') }}" class="btn bg-white float-right btn-sm"><i class="fa fa-list"></i>
-                            Lista de Clientes
+                            Agenda
                         </a>
                     </h3>
                 </div><!-- /.Card Header -->
@@ -41,7 +41,7 @@
                         @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="name">Nombre del Cliente</label>
+                            <label for="name">Nombre</label>
                             <input type="text" name="name" class="form-control">
                         </div>
                         <div class="form-group col-md-6">

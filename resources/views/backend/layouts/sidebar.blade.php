@@ -7,27 +7,12 @@
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item has-treeview">
-                <a href="#" class="nav-link text-dark">
+                <a href="{{ route('customers.view') }}" class="nav-link text-dark">
                     <i class="fa fa-address-book ml-2" aria-hidden="true"></i>
                     <p class="ml-2">
                         Agenda
-                        <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('customers.view') }}" class="nav-link text-dark">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Clientes</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('suppliers.view') }}" class="nav-link text-dark">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Proveedores</p>
-                        </a>
-                    </li>
-                </ul>
             </li>
 
             <li class="nav-item has-treeview mt-3">

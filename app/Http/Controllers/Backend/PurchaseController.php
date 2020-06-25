@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Product;
-use App\Model\Supplier;
+use App\Model\Customer;
 use App\Model\Unit;
 use App\Model\Category;
 use Auth;
 use App\Model\Purchase;
 use DB;
+use Session;
 use PDF;
 
 class PurchaseController extends Controller
@@ -21,7 +22,7 @@ class PurchaseController extends Controller
     }
 
     public function add(){
-        $data['suppliers'] = Supplier::all();
+        $data['customers'] = Customer::all();
         $data['products'] = Product::all();
     	$data['categories'] = Category::all();
     	return view('backend.purchase.add-purchase',$data);
@@ -36,7 +37,7 @@ class PurchaseController extends Controller
                 $purchase = new Purchase();
                 $purchase->date = date('Y-m-d',strtotime($request->date[$i]));
                 $purchase->purchase_no = $request->purchase_no[$i];
-                $purchase->supplier_id = $request->supplier_id[$i];
+                $purchase->customer_id = $request->customer_id[$i];
                 $purchase->category_id = $request->category_id[$i];
                 $purchase->product_id = $request->product_id[$i];
                 $purchase->buying_qty = $request->buying_qty[$i];
@@ -83,7 +84,7 @@ class PurchaseController extends Controller
     public function purchaseReportPdf(Request $request){
         $sdate = date('Y-m-d',strtotime($request->start_date));
         $edate = date('Y-m-d',strtotime($request->end_date));
-        $data['allData'] = Purchase::whereBetween('date',[$sdate,$edate])->where('status','1')->orderBy('supplier_id')->orderBy('category_id')->orderBy('product_id')->get();
+        $data['allData'] = Purchase::whereBetween('date',[$sdate,$edate])->where('status','1')->orderBy('customer_id')->orderBy('category_id')->orderBy('product_id')->get();
         $data['start_date'] = date('Y-m-d',strtotime($request->start_date));
         $data['end_date'] = date('Y-m-d',strtotime($request->end_date));
         $pdf = PDF::loadView('backend.pdf.daily-purchase-report-pdf', $data);
