@@ -40,7 +40,6 @@
                 <table id="example1" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
                             <th>Cliente</th>
                             <th>Numero</th>
                             <th>Fecha</th>
@@ -53,7 +52,6 @@
                     <tbody>
                       @foreach ($allData as $key => $invoice)
                       <tr>
-                        <td>{{ $key+1 }}</td>
                         <td>{{ $invoice['payment']['customer']['name'] }} - 
                             {{ $invoice['payment']['customer']['company'] }} 
                         </td>
@@ -63,9 +61,9 @@
                         <td>{{ $invoice['payment']['total_amount'] }}</td>
                         <td>
                             @if($invoice->status=='0')
-                            <span style="background: #FC4236;padding:5px">Pendiente de Venta</span>
+                            <span style="color: #FC4236;padding:5px">Pendiente de Venta</span>
                             @elseif($invoice->status=='1')
-                            <span style="background: #5EAB00;pagging:5px">Pagado</span>
+                            <span style="color: #5EAB00;pagging:5px">Pagado</span>
                             @endif
                           </td>
                           <td>

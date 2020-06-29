@@ -36,15 +36,13 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-hover table-responsive" width="100%">
+                <table id="example1" class="table table-hover table-responsive">
                     <thead style="font-size: 14px">
                         <tr>
                             <th style="display:none ">Codigo</th>
                             <th>Nombre</th>
                             <th>Empresa</th>
-                            <th>Telefono</th>
-                            <th>Tel 2</th>
-                            <th>Tel 3</th>
+                            <th width="10%">Telefonos</th>
                             <th>Email</th>
                             <th>Puesto</th>
                             <th>Ciudad</th>
@@ -52,7 +50,7 @@
                             <th>CPostal</th>
                             <th>Cuit</th>
                             <th width="2%">Website</th>
-                            <th>Accion</th>
+                            <th width="20%">Accion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,9 +59,7 @@
                             <td style="display: none;">{{$key+1}}</td>
                             <td>{{$customer->name}}</td>
                             <td>{{ $customer->company }}</td>
-                            <td>{{$customer->mobile_no}}</td>
-                            <td>{{$customer->mobile_two}}</td>
-                            <td>{{$customer->mobile_three}}</td>
+                            <td>{{$customer->mobile_no}} - {{ $customer->mobile_two }} - {{ $customer->mobile_three }}</td>
                             <td>{{$customer->email}}</td>
                             <td>{{$customer->position}}</td>
                             <td>{{$customer->city}}</td>

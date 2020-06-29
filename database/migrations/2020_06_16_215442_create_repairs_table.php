@@ -15,15 +15,13 @@ class CreateRepairsTable extends Migration
     {
         Schema::create('repairs', function (Blueprint $table) {
             $table->id();
+            $table->integer('product_id');
             $table->string('repair_no');
             $table->date('admission');
             $table->date('labsent');
             $table->date('labreturn');
             $table->date('deliver');
             $table->string('laboratory');
-            $table->string('producto');
-            $table->string('marca');
-            $table->string('serial');
             $table->decimal('labcost');
             $table->decimal('repaircost');
             $table->decimal('transportcost');

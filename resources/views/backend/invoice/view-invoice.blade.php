@@ -40,7 +40,6 @@
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
                             <th>Cliente</th>
                             <th>Numero</th>
                             <th>Fecha</th>
@@ -53,7 +52,6 @@
                     <tbody>
                       @foreach ($allData as $key => $invoice)
                       <tr>
-                        <td>{{ $key+1 }}</td>
                         <td>{{ $invoice['payment']['customer']['name'] }} - 
                             {{ $invoice['payment']['customer']['company'] }} 
                         </td>

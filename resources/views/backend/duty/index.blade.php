@@ -39,17 +39,15 @@
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-hover">
                     <thead>
-                      <th style="display: none">Codigo</th>
-                            <th width="8%">Fecha</th>
+                            <th width="15%">Fecha</th>
                             <th>Descripcion</th>
                             <th width="1%">Estado</th>
-                            <th width="8%">Accion</th>
+                            <th width="15%">Accion</th>
                         </tr>
                     </thead>
                     <tbody>
                       @foreach ($duty as $key => $duty)
                       <tr>
-                        <td style="display: none">{{$key+1}}</td>
                         <td>{{ date('d-m-Y'),strtotime($duty->date) }}</td>
                         <td>{{ $duty->descripcion }}</td>
                         <td>{{ $duty->status }}</td>
