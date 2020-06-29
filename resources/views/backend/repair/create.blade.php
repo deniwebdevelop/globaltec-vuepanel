@@ -38,7 +38,7 @@
                             </h3>
                         </div><!-- /.Card Header -->
                         <div class="card-body">
-                            <form method="post" action="/repair" id="myForm" enctype="multipart/form-data" class="bg-white">
+                            <form method="post" action="{{ route('repair.store') }}" id="myForm" enctype="multipart/form-data" class="bg-white">
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-1">
@@ -56,19 +56,19 @@
                                      </div>
 
                                     <div class="form-group col-md-3">
-                                        <label for="laboratory">Envio Laboratorio</label>
+                                        <label for="labsent">Envio Laboratorio</label>
                                         <input type="text" name="labsent" id="labsent" class="form-control form-control-sm"
                                         placeholder="Envio a Laboratorio" readonly>
                                     </div>
 
                                     <div class="form-group col-md-3">
-                                        <label for="laboratory">Devolucion Laboratorio</label>
+                                        <label for="labreturn">Devolucion Laboratorio</label>
                                         <input type="text" name="labreturn" id="labreturn"
                                         class="form-control form-control-sm" placeholder="Devolución Laboratorio" readonly>
                                     </div>
 
                                     <div class="form-group col-md-3">
-                                        <label for="laboratory">Entrega Cliente</label>
+                                        <label for="deliver">Entrega Cliente</label>
                                         <input type="text" name="deliver" id="deliver" class="form-control form-control-sm"
                                         placeholder="Entrega al Cliente" readonly>
                                     </div>
@@ -169,6 +169,51 @@
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<script type="text/javascript">
+    $(document).ready(function (){
+      $('#myForm').validate({
+        rules:{
+          laboratory: {
+            required: true,
+          },
+          producto: {
+            required:true,
+          },
+          marca: {
+            required:true,
+          },
+          modelo: {
+            required: true,
+          }
+        },
+        messages: {
+            laboratory: {
+                required: "Debe ingresar un nombre",
+            },
+            producto: {
+                required: "Debe ingresar un telefono",
+            },
+            marca: {
+                required: "Debe ingresar un e-mail",
+            },
+            modelo: {
+                required: "Debe ingresar un cuit",
+            },                
+        },
+        errorElement: 'span',
+        errorPlacement: function(error, element){
+          error.addClass('invalid-feedback');
+          element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass){
+          $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass){
+          $(element).removeClass('is-invalid');
+        }
+      });
+    });
+    </script>
 <script>
     $('#admission').datepicker({
         uiLibrary: 'bootstrap4',
@@ -186,6 +231,6 @@
         uiLibrary: 'bootstrap4',
         format: 'yyyy-mm-dd'
     });
-
 </script>
+
 @endsection

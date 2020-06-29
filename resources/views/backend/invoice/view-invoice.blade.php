@@ -37,26 +37,51 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
+                            <th>Codigo</th>
+                            <th>Cliente</th>
                             <th>Numero</th>
                             <th>Fecha</th>
-                            <th>Cliente</th>
                             <th>Descripcion</th>
                             <th>Monto</th>
+                            <th width="20%">Estado</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
                       @foreach ($allData as $key => $invoice)
                       <tr>
-                        <td>Factura Numero{{ $invoice->invoice_no}}</td>
-                        <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
-                        <td>{{ $invoice['payment']['customer']['name'] }}
-                            ({{ $invoice['payment']['customer']['mobile_no'] }} - {{ $invoice['payment']['customer']['address'] }})
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $invoice['payment']['customer']['name'] }} - 
+                            {{ $invoice['payment']['customer']['company'] }} 
                         </td>
+                        <td>{{ $invoice->invoice_no}}</td>
+                        <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
                         <td>{{ $invoice->description }}</td>
                         <td>{{ $invoice['payment']['total_amount'] }}</td>
+                        <td>
+                            @if($invoice['payment']['paid_status'] =='partial_paid')
+                          <a href="{{ route('customers.credit') }}"><span style="color: #d61b0d;padding:5px">Monto Parcial Pendiente</span></a>
+                            @elseif($invoice['payment']['paid_status'] =='full_paid')
+                           <a href="{{ route('customers.paid') }}"><span style="color: #5EAB00;padding:5px">Pagada</span></a> 
+                            @elseif($invoice['payment']['paid_status'] =='full_due')
+                            <a href="{{ route('customers.credit') }}"><span style="color: #d61b0d;padding:5px">Monto Total Pendiente</span></a>
+                            @endif
+                          </td>
+                          <td>
+                            @if($invoice['payment']['paid_status'] =='partial_paid')
+                            <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
+                              class="fa fa-edit"></i></a>
+                              @endif
+                              @if($invoice['payment']['paid_status'] =='full_due')
+                              <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
+                                class="fa fa-edit"></i></a>
+                                @endif
+                            <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
+                              <i class="fa fa-eye"></i></a>
+                          </td>
                     </tr>                          
                       @endforeach
                     </tbody>

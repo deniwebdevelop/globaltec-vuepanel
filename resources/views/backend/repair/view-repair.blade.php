@@ -36,23 +36,22 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-striped table-responsive">
+                <table id="example1" class="table table-striped">
                     <thead style="font-size: 14px">
                         <tr>
                             <th style="display: none">Codigo</th>
                             <th>Nro</th>
-                            <th width="9%">Ingreso</th>
-                            <th width="9%">Envio</th>
+                            <th>Ingreso</th>
+                            <th>Envio</th>
                             <th>Devolucion</th>
-                            <th width="9%">Cliente</th>
-                            <th>Laboratorio</th>
+                            <th>Cliente</th>
+                            <th>Lab</th>
                             <th>Producto</th>
                             <th>Marca</th>
                             <th>Serial</th>
                             <th>Total</th>
                             <th>Estado</th>
-                     
-                            <th width="20%">Accion</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,7 +73,8 @@
                                 <a title="View" target="_blank" class="btn btn-sm btn-warning" href="{{ route('repair.show', $data->id) }}"><i
                                 class="fa fa-eye"></i></a>
 
-                                <a title="Download" id="download" class="btn btn-sm btn-success" href="{{ route('repair.download', $data->file) }}"><i
+                                <a title="Download" id="download" class="btn btn-sm btn-success"
+                                href="/repair/download/{{ $data->file }}"><i
                                     class="fa fa-download"></i></a>
                         
                               <a title="Edit" class="btn btn-sm text-white" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);" href="{{ route('repair.edit', $data->id) }}"><i

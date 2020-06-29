@@ -30,7 +30,7 @@
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="font-weight-light text-white">Pendientes de aprobacion
+                 <h3 class="font-weight-light text-white">Presupuestos
                    <!-- <a class="btn btn-success float-right btn-sm"
                     href="{{ route('invoice.add') }}"><i class="fa fa-plus-circle p-2"></i>Nueva Factura</a> -->
                  </h3>
@@ -63,14 +63,14 @@
                         <td>{{ $invoice['payment']['total_amount'] }}</td>
                         <td>
                             @if($invoice->status=='0')
-                            <span style="background: #FC4236;padding:5px">Pendiente</span>
+                            <span style="background: #FC4236;padding:5px">Pendiente de Venta</span>
                             @elseif($invoice->status=='1')
-                            <span style="background: #5EAB00;pagging:5px">Pagada</span>
+                            <span style="background: #5EAB00;pagging:5px">Pagado</span>
                             @endif
                           </td>
                           <td>
                             @if($invoice->status=='0')
-                          <a title="Pagada" class="btn btn-sm btn-success" href="{{ route('invoice.approve', $invoice->id) }}"><i
+                          <a title="Venta" class="btn btn-sm btn-success" href="{{ route('invoice.approve', $invoice->id) }}"><i
                           class="fa fa-check-circle"></i></a>
                           <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('invoice.delete', $invoice->id) }}"><i
                             class="fa fa-trash"></i></a>

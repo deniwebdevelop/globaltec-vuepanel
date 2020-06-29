@@ -2,14 +2,14 @@
   @section('content')
   <style>
     .small-box{
-  background-image: linear-gradient(200deg, #070525e3 1%, rgba(1, 0, 5, 0.932)100%);
+background-image: linear-gradient(200deg, #070525e1 1%, rgba(1, 0, 5, 0.932)100%);
  
     }
   </style>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Main content -->
-      <section class="content">
+      <section class="content bg-white">
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
           <div class="row mt-5">

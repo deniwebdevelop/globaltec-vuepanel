@@ -120,23 +120,22 @@
             required:true,
             email:true,
           },
-          address: {
+          cuit: {
             required: true,
           }
         },
         messages: {
             name: {
-                required: "Debe ingresar nombre",
+                required: "Debe ingresar un nombre",
             },
             mobile_no: {
                 required: "Debe ingresar un telefono",
             },
             email: {
-                required: "Debe ingresar un email",
-                email: "Por favor ingresar un email <em>valido</em>",
+                required: "Debe ingresar un e-mail",
             },
-            address: {
-                required: "Debe ingresar una direccion",
+            cuit: {
+                required: "Debe ingresar un cuit",
             },                
         },
         errorElement: 'span',

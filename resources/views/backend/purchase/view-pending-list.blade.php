@@ -35,7 +35,7 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-hover" width="100%">
+                <table id="example1" class="table table-hover table-responsive" width="100%">
                   <thead style="font-size: 14px">
                         <tr>
                             <th>Codigo</th>
@@ -70,9 +70,9 @@
                             <td>{{ $purchase->buying_price }}</td>
                             <td>
                               @if($purchase->status=='0')
-                              <span style="background: #FC4236;padding:5px">Pendiente</span>
+                              <span style="color: #FC4236;padding:1px">Pago Pendiente</span>
                               @elseif($purchase->status=='1')
-                              <span style="background: #5EAB00;pagging:5px">Pago Realizado</span>
+                              <span style="color: #5EAB00;pagging:5px">Pago Realizado</span>
                               @endif
                             </td>
                             <td>

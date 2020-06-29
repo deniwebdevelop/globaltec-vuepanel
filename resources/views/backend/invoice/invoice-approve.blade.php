@@ -30,7 +30,7 @@
                     <!-- Custom tabs (Charts with tabs)-->
                     <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
                         <div class="card-header">
-                            <h3 class="text-white font-weight-lighter">{{ $invoice->invoice_no }}({{ date('d-m-Y',strtotime($invoice->date))}})
+                            <h3 class="text-white font-weight-lighter">Presupuesto Nro: {{ $invoice->invoice_no }} ({{ date('d-m-Y',strtotime($invoice->date))}})
                                 <a class="btn bg-white float-right btn-sm"
                                     href="{{ route('invoice.pending.list') }}"><i class="fa fa-list"></i> Presupuestos Pendientes</a>
                             </h3>
@@ -123,7 +123,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <button type="submit" class="btn btn-md text-white" style="background:#070525ce;">Aprobar</button>
+                            <button type="submit" class="btn btn-md text-white" style="background:#070525ce;"> Generar Venta</button>
                         </form>
                     </div><!-- /.card-body -->
             </div>

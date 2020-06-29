@@ -40,7 +40,6 @@
                 <table id="example1" class="table table-hover" width="100%">
                   <thead style="font-size: 14px">
                         <tr>
-                            <th style="display: none">Codigo</th>
                             <th>OC</th>
                             <th>Fecha</th>
                             <th>Proveedor</th>
@@ -50,17 +49,16 @@
                             <th>Cantidad</th>
                             <th>Precio Unitario</th>
                             <th>Total</th>
-                            <th>Estado</th>
+                            <th width="13%">Estado</th>
                             <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($allData as $key => $purchase)
                         <tr>
-                            <td style="display: none">{{$key+1}}</td>
                             <td>{{ $purchase->purchase_no }}</td>
                             <td>{{ date('d/m/Y',strtotime($purchase->date)) }}</td>
-                            <td>{{ $purchase['customer']['name'] }}</td>
+                            <td>{{ $purchase['customer']['company'] }}</td>
                             <td>{{ $purchase['category']['name']}}</td>
                             <td>{{ $purchase['product']['name']}}</td>
                             <td>{{ $purchase->description}}</td>
@@ -72,16 +70,18 @@
                             <td>{{ $purchase->buying_price }}</td>
                             <td>
                               @if($purchase->status=='0')
-                              <span style="background: #FC4236;padding:5px;"><a class="text-white" href="{{ route('purchase.pending.list') }}">Pendiente</a></span>
+                              <a href="{{ route('purchase.pending.list') }}">  <span style="color: #FC4236;padding:5px;">Pago Pendiente</a></span>
                               @elseif($purchase->status=='1')
-                              <span style="background: #5EAB00;pagging:5px">Pago Realizado</span>
+                              <span style="color: #5EAB00;pagging:5px">Pago Realizado</span>
                               @endif
                             </td>
                             <td>
-                              @if($purchase->status=='0')
+
+                          
+
                             <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('purchase.delete', $purchase->id) }}"><i
                             class="fa fa-trash"></i></a>
-                            @endif
+              
                             </td>
                         </tr>
                     @endforeach

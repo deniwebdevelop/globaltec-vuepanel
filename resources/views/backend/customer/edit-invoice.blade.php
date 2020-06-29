@@ -7,7 +7,6 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-              <h1 class="font-weight-lighter">Administrar Clientes</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -20,21 +19,23 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
+    <!-- Main Content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-md-12">
-            <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
-              <div class="card-header">
-                 <h3 class="p-1 font-weight-light">Editar Factura {{ $payment['invoice']['invoice_no'] }}
-                     <a class="btn btn-success float-right btn-sm" href="{{ route('customers.credit') }}">
-                         <i class="fa fa-list p-2"></i>Facturas</a>
-                 </h3>
-                </div>
+      <!-- Main Row -->
+          <div class="row">
+         <!-- Left Col -->
+         <section class="col-md-12">
+             <!-- Custom Tabs -->
+             <div class="card">
+               <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
+                     <h3 class="font-weight-lighter">Actualizar Venta
+                         <a href="{{ route('products.view') }}" class="btn bg-white float-right btn-sm">
+                           <i class="fa fa-list"></i>
+                              Ventas
+                         </a>
+                     </h3>
+                 </div><!-- /.Card Header -->
               </div><!-- /.card-header -->
               <div class="card-body">
                 <table width="100%">
@@ -119,7 +120,8 @@
                             placeholder="DD-MM-YYY" readonly>
                           </div>
                           <div class="form-group col-md-3" style="padding-top: 30px;">
-                              <button type="submit" class="btn btn-primary btn-sm">Actualizar Factura</button>
+                              <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                 Actualizar</button>
                           </div>
                     </div>
                   </form>

@@ -14,16 +14,16 @@
     </head>
     <body>
         <main class="d-flex align-items-center min-vh-100">
-            <div class="container">
-              <div class="card login-card">
+            <div class="container text-white">
+              <div class="card login-card" style="  background-image: linear-gradient(200deg, #2e95fcd3 1%, rgb(3, 12, 29)100%);">
                 <div class="row">
-                  <div class="col-md-5">
-                    <img src="{{ asset('frontend/assets/images/jungle.jpg') }}" alt="login" class="login-card-img">
+                  <div class="col-md-5 bg-light">
+                    <img src="{{ asset('backend/dist/img/axis.jpg') }}" alt="login" class="login-card-img" style="padding: 10%">
                   </div>
                   <div class="col-md-6 offset-1">
                     <div class="card-body">
                       <div class="brand-wrapper">
-                            <h2 style="font-family: 'Satisfy', cursive; font-size:40px;">Global Tec Trade</h2>
+                            <h2 class="text-white" style="font-family: 'Satisfy', cursive; font-size:50px; padding-left:30%; padding-bottom:5%"> Axis</h2>
                       </div>
                       <p class="login-card-description"></p>
                       <form method="POST" action="{{ route('login') }}">
@@ -47,14 +47,14 @@
                         @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-dark btn-black">
+                        <button type="submit" class="btn btn-light btn-light">
                             {{ __('Ingresar') }}
                         </button>
                         </form><br>
-                        <p>Ingresa a tu cuenta</p>
+                        <p></p>
 
                         <nav class="login-card-footer-nav">
-                          <a class="text-decoration-none" href="http://www.globaltectrade.com.ar" target="_blank">Todos los derechos reservados ©️ Global Tec Trade</a>
+                          <a class="text-decoration-none text-light" href="http://www.globaltectrade.com.ar" target="_blank">Todos los derechos reservados ©️ Axis</a>
                         </nav>
                     </div>
                   </div>

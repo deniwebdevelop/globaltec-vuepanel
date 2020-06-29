@@ -124,7 +124,7 @@
                   <div class="form-row">
                     <div class="form-group col-md-3">
                       <label>Estado de Pago</label>
-                      <select name="paid_status" id="paid_status" class="form-control form-control-sm">
+                      <select name="paid_status" id="paid_status" class="form-control form-control-sm" required>
                         <option value="">Seleccionar Estado</option>
                         <option value="full_paid">Pago Completo</option>
                         <option value="full_due">Pendiente de Pago</option>
@@ -134,10 +134,10 @@
                     </div>
                     <div class="form-group col-md-9">
                       <label>Cliente</label>
-                      <select name="customer_id" id="customer_id" class="form-control form-control-sm">
+                      <select name="customer_id" id="customer_id" class="form-control form-control-sm" required>
                         <option value="">Seleccionar Cliente</option>
                         @foreach ($customers as $customer)
-                        <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->mobile_no }}-{{ $customer->address }})</option>
+                        <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->company }})</option>
                         @endforeach
                         <option value="0">Nuevo Cliente</option>
                       </select>
@@ -147,51 +147,51 @@
                   <div class="form-row new_customer" style="display: none;">
                     <div class="form-group col-md-4">
                       <input type="text" name="name" id="name" class="form-control form-control-sm"
-                      placeholder="Nombre" required>
+                      placeholder="Nombre">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="company" id="company" class="form-control form-control-sm"
-                      placeholder="Empresa" required>
+                      placeholder="Empresa">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="mobile_no" id="mobile_no" class="form-control form-control-sm"
-                      placeholder="Telefono" required>
+                      placeholder="Telefono">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="mobile_two" id="mobile_two" class="form-control form-control-sm"
-                      placeholder="Telefono 2" required>
+                      placeholder="Telefono 2">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="mobile_three" id="mobile_three" class="form-control form-control-sm"
-                      placeholder="Telefono 3" required>
+                      placeholder="Telefono 3">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="email" id="email" class="form-control form-control-sm"
-                      placeholder="E-mail" required>
+                      placeholder="E-mail">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="position" id="position" class="form-control form-control-sm"
-                      placeholder="Puesto" required>
+                      placeholder="Puesto">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="city" id="city" class="form-control form-control-sm"
-                      placeholder="Ciudad" required>
+                      placeholder="Ciudad">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="address" id="address" class="form-control form-control-sm"
-                      placeholder="Direccion" required>
+                      placeholder="Direccion">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="postal" id="postal" class="form-control form-control-sm"
-                      placeholder="Codigo Postal" required>
+                      placeholder="Codigo Postal">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="cuit" id="cuit" class="form-control form-control-sm"
-                      placeholder="Cuit" required>
+                      placeholder="Cuit">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="website" id="website" class="form-control form-control-sm"
-                      placeholder="Website" required>
+                      placeholder="Website">
                     </div>
                   </div>
 
@@ -227,13 +227,13 @@
         @{{product_name}}
       </td>
       <td>
-        <input type="number" min="1" class="form-control form-control-sm text-right selling_qty" name="selling_qty[]"  value="1">
+        <input type="decimal" min="1" class="form-control form-control-sm text-right selling_qty" name="selling_qty[]"  value="1">
       </td> 
       <td>
-        <input type="number" class="form-control form-control-sm text-right unit_price" name="unit_price[]"  value="">
+        <input type="decimal" class="form-control form-control-sm text-right unit_price" name="unit_price[]"  value="">
       </td>
       <td>
-        <input class="form-control form-control-sm text-right selling_price" name="selling_price[]"  value="0" readonly>
+        <input type="decimal" class="form-control form-control-sm text-right selling_price" name="selling_price[]"  value="0" readonly>
       </td>
       <td><i class="btn btn-danger btn-sm fa fa-window-close removeeventmore"></i></td>
     </tr>
@@ -244,7 +244,6 @@
       $(document).on("click",".addeventmore", function () {
         var date  = $('#date').val();
         var invoice_no  = $('#invoice_no').val();
-        var supplier_id  = $('#supplier_id').val();
         var category_id  = $('#category_id').val();
         var category_name = $('#category_id').find('option:selected').text();
         var product_id  = $('#product_id').val();

@@ -14,7 +14,7 @@
         <tbody>
           <tr>
             <td>
-              <span style="font-size: 20px;">Global Tec Trade<span>
+              <span style="font-size: 20px;">Axis<span>
             </td>
           </tr>
         </tbody>

@@ -3,7 +3,7 @@
 <head>
 @include('backend.layouts.head')
 </head>
-<body class="hold-transition sidebar-mini sidebar-collapse">
+<body class="hold-transition sidebar-fixed bg-white">
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand border-0 navbar-white text-dark">
@@ -38,14 +38,20 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar" style="background-image: linear-gradient(200deg, #fff 100%, rgba(59, 35, 167, 0.856)100%);">
-    <!-- Brand Logo -->
-    <a href="{{ route('home') }}" class="brand-link text-center">
-      <h5 class="brand-text text-dark"><i class="fa fa-globe brand-logo text-dark mt-4" aria-hidden="true"></i> Global Tec Trade</h5>
-    </a>
+<aside class="main-sidebar py-2" style="  background-image: linear-gradient(200deg, #070525d3 1%, rgba(1, 0, 5, 0.932)100%);">
+<!-- Brand Logo -->
+<div>
+<a href="{{ route('home') }}" class="brand-link text-white">
+  <img src="{{ url('backend/dist/img/axis.jpg') }}"
+       alt="Axis Logo"
+       class="brand-image img-circle mt-1"
+       style="margin-left:30%">
+  <span class="brand-text font-weight-lighter" style="font-size: 1.3em"> AXIS</span>
+</a>
+</div>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar mt-3">
 
     @include('backend.layouts.sidebar')
     </div>

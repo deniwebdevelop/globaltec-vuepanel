@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Product;
-use App\Model\Supplier;
 use App\Model\Unit;
 use App\Model\Category;
 use App\Model\Purchase;
@@ -43,10 +42,9 @@ class InvoiceController extends Controller
 
     public function store(Request $request){
         if($request->category_id == null){
-            return redirect()->back()->with('error', 'Debes seleccionar un producto!');
+            return redirect()->back();
     }else{
         if($request->paid_amount>$request->estimated_amount){
-            Session::flash('success');
             return redirect()->back();
         }else{
             $invoice = new Invoice();
@@ -145,7 +143,6 @@ class InvoiceController extends Controller
         foreach ($request->selling_qty as $key => $val){
             $invoice_details = InvoiceDetail::where('id', $key)->first();
             $product = Product::where('id', $invoice_details->product_id)->first();
-         
         }
         $invoice = Invoice::find($id);
         $invoice->approved_by = Auth::user()->id;
@@ -159,7 +156,7 @@ class InvoiceController extends Controller
             }
             $invoice->save();
         });
-        return redirect()->route('invoice.pending.list');
+        return redirect()->route('invoice.view');
     }
 
     public function printInvoiceList(){
