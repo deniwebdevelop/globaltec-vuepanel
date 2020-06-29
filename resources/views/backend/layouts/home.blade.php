@@ -12,9 +12,9 @@ background-image: linear-gradient(200deg, #070525e1 1%, rgba(1, 0, 5, 0.932)100%
       <section class="content bg-white">
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
-          <div class="row mt-5">
+          <div class="row mt-4">
                 <!-- ./col -->
-                <div class="col-md-6">
+                <div class="col-md-6 py-4">
                   <!-- small box -->
                   <div class="small-box ">
                     <div class="inner">
@@ -29,27 +29,27 @@ background-image: linear-gradient(200deg, #070525e1 1%, rgba(1, 0, 5, 0.932)100%
                   </div>
                 </div>
                 <!-- ./col -->
-            <div class="col-md-6">
-              <!-- small box -->
-              <div class="small-box">
-                <div class="inner">
-                  <h3 class="text-white">Proveedores</h3>
-  
-                  <a class="text-white" href="{{ route('suppliers.view') }}"><p>Ver Proveedores</p></a>
+
+                
+
+                <div class="col-md-6 py-4">
+                  <!-- small box -->
+                  <div class="small-box ">
+                    <div class="inner">
+                      <h3 class="text-white">Agenda</h3>
+      
+                      <a class="text-white" href="{{ route('customers.view') }}"><p>Ver Agenda</p></a>
+                    </div>
+                    <div class="icon">
+                      <i class="fa fa-address-book text-white" aria-hidden="true"></i>
+                    </div>
+                    <a href="{{ route('customers.add') }}" class="small-box-footer text-white bg-white"> Nuevo Contacto <i class="fas fa-arrow-circle-up"></i></a>
+                  </div>
                 </div>
-                <div class="icon">
-                  <i class="ion ion-person-add text-white"></i>
-                </div>
-                <a href="{{ route('suppliers.add') }}" class="small-box-footer text-white bg-white"> Agregar Proveedor  <i class="fas fa-arrow-circle-up"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-
-
 
   
             <!-- ./col -->
-            <div class="col-md-6">
+            <div class="col-md-6 py-4">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -65,23 +65,9 @@ background-image: linear-gradient(200deg, #070525e1 1%, rgba(1, 0, 5, 0.932)100%
             </div>
             <!-- ./col -->
 
-            <div class="col-md-6">
-              <!-- small box -->
-              <div class="small-box ">
-                <div class="inner">
-                  <h3 class="text-white">Clientes</h3>
-  
-                  <a class="text-white" href="{{ route('customers.view') }}"><p>Ver clientes</p></a>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person-add text-white"></i>
-                </div>
-                <a href="{{ route('customers.add') }}" class="small-box-footer text-white bg-white"> Nuevo Cliente <i class="fas fa-arrow-circle-up"></i></a>
-              </div>
-            </div>
 
 
-            <div class="col-md-6">
+            <div class="col-md-6 py-4">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -96,7 +82,7 @@ background-image: linear-gradient(200deg, #070525e1 1%, rgba(1, 0, 5, 0.932)100%
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4 py-5">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -112,7 +98,7 @@ background-image: linear-gradient(200deg, #070525e1 1%, rgba(1, 0, 5, 0.932)100%
             </div>
 
             
-            <div class="col-md-6">
+            <div class="col-md-4 py-5">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
@@ -128,7 +114,7 @@ background-image: linear-gradient(200deg, #070525e1 1%, rgba(1, 0, 5, 0.932)100%
             </div>
             <!-- ./col -->
 
-            <div class="col-md-6">
+            <div class="col-md-4 py-5">
               <!-- small box -->
               <div class="small-box ">
                 <div class="inner">
