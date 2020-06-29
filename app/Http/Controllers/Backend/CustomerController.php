@@ -119,7 +119,7 @@ class CustomerController extends Controller
                 $payment_details->date = date('Y-m-d',strtotime($request->date));
                 $payment_details->save();
                 Session::flash('success');
-                return redirect()->route('customers.credit');
+                return redirect()->route('invoice.view');
             }
         }
 

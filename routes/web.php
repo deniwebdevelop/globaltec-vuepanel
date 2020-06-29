@@ -124,7 +124,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('create', 'Backend\RepairController@create')->name('repair.create');
 		Route::post('', 'Backend\RepairController@store')->name('repair.store');;
 		Route::get('', 'Backend\RepairController@index')->name('repair.index');;
-		Route::get('/{id}', 'Backend\RepairController@show')->name('repair.show');;
+		Route::get('/{id}', 'Backend\RepairController@show')->name('repair.show');
 		Route::get('/download/{file}', 'Backend\RepairController@download')->name('repair.download');
 		Route::get('/edit/{id}','Backend\RepairController@edit')->name('repair.edit');
 		Route::post('/update/{id}','Backend\RepairController@update')->name('repair.update');

@@ -64,9 +64,12 @@
                           <select name="coin" class="form-control">
                             <option value="">Seleccionar Moneda</option>
                             <option value="ARS">ARS</option>
-                            <option value="USD">USD</option>
+                            <option value="USD">USD-W</option>
+                            <option value="USDB">USD-B</option>
+                            <option value="USDT">USD-T</option>
                             <option value="EUR">EUR</option>
                             <option value="GBP">GBP</option>
+                            <option value="RBL">Real</option>
                           </select>
                       </div>
                   

@@ -19,8 +19,9 @@
                                 <span>Telefono: 11-2493-2929</span>    
                             </td>
                             <td>
-                                <span style="font-size: 35px;background: #17818F;padding: 3px 10px 3px 10px; color: #fff">
-                                Global Tec Trade</span>
+
+                                <span style="font-size: 35px;background: #fff;padding: 3px 10px 3px 10px; color: rgb(17, 17, 17)">
+                                Axis</span>
                             </td>
                         
                             <td><strong>Factura Numero: {{ $payment['invoice']['invoice_no'] }}</strong></td>
@@ -141,17 +142,7 @@
         <div class="col-md-12">
             <hr style="margin-bottom: 0px;">
             <table border="0" width="100%">
-                <tbody>
-                    <tr>
-                        <td style="width: 40%" >
-                            <p style="text-align: center;margin-left: 20px;">Firma Cliente</p>
-                        </td>
-                        <td style="width: 20%"></td>
-                        <td style="width: 40%;text-align:center;">
-                            <p style="text-align: center;">Firma Vendedor</p>
-                        </td>
-                    </tr>
-                </tbody>
+
             </table>
         </div>
     </div>

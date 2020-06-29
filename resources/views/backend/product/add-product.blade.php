@@ -108,6 +108,9 @@
         brand: {
             required: true,
         },
+        coin: {
+            required: true,
+        }
       },
       messages: {
 
@@ -120,6 +123,9 @@
           brand: {
               required: "Debe ingresar una marca",
           },
+          coin: {
+              required: "Debe ingresar una moneda",
+          }
       },
       errorElement: 'span',
       errorPlacement: function(error, element){

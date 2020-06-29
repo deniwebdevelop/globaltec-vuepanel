@@ -54,7 +54,7 @@
                                     <div class="form-group col-md-12">
                                         <label for="descripcion">Descripcion</label> 
                                         <input type="text" name="descripcion" id="descripcion"
-                                            class="form-control form-control-sm py-5">
+                                            class="form-control form-control-lg">
                                     </div>
 
                                     <div class="form-group col-md-12">
@@ -91,4 +91,31 @@
     });
 
 </script>
+<script type="text/javascript">
+    $(document).ready(function (){
+      $('#myForm').validate({
+        rules:{
+          descripcion: {
+            required: true,
+          }
+        },
+        messages: {
+          descripcion: {
+            required: "Debe ingresar una descripción",
+          }               
+        },
+        errorElement: 'span',
+        errorPlacement: function(error, element){
+          error.addClass('invalid-feedback');
+          element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass){
+          $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass){
+          $(element).removeClass('is-invalid');
+        }
+      });
+    });
+    </script>
 @endsection

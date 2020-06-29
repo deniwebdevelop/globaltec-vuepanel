@@ -6,13 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Product;
 use App\Model\Customer;
-use App\Model\Unit;
 use App\Model\Category;
 use Auth;
 use App\Model\Purchase;
 use DB;
-use Session;
 use PDF;
+use Session;
 
 class PurchaseController extends Controller
 {
@@ -30,7 +29,7 @@ class PurchaseController extends Controller
 
     public function store(Request $request){
     	if($request->category_id == null){
-            return redirect()->back()->with('error','Sorry! you do not select any item');
+            return redirect()->back();
         }else{
             $count_category = count($request->category_id);
             for ($i=0; $i <$count_category ; $i++) { 
@@ -74,7 +73,7 @@ class PurchaseController extends Controller
                     ->where('id', $id)
                     ->update(['status' => 1]);
         }
-        return redirect()->route('purchase.pending.list')->with('success','Data approved successfully');
+        return redirect()->route('purchase.view');
     }
 
     public function purchaseReport(){

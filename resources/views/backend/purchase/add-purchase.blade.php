@@ -37,10 +37,11 @@
 
               <div class="card-body">
                   <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <label>Fecha</label>
-                      <input type="text" name="date" id="date" class="form-control datepicker form-control-sm" placeholder="DD-MM-YYYY" readonly>
-                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="date">Fecha</label> 
+                        <input type="text" name="date" id="date"
+                      class="form-control form-control-sm datepicker" placeholder="Fecha De Ingreso" readonly>
+                   </div>
                     <div class="form-group col-md-4">
                       <label>Numero OC</label>
                       <input type="text" name="purchase_no" id="purchase_no" class="form-control form-control-sm">
@@ -50,7 +51,7 @@
                       <select name="customer_id" id="customer_id" class="form-control select2">
                         <option value="">Seleccionar Proveedor</option>
                         @foreach($customers as $customer)
-                        <option value="{{$customer->id}}">{{$customer->company}}</option>
+                        <option value="{{$customer->id}}">{{$customer->name}} {{ $customer->company }}</option>
                         @endforeach
                       </select>
                     </div>
@@ -68,7 +69,7 @@
                       <select name="product_id" id="product_id" class="form-control select2">
                         <option value="">Seleccionar Producto</option>
                         @foreach($products as $data)
-                        <option value="{{$data->id}}">{{$data->name}} - {{ $data->brand }}</option>
+                        <option value="{{$data->id}}">{{$data->name}}</option>
                         @endforeach
                       </select>
                     </div>
@@ -130,7 +131,8 @@
     <tr class="delete_add_more_item" id="delete_add_more_item">
       <input type="hidden" name="date[]" value="@{{date}}">
       <input type="hidden" name="purchase_no[]" value="@{{purchase_no}}">
-      <input type="hidden" name="customer_Id[]" value="@{{customer_id}}">
+      <input type="hidden" name="customer_id[]" value="@{{customer_id}}">
+      @{{ customer_name }}
       <td>
         <input type="hidden" name="category_id[]" value="@{{category_id}}">
         @{{category_name}}
@@ -140,16 +142,16 @@
         @{{product_name}}
       </td>
       <td>
-        <input type="number" min="1" class="form-control form-control-sm text-right buying_qty" name="buying_qty[]"  value="1">
+        <input type="decimal" min="1" class="form-control form-control-sm text-right buying_qty" name="buying_qty[]"  value="1">
       </td> 
       <td>
-        <input type="number" class="form-control form-control-sm text-right unit_price" name="unit_price[]"  value="">
+        <input type="decimal" class="form-control form-control-sm text-right unit_price" name="unit_price[]"  value="">
       </td>
       <td>
         <input type="text" name="description[]" class="form-control form-control-sm">
       </td>
       <td>
-        <input class="form-control form-control-sm text-right buying_price" name="buying_price[]"  value="0" readonly>
+        <input type="decimal" class="form-control form-control-sm text-right buying_price" name="buying_price[]"  value="0" readonly>
       </td>
       <td><i class="btn btn-danger btn-sm fa fa-window-close removeeventmore"></i></td>
     </tr>
@@ -166,6 +168,28 @@
         var category_name = $('#category_id').find('option:selected').text();
         var product_id  = $('#product_id').val();
         var product_name  = $('#product_id').find('option:selected').text();
+
+        if(date==''){
+          $.notify("Date is required", {globalPosition: 'top right',className: 'error'});
+          return false;
+        }
+        if(purchase_no==''){
+          $.notify("Purchase no is required", {globalPosition: 'top right',className: 'error'});
+          return false;
+        }
+        if(customer_id==''){
+          $.notify("Supplier is required", {globalPosition: 'top right',className: 'error'});
+          return false;
+        }
+        if(category_id==''){
+        $.notify("Category is required", {globalPosition: 'top right',className: 'error'});
+        return false;
+        }
+        if(product_id==''){
+          $.notify("Product is required", {globalPosition: 'top right',className: 'error'});
+          return false;
+        }
+
         var source = $("#document-template").html();
         var template = Handlebars.compile(source);
         var data= {
@@ -206,61 +230,6 @@
         $('#estimated_amount').val(sum);
       }
     });
-  </script>
-
-<script type="text/javascript">
-  $(document).ready(function (){
-    $('#myForm').validate({
-      rules:{
-        date: {
-          required: true,
-        },
-        purchase_no: {
-          required:true,
-        },
-        category_id: {
-          required:true,
-          email: true,
-        },
-        customer_id: {
-          required:true,
-          email: true,
-        },
-        product_id: {
-          required: true,
-        }
-      },
-      messages: {
-        date: {
-          required: "Debe ingresar un nombre",
-        },
-        purchase_no: {
-          required: "Debe ingresar un telefono",
-        },
-        category_id: {
-          required:"Debe ingresar un e-mail",
-        },
-        customer_id: {
-          required:true,
-          email: true,
-        },
-        product_id: {
-          required: "Debe ingresar una direccion",
-        }
-      },
-      errorElement: 'span',
-      errorPlacement: function(error, element){
-        error.addClass('invalid-feedback');
-        element.closest('.form-group').append(error);
-      },
-      highlight: function (element, errorClass, validClass){
-        $(element).addClass('is-invalid');
-      },
-      unhighlight: function (element, errorClass, validClass){
-        $(element).removeClass('is-invalid');
-      }
-    });
-  });
   </script>
 
   <script>

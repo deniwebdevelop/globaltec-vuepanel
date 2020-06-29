@@ -52,7 +52,7 @@
                             <th>CPostal</th>
                             <th>Cuit</th>
                             <th width="2%">Website</th>
-                            <th>Action</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -47,7 +47,7 @@
                                     <th>Marca</th>
                                     <th>Moneda</th>
                                     
-                                    <th style="width: 13%;">Action</th>
+                                    <th style="width: 15%;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

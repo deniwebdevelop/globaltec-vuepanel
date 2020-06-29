@@ -12,8 +12,8 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item">Clientes</li>
-              <li class="breadcrumb-item">Pago Recibido</li>
+              <li class="breadcrumb-item">Ventas</li>
+              <li class="breadcrumb-item">Pagos Recibidos</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -31,7 +31,7 @@
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="font-weight-light text-white">Pago Recibido
+                 <h3 class="font-weight-light text-white">Pagos Recibidos
                      <a class="btn bg-white float-right btn-sm" href="{{ route('customers.paid.pdf') }}" target="_blank"><i class="fa fa-download"></i> Descargar PDF</a>
                  </h3>
                 </div>
@@ -40,12 +40,11 @@
                 <table id="example1" class="table table-bordered table-hover">
                     <thead class="thead">
                         <tr>
-                            <th>Codigo</th>
                             <th>Cliente</th>
                             <th>Numero Factura</th>
                             <th>Fecha</th>
                             <th>Monto</th>
-                            <th>Action</th>
+                            <th>Ver</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,7 +53,6 @@
                         @endphp
                         @foreach($allData as $key => $payment)
                         <tr>
-                            <td>{{$key+1}}</td>
                             <td>
                                 {{$payment['customer']['name']}}
                                 {{$payment['customer']['mobile_no']}}-{{ $payment['customer']['address'] }}
