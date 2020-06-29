@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Repair;
+use App\Model\Product;
 use Auth;
 use DB;
 use Session;
@@ -38,6 +39,7 @@ class RepairController extends Controller
             $data['repair_no'] = $repair_data+1;
         }
         $data['admission'] = date('Y-m-d');
+        $data['products'] = Product::all();
         return view('backend.repair.create', $data);
         
     }
@@ -65,9 +67,7 @@ class RepairController extends Controller
         $data->labreturn = date('Y-m-d',strtotime($request->labreturn));
         $data->deliver = date('Y-m-d',strtotime($request->deliver));
         $data->laboratory = $request->laboratory;
-        $data->producto = $request->producto;
-        $data->marca = $request->marca;
-        $data->serial = $request->serial;
+        $data->product_id = $request->product_id;
         $data->labcost = $request->labcost;
         $data->repaircost = $request->repaircost;
         $data->transportcost = $request->transportcost;
@@ -128,10 +128,8 @@ class RepairController extends Controller
         $data->labsent = date('Y-m-d',strtotime($request->labsent));
         $data->labreturn = date('Y-m-d',strtotime($request->labreturn));
         $data->deliver = date('Y-m-d',strtotime($request->deliver));
+        $data->product_id = $request->product_id;
         $data->laboratory = $request->laboratory;
-        $data->producto = $request->producto;
-        $data->marca = $request->marca;
-        $data->serial = $request->serial;
         $data->labcost = $request->labcost;
         $data->repaircost = $request->repaircost;
         $data->transportcost = $request->transportcost;

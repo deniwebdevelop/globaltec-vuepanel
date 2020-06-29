@@ -81,28 +81,15 @@
                                     class="form-control form-control-sm" placeholder="Nombre Laboratorio">
                             </div>
                         </div>
-                        <div class="form-row py-3">
-                            <div class="form-group col-md-3">
-                                <label for="producto">Producto</label>
-                                <input type="text" name="producto" id="producto"
-                                    class="form-control form-control-sm">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="modelo">Modelo</label>
-                                <input type="text" name="modelo" id="modelo"
-                                    class="form-control form-control-sm">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="marca">Marca</label>
-                                <input type="text" name="marca" id="marca"
-                                    class="form-control form-control-sm">
-                            </div>
-                            <div class="form-group col-md-2">
-                                <label for="serial">Numero de Serie</label>
-                                <input type="text" name="serial" id="serial"
-                                    class="form-control form-control-sm">
-                            </div>
-                        </div>    
+                        <div class="form-group col-md-6">
+                            <label>Producto</label>
+                            <select name="product_id" id="product_id" class="form-control select2">
+                              <option value="">Seleccionar Producto</option>
+                              @foreach($products as $data)
+                              <option value="{{$data->id}}">{{ $data->name }} - {{$data->brand}} </option>
+                              @endforeach
+                            </select>
+                          </div> 
                         
                         <div class="form-row">
                             <div class="form-group col-md-2">
