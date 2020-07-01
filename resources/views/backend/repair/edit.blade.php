@@ -72,16 +72,8 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <label for="producto">Producto</label>
-                            <input type="text" name="producto" value="{{ $data->producto }}" class="form-control">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="marca">Marca</label>
-                            <input type="text" name="marca" value="{{ $data->marca }}" class="form-control">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="serial">S/N</label>
-                            <input type="text" name="serial" value="{{ $data->serial }}" class="form-control">
+                            <label for="product_id">Producto</label>
+                            <input type="text" name="product_id" value="{{ $data->product_id }}" class="form-control">
                         </div>
                     </div>
                     <div class="form-row">

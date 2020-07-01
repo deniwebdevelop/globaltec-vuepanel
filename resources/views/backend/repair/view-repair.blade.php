@@ -47,8 +47,6 @@
                             <th>Cliente</th>
                             <th>Lab</th>
                             <th>Producto</th>
-                            <th>Marca</th>
-                            <th>Serial</th>
                             <th>Total</th>
                             <th>Estado</th>
                             <th>Accion</th>
@@ -64,9 +62,7 @@
                             <td>{{$data->labreturn}}</td>
                             <td>{{$data->deliver}}</td>
                             <td>{{ $data->laboratory }}</td>
-                            <td>{{ $data->producto }}</td>
-                            <td>{{ $data->marca }}</td>
-                            <td>{{ $data->serial }}</td>
+                            <td>{{ $data->product_id}}</td>
                             <td>{{ $data->repair_total }}</td>
                             <td>{{ $data->status }}</td>
                             <td>
