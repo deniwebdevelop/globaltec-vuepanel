@@ -44,21 +44,37 @@
                             <tbody>
                                 <tr>
                                     <td width="15%">
-                                        <p><strong>Datos del Cliente</strong></p>
-                                    </td>
-                                    <td width="25%">
-                                        <p><strong>Nombre :</strong>{{ $payment['customer']['name'] }}</p>
-                                    </td>
-                                    <td width="25%">
-                                        <p><strong>Telefono :</strong>{{ $payment['customer']['mobile_no'] }}</p>
-                                    </td>
-                                    <td width="35%">
-                                        <p><strong>Direccion :</strong>{{ $payment['customer']['address'] }}</p>
+                                        <p><strong>Datos del Cliente:</strong></p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="15%"></td>
-                                    <td width="85%" colspan="3">
+                                    <td width="25%">
+                                        <p><strong>Cliente :</strong> {{ $payment['customer']['company'] }}</p>
+                                    </td>
+                                    <td width="25%">
+                                        <p><strong>Contacto :</strong> {{ $payment['customer']['name'] }}</p>
+                                    </td>
+                                                    
+                                    <td width="25%">
+                                        <p><strong>Telefono :</strong> {{ $payment['customer']['mobile_no'] }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="25%">
+                                        <p><strong>Ciudad :</strong> {{ $payment['customer']['city'] }}</p>
+                                    </td>
+                                    <td width="25%">
+                                        <p><strong>Provincia|Estado :</strong> {{ $payment['customer']['state'] }}</p>
+                                    </td>
+                                    <td width="25%">
+                                        <p><strong>Codigo Postal :</strong> {{ $payment['customer']['postal'] }}</p>
+                                    </td>
+                                    <td width="35%">
+                                        <p><strong>Direccion :</strong> {{ $payment['customer']['address'] }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" colspan="2">
                                         <p><strong>Descripcion :</strong>{{ $invoice->description }}</p>
                                     </td>
                                 </tr>
@@ -69,10 +85,9 @@
                             <table border="1" width="100%" style="margin-bottom: 10px">
                                 <thead>
                                     <tr class="text-center">
-                                        <th>SL.</th>
+                                        <th>ITEM</th>
                                         <th>Categoria</th>
                                         <th>Producto</th>
-                                        <th class="text-center" style="background: #ddd;padding 1px;">Stock</th>
                                         <th>Cantidad</th>
                                         <th>Precio Unitario</th>
                                         <th>Precio Total</th>
@@ -91,11 +106,9 @@
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ $details['category']['name'] }}</td>
                                         <td>{{ $details['product']['name']}}</td>
-                                        <td class="text-cent" style="background:#ddd; padding:1px;">
-                                            {{ $details['product']['quantity'] }}</td>
                                         <td>{{ $details->selling_qty }}</td>
-                                        <td>{{ $details->unit_price }}</td>
-                                        <td>{{ $details->selling_price }}</td>
+                                        <td>$ {{ number_format($details->unit_price, 2) }}</td>
+                                        <td>$ {{ number_format($details->selling_price, 2) }}</td>
                                     </tr>
                                     @php
                                     $total_sum += $details->selling_price;
@@ -103,7 +116,7 @@
                                     @endforeach
                                     <tr>
                                         <td colspan="6" class="text-right"><strong>Sub Total</strong></td>
-                                        <td class="text-center"><strong>{{ $total_sum }}</strong></td>
+                                        <td class="text-center"><strong>$ {{ number_format($total_sum, 2) }}</strong></td>
                                     </tr>
                                     <tr>
                                         <td colspan="6" class="text-right">Descuento</td>
@@ -111,15 +124,15 @@
                                     </tr>
                                     <tr>
                                         <td colspan="6" class="text-right">Monto Pagado</td>
-                                        <td class="text-center"><strong>{{ $payment->paid_amount }}</strong></td>
+                                        <td class="text-center"><strong>$ {{ number_format($payment->paid_amount, 2) }}</strong></td>
                                     </tr>
                                     <tr>
                                         <td colspan="6" class="text-right">Monto Adeudado</td>
-                                        <td class="text-center"><strong>{{ $payment->due_amount }}</strong></td>
+                                        <td class="text-center"><strong>{{ number_format($payment->due_amount, 2) }}</strong></td>
                                     </tr>
                                     <tr>
                                         <td colspan="6" class="text-right">Total</td>
-                                        <td class="text-center"><strong>{{ $payment->total_amount }}</strong></td>
+                                        <td class="text-center"><strong>$ {{ number_format($payment->total_amount, 2) }}</strong></td>
                                     </tr>
                                 </tbody>
                             </table>

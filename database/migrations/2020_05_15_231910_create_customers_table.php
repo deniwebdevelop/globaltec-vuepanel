@@ -22,6 +22,8 @@ class CreateCustomersTable extends Migration
             $table->string('mobile_three')->nullable();
             $table->string('email');
             $table->string('position')->nullable();
+            $table->string('country')->nullable();
+            $table->string('state')->nullable();
             $table->string('city')->nullable();
             $table->string('address')->nullable();
             $table->string('postal')->nullable();

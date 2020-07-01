@@ -36,7 +36,7 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-hover table-responsive">
+                <table id="example1" class="table table-striped table-responsive" style="width: 100%">
                     <thead style="font-size: 14px">
                         <tr>
                             <th style="display:none ">Codigo</th>
@@ -45,12 +45,14 @@
                             <th width="10%">Telefonos</th>
                             <th>Email</th>
                             <th>Puesto</th>
+                            <th>Pais</th>
+                            <th>Estado</th>
                             <th>Ciudad</th>
                             <th>Direccion</th>
-                            <th>CPostal</th>
+                            <th>CP</th>
                             <th>Cuit</th>
-                            <th width="2%">Website</th>
-                            <th width="20%">Accion</th>
+                            <th>Website</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,10 +60,12 @@
                         <tr>
                             <td style="display: none;">{{$key+1}}</td>
                             <td>{{$customer->name}}</td>
-                            <td>{{ $customer->company }}</td>
+                            <td>{{$customer->company }}</td>
                             <td>{{$customer->mobile_no}} - {{ $customer->mobile_two }} - {{ $customer->mobile_three }}</td>
                             <td>{{$customer->email}}</td>
                             <td>{{$customer->position}}</td>
+                            <td>{{$customer->country}}</td>
+                            <td>{{$customer->state}}</td>
                             <td>{{$customer->city}}</td>
                             <td>{{$customer->address}}</td>
                             <td>{{$customer->postal }}</td>

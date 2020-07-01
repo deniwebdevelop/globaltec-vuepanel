@@ -42,7 +42,7 @@
     <table border="1" width="100%" style="margin-bottom: 10px">
       <thead>
           <tr class="text-center">
-              <th>SL.</th>
+              <th>ITEM</th>
               <th>Categoria</th>
               <th>Producto</th>
               <th>Cantidad</th>
