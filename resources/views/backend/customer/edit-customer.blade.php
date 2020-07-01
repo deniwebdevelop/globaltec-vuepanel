@@ -71,6 +71,14 @@
                           <input type="text" name="position" value="{{ $editData->position }}" class="form-control">
                       </div>
                       <div class="form-group col-md-6">
+                        <label for="country">Pais</label>
+                        <input type="text" name="country" value="{{ $editData->country }}" class="form-control">
+                    </div>
+                        <div class="form-group col-md-6">
+                            <label for="state">Provincia | Estado</label>
+                            <input type="text" name="address" value="{{ $editData->state }}" class="form-control">
+                        </div>
+                      <div class="form-group col-md-6">
                         <label for="city">Ciudad</label>
                         <input type="text" name="city" value="{{ $editData->city }}" class="form-control">
                     </div>

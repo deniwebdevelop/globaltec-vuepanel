@@ -69,6 +69,14 @@
                             <input type="text" name="position" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="country">Pais</label>
+                            <input type="text" name="country" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="state">Provincia/Estado</label>
+                            <input type="text" name="state" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
                             <label for="city">Ciudad</label>
                             <input type="text" name="city" class="form-control">
                         </div>

@@ -58,7 +58,7 @@
                         <td>{{ $invoice->invoice_no}}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
                         <td>{{ $invoice->description }}</td>
-                        <td>{{ $invoice['payment']['total_amount'] }}</td>
+                        <td>{{ number_format($invoice['payment']['total_amount'], 2) }}</td>
                         <td>
                             @if($invoice['payment']['paid_status'] =='partial_paid')
                           <a href="{{ route('customers.credit') }}"><span style="color: #d61b0d;padding:5px">Monto Parcial Pendiente</span></a>

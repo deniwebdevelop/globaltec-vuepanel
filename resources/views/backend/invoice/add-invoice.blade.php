@@ -93,7 +93,6 @@
                       </tr>
                     </thead>
                     <tbody id="addRow" class="addRow">
-
                     </tbody>
                     <tbody>
                     <tr>
@@ -102,12 +101,13 @@
                       <input type="text" name="discount_amount" id="discount_amount"
                        class="form-control form-control-sm discount_amount text-right" placeholder="Ingresar Descuento">
           
-                      <td></td>
+                      <td>
+                      </td>
                     </tr>
                     <tr>
                         <td class="text-right" colspan="4">Precio Final</td>
                         <td>
-                          <input type="text" name="estimated_amount" value="0" id="estimated_amount"
+                          <input type="text" name="estimated_amount" value="$0" id="estimated_amount"
                            class="form-control form-control-sm text-right  text-white estimated_amount" style="background:#030335e8" readonly>
                         </td>
                         <td></td>
@@ -227,13 +227,14 @@
         @{{product_name}}
       </td>
       <td>
-        <input type="decimal" min="1" class="form-control form-control-sm text-right selling_qty" name="selling_qty[]"  value="1">
+        <input type="integer" min="1" class="form-control form-control-sm text-right selling_qty" name="selling_qty[]"  value="1">
       </td> 
       <td>
-        <input type="decimal" class="form-control form-control-sm text-right unit_price" name="unit_price[]"  value="">
+      
+        <input type="number"   pattern="[0-9]+([\.,][0-9][0-9]+)?" step="any" class="form-control form-control-sm text-right unit_price" name="unit_price[]" value="$0">
       </td>
       <td>
-        <input type="decimal" class="form-control form-control-sm text-right selling_price" name="selling_price[]"  value="0" readonly>
+        <input type="number"   pattern="[0-9]+([\.,][0-9][0-9]+)?" step="any" class="form-control form-control-sm text-right selling_price" name="selling_price[]" readonly>
       </td>
       <td><i class="btn btn-danger btn-sm fa fa-window-close removeeventmore"></i></td>
     </tr>

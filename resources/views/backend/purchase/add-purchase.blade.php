@@ -40,7 +40,7 @@
                     <div class="form-group col-md-3">
                       <label for="date">Fecha</label> 
                         <input type="text" name="date" id="date"
-                      class="form-control form-control-sm datepicker" placeholder="Fecha De Ingreso" readonly>
+                      class="form-control form-control-sm datepicker" placeholder="Fecha OC" readonly>
                    </div>
                     <div class="form-group col-md-4">
                       <label>Numero OC</label>
@@ -142,10 +142,10 @@
         @{{product_name}}
       </td>
       <td>
-        <input type="decimal" min="1" class="form-control form-control-sm text-right buying_qty" name="buying_qty[]"  value="1">
+        <input type="integer" min="1" class="form-control form-control-sm text-right buying_qty" name="buying_qty[]">
       </td> 
       <td>
-        <input type="decimal" class="form-control form-control-sm text-right unit_price" name="unit_price[]"  value="">
+        <input type="number" pattern="[0-9]+([\.,][0-9][0-9]+)?" step="0.01" class="form-control form-control-sm text-right unit_price" name="unit_price[]">
       </td>
       <td>
         <input type="text" name="description[]" class="form-control form-control-sm">

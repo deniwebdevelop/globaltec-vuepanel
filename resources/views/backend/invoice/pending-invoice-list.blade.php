@@ -58,7 +58,7 @@
                         <td>{{ $invoice->invoice_no}}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
                         <td>{{ $invoice->description }}</td>
-                        <td>{{ $invoice['payment']['total_amount'] }}</td>
+                        <td>{{ number_format($invoice['payment']['total_amount'], 2) }}</td>
                         <td>
                             @if($invoice->status=='0')
                             <span style="color: #FC4236;padding:5px">Pendiente de Venta</span>

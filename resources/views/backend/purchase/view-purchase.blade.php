@@ -49,7 +49,7 @@
                             <th>Cantidad</th>
                             <th>Precio Unitario</th>
                             <th>Total</th>
-                            <th width="13%">Estado</th>
+                            <th width="10%">Estado</th>
                             <th>Accion</th>
                         </tr>
                     </thead>
@@ -66,8 +66,8 @@
                               {{ $purchase->buying_qty }}
                               {{ $purchase['product']['unit'] }}
                             </td>
-                            <td>{{ $purchase->unit_price }}</td>
-                            <td>{{ $purchase->buying_price }}</td>
+                            <td>{{ number_format($purchase->unit_price, 2) }}</td>
+                            <td>${{ number_format($purchase->buying_price, 2) }}</td>
                             <td>
                               @if($purchase->status=='0')
                               <a href="{{ route('purchase.pending.list') }}">  <span style="color: #FC4236;padding:5px;">Pago Pendiente</a></span>

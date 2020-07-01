@@ -39,6 +39,8 @@ class CustomerController extends Controller
         $customer->mobile_three = $request->mobile_three;
         $customer->email = $request->email;
         $customer->position = $request->position;
+        $customer->country = $request->country;
+        $customer->state = $request->state;
         $customer->city = $request->city;
         $customer->address = $request->address;
         $customer->postal = $request->postal;
@@ -64,6 +66,8 @@ class CustomerController extends Controller
         $customer->mobile_three = $request->mobile_three;
         $customer->email = $request->email;
         $customer->position = $request->position;
+        $customer->country = $request->country;
+        $customer->state = $request->state;
         $customer->city = $request->city;
         $customer->address = $request->address;
         $customer->postal = $request->postal;
