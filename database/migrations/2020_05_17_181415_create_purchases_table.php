@@ -21,6 +21,8 @@ class CreatePurchasesTable extends Migration
             $table->string('purchase_no');
             $table->date('date');
             $table->string('description')->nullable();
+            $table->string('coin');
+            $table->string('origin');
             $table->double('buying_qty');
             $table->double('unit_price');
             $table->double('buying_price');

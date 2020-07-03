@@ -17,6 +17,7 @@ class CreateInvoicesTable extends Migration
             $table->id();
             $table->string('invoice_no');
             $table->date('date');
+            $table->string('payment_condition');
             $table->longText('description')->nullable();
             $table->tinyInteger('status')->defualt(0)->comment('0=Pending,1=Approve');
             $table->integer('created_by')->nullable();

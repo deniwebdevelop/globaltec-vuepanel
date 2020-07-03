@@ -51,16 +51,31 @@
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                          <label for="name">Nombre Producto</label>
+                            <label for="category_id">Tipo de Producto</label>
+                            <select name="category_id" class="form-control">
+                              <option value="">Seleccionar</option>
+                              @foreach ($categories as $category)
+                              <option value="{{ $category->id }}">{{ $category->name }}</option>
+                              @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="name">Modelo</label>
                           <input type="text" name="name" class="form-control">
                       </div>
                         <div class="form-group col-md-3">
                           <label for="brand">Marca</label>
                           <input type="text" name="brand" class="form-control">
                       </div>
+            
+                    
+                    <div class="form-group col-md-2">
+                        <label for="fob">Costo Fob</label>
+                        <input type="number"  pattern="[0-9]+([\.,][0-9]+)?" step="00.01" name="fob" class="form-control">
+                    </div>
 
                         <div class="form-group col-md-3">
-                          <label for="coin">Moneda</label>
+                          <label for="coin">Moneda de Compra</label>
                           <select name="coin" class="form-control">
                             <option value="">Seleccionar Moneda</option>
                             <option value="ARS">ARS</option>
@@ -72,10 +87,35 @@
                             <option value="RBL">Real</option>
                           </select>
                       </div>
+                      <div class="form-group col-md-3">
+                        <label for="sale_coin">Moneda de Venta</label>
+                        <select name="sale_coin" class="form-control">
+                          <option value="">Seleccionar Moneda</option>
+                          <option value="ARS">ARS</option>
+                          <option value="USD">USD-W</option>
+                          <option value="USDB">USD-B</option>
+                          <option value="USDT">USD-T</option>
+                          <option value="EUR">EUR</option>
+                          <option value="GBP">GBP</option>
+                          <option value="RBL">Real</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="sale_price">Precio de Venta</label>
+                        <input type="number" name="sale_price" class="form-control">
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        <label for="description">Descripcion</label>
+                        <input type="text" name="description" class="form-control">
+                    </div>
+
                       <div class="form-group col-md-12">
                         <label for="file">Archivos</label>
                         <input type="file" name="file" class="form-control py-5 text-white">
                     </div>
+
                         <div class="form-group col-md-12">
                         <input type="submit" value="Agregar" class="btn btn-md text-white" style="background:#030335e8">
                         </div>

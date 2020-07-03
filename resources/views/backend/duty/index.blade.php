@@ -40,6 +40,7 @@
                 <table id="example1" class="table table-bordered table-hover">
                     <thead>
                             <th width="15%">Fecha</th>
+                            <th>Cliente</th>
                             <th>Descripcion</th>
                             <th width="1%">Estado</th>
                             <th width="15%">Accion</th>
@@ -49,6 +50,7 @@
                       @foreach ($duty as $key => $duty)
                       <tr>
                         <td>{{ date('d-m-Y'),strtotime($duty->date) }}</td>
+                        <td>{{ $duty->customer_id }}</td>
                         <td>{{ $duty->descripcion }}</td>
                         <td>{{ $duty->status }}</td>
                         <td><a title="Edit" class="btn btn-sm text-white" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);" href="{{ route('duty.edit', $duty->id) }}"><i

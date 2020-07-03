@@ -80,8 +80,10 @@
                                 <input type="text" name="laboratory" id="laboratory"
                                     class="form-control form-control-sm" placeholder="Nombre Laboratorio">
                             </div>
-                        </div>
-                        <div class="form-group col-md-6">
+                       
+
+                      
+                        <div class="form-group col-md-3">
                             <label>Producto</label>
                             <select name="product_id" id="product_id" class="form-control select2">
                               <option value="">Seleccionar Producto</option>
@@ -90,37 +92,116 @@
                               @endforeach
                             </select>
                           </div> 
+                   
+                          <div class="form-group col-md-3">
+                            <label>S/N</label>
+                            <input type="text" name="serial_number" id="serial_number" class="form-control form-control-sm">
+                          </div> 
+
+                          <div class="form-group col-md-3">
+                            <label>Accesorios</label>
+                            <input type="text" name="accesories" id="accesories" class="form-control form-control-sm">
+                          </div> 
+                        </div>
+           
+                          <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label>Repuesto 1</label>
+                            <input type="text" name="spare_1" id="spare_1" class="form-control form-control-sm">
+                        </div> 
                         
-                        <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label>Repuesto 2</label>
+                            <input type="text" name="spare_2" id="spare_2" class="form-control form-control-sm">
+                        </div> 
+                    
+                        <div class="form-group col-md-2">
+                            <label>Repuesto 3</label>
+                            <input type="text" name="spare_3" id="spare_3" class="form-control form-control-sm">
+                        </div> 
+                       
+                        <div class="form-group col-md-2">
+                            <label>Repuesto 4</label>
+                            <input type="text" name="spare_4" id="spare_4" class="form-control form-control-sm">
+                        </div> 
+                       
+                        <div class="form-group col-md-2">
+                            <label>Repuesto 5</label>
+                            <input type="text" name="spare_5" id="spare_5" class="form-control form-control-sm">
+                        </div> 
+                        </div>
+                       
+                        <div class="form-row mt-5 text-center">
                             <div class="form-group col-md-2">
-                                <label for="labcost">Costo Laboratorio</label>
+                                <label for="labcost">Laboratorio</label>
                                 <input type="decimal" name="labcost" id="labcost"
                                     class="form-control form-control-sm">
                             </div>
-
+                            <div class="form-group col-md-2 text-center">
+                                <label for="labcost_coin">Moneda</label>
+                                <select name="labcost_coin" class="form-control select2">
+                                  <option value="ARS">ARS</option>
+                                  <option value="USD">USD-W</option>
+                                  <option value="USDB">USD-B</option>
+                                  <option value="USDT">USD-T</option>
+                                  <option value="EUR">EUR</option>
+                                  <option value="GBP">GBP</option>
+                                  <option value="RBL">Real</option>
+                                </select>
+                            </div>
                             <div class="form-group col-md-2">
                                 <label for="repaircost">Repuesto</label>
                                 <input type="decimal" name="repaircost" id="repaircost"
                                     class="form-control form-control-sm">
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="repaircost_coin">Moneda</label>
+                                <select name="repaircost_coin" class="form-control select2">
+                                  <option value="ARS">ARS</option>
+                                  <option value="USD">USD-W</option>
+                                  <option value="USDB">USD-B</option>
+                                  <option value="USDT">USD-T</option>
+                                  <option value="EUR">EUR</option>
+                                  <option value="GBP">GBP</option>
+                                  <option value="RBL">Real</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row text-center">
                             <div class="form-group col-md-2">
                                 <label for="transportcost">Transporte</label>
                                 <input type="decimal" name="transportcost" id="transportcost"
                                     class="form-control form-control-sm">
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="transportcost_coin">Moneda</label>
+                                <select name="transportcost_coin" class="form-control select2">
+                                  <option value="ARS">ARS</option>
+                                  <option value="USD">USD-W</option>
+                                  <option value="USDB">USD-B</option>
+                                  <option value="USDT">USD-T</option>
+                                  <option value="EUR">EUR</option>
+                                  <option value="GBP">GBP</option>
+                                  <option value="RBL">Real</option>
+                                </select>
+                            </div>
                             <div class="form-group col-md-2">
                                 <label for="markup">Mark Up</label>
                                 <input type="decimal" name="markup" id="markup"
                                     class="form-control form-control-sm">
                             </div>
-                        
                             <div class="form-group col-md-2">
-                                <label for="repair_total">Total</label>
-                                <input type="decimal" name="repair_total" id="repair_total" value="0"
-                                    class="form-control form-control-sm text-white" style="background:#030335e8">
-                            </div> 
+                                <label for="markup_coin">Moneda</label>
+                                <select name="markup_coin" class="form-control select2">
+                                  <option value="ARS">ARS</option>
+                                  <option value="USD">USD-W</option>
+                                  <option value="USDB">USD-B</option>
+                                  <option value="USDT">USD-T</option>
+                                  <option value="EUR">EUR</option>
+                                  <option value="GBP">GBP</option>
+                                  <option value="RBL">Real</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-row">
@@ -133,7 +214,16 @@
                                     <option value="Entregado">Entregado A Cliente</option>
                                 </select>
                             </div>
-
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="fail_description">Descripcion de Falla</label>
+                            <input type="text" name="fail_description" class="form-control form-control-md">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="repair_description">Descripcion de Reparacion</label>
+                            <input type="text" name="repair_description" class="form-control form-control-md">
+                        </div>
                             <div class="form-group col-md-12">
                                 <label for="file">Archivos</label>
                                 <input type="file" name="file" multiple class="form-control py-5">

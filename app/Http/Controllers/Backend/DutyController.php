@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Duty;
+use App\Model\Customer;
 use Session;
 use Auth;
 
@@ -28,7 +29,8 @@ class DutyController extends Controller
      */
     public function create()
     {
-        return view('backend.duty.create');
+        $data['customers'] = Customer::all();
+        return view('backend.duty.create', $data);
     }
 
     /**
@@ -42,6 +44,7 @@ class DutyController extends Controller
        
         $duty = new Duty();
         $duty->date = date('Y-m-d',strtotime($request->date));
+        $duty->customer_id = $request->customer_id;
         $duty->descripcion = $request->descripcion;
         $duty->status = $request->status;
         $duty->created_by = Auth::user()->id;

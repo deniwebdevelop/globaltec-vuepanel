@@ -32,7 +32,11 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->name = $request->name;
         $product->brand = $request->brand;
+        $product->description = $request->description;
+        $product->fob = $request->fob;
+        $product->sale_price = $request->sale_price;
         $product->coin = $request->coin;
+        $product->sale_coin = $request->sale_coin;
         $product->quantity = '0';
         $product->created_by = Auth::user()->id;
         $product->save();
@@ -58,10 +62,21 @@ class ProductController extends Controller
 
     public function update(Request $request, $id){
         $product = Product::find($id);
+        if($request->file('file')){
+            $file = $request->file('file');
+            $filename = time().'.'.$file->getClientOriginalName();
+            $request->file->move('storage/', $filename);
+            $product->file = $filename;
+        }
         $product->category_id = $request->category_id;
         $product->name = $request->name;
         $product->brand = $request->brand;
+        $product->description = $request->description;
+        $product->fob = $request->fob;
+        $product->sale_price = $request->sale_price;
         $product->coin = $request->coin;
+        $product->sale_coin = $request->sale_coin;
+        $product->quantity = '0';
         $product->updated_by = Auth::user()->id;
         $product->save();
         Session::flash('success');

@@ -46,12 +46,14 @@
                       <label>Numero OC</label>
                       <input type="text" name="purchase_no" id="purchase_no" class="form-control form-control-sm">
                     </div>
+                  </div>
+                  <div class="form-row">
                     <div class="form-group col-md-4">
                       <label>Proveedor</label>
                       <select name="customer_id" id="customer_id" class="form-control select2">
                         <option value="">Seleccionar Proveedor</option>
                         @foreach($customers as $customer)
-                        <option value="{{$customer->id}}">{{$customer->name}} {{ $customer->company }}</option>
+                        <option value="{{$customer->id}}">{{$customer->name}} | {{ $customer->company }}</option>
                         @endforeach
                       </select>
                     </div>
@@ -64,15 +66,16 @@
                         @endforeach
                       </select>
                     </div>
-                    <div class="form-group col-md-6">
-                      <label>Producto</label>
+                    <div class="form-group col-md-4">
+                      <label>Marca | Modelo</label>
                       <select name="product_id" id="product_id" class="form-control select2">
                         <option value="">Seleccionar Producto</option>
                         @foreach($products as $data)
-                        <option value="{{$data->id}}">{{$data->name}}</option>
-                        @endforeach
+                        <option value="{{$data->id}}">{{ $data->brand }} | {{$data->name}} </option>
+                        @endforeach 
                       </select>
                     </div>
+                    
                     <div class="form-group col-md-2" style="padding-top: 30px;">
                       <a class="btn text-white addeventmore btn-sm" style="background:#030335e8"><i class="fa fa-plus-circle"></i> Agregar Producto</a>
                     </div>
@@ -86,7 +89,7 @@
                     <thead>
                       <tr>
                         <th>Categoria</th>
-                        <th>Producto</th>
+                        <th>Modelo</th>
                         <th width="7%">Cantidad</th>
                         <th width="10%">Precio Unitario</th>
                         <th>Descripcion</th>
@@ -95,7 +98,24 @@
                       </tr>
                     </thead>
                     <tbody id="addRow" class="addRow">
-
+                      <div class="form-group col-md-4">
+                        <label for="coin">Moneda</label>
+                        <select name="coin" class="form-control select2">
+                          <option value="">Seleccionar Moneda</option>
+                          <option value="ARS">ARS</option>
+                          <option value="USD">USD-W</option>
+                          <option value="USDB">USD-B</option>
+                          <option value="USDT">USD-T</option>
+                          <option value="EUR">EUR</option>
+                          <option value="GBP">GBP</option>
+                          <option value="RBL">Real</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group col-md-4">
+                      <label for="origin">Origen</label>
+                      <input type="text" name="origin" id="origin" class="form-control form-control-sm">
+                    </div>
                     </tbody>
                     <tbody>
                       <tr>
@@ -108,6 +128,8 @@
                     </tbody>
                   </table>
                   <br>
+   
+
                   <div class="form-group">
                     <button type="submit" class="btn btn-md text-white" style="background:#030335e8" id="storeButton">Agregar</button>
                   </div>
@@ -142,13 +164,13 @@
         @{{product_name}}
       </td>
       <td>
-        <input type="integer" min="1" class="form-control form-control-sm text-right buying_qty" name="buying_qty[]">
+        <input type="integer" min="1" class="form-control form-control-sm text-right buying_qty" name="buying_qty[]" value="1">
       </td> 
       <td>
         <input type="number" pattern="[0-9]+([\.,][0-9][0-9]+)?" step="0.01" class="form-control form-control-sm text-right unit_price" name="unit_price[]">
       </td>
-      <td>
-        <input type="text" name="description[]" class="form-control form-control-sm">
+       <td>
+        <input type="text" name="description" class="form-control form-control-sm">
       </td>
       <td>
         <input type="decimal" class="form-control form-control-sm text-right buying_price" name="buying_price[]"  value="0" readonly>
@@ -238,5 +260,43 @@
           format :'dd-mm-yyyy'
       });
   </script>
-
+<script type="text/javascript">
+  $(document).ready(function (){
+    $('#myForm').validate({
+      rules:{
+        purchase_no: {
+            required: true,
+        },
+        origin: {
+            required: true,
+        },
+        coin: {
+            required: true,
+        }
+      },
+      messages: {
+        purchase_no: {
+            required: "Ingresar OC",
+        },
+        origin: {
+            required: "Ingresar Origen",
+        },
+        coin: {
+            required: "Ingresar Moneda",
+        }
+      },
+      errorElement: 'span',
+      errorPlacement: function(error, element){
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass){
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass){
+        $(element).removeClass('is-invalid');
+      }
+    });
+  });
+  </script>
 @endsection

@@ -37,6 +37,7 @@ class InvoiceController extends Controller
         }
         $data['customers'] = Customer::all();
         $data['date'] = date('Y-m-d');
+        $data['products'] = Product::all();
         return view('backend.invoice.add-invoice', $data);
     }
 
@@ -50,6 +51,7 @@ class InvoiceController extends Controller
             $invoice = new Invoice();
             $invoice->invoice_no = $request->invoice_no;
             $invoice->date = date('Y-m-d',strtotime($request->date));
+            $invoice->payment_condition = $request->payment_condition;
             $invoice->description = $request->description;
             $invoice->status = '0';
             $invoice->created_by = Auth::user()->id;

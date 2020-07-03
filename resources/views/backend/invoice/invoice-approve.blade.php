@@ -75,7 +75,12 @@
                                 </tr>
                                 <tr>
                                     <td width="15%" colspan="2">
-                                        <p><strong>Descripcion :</strong>{{ $invoice->description }}</p>
+                                        <p><strong>Descripcion :</strong> {{ $invoice->description }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" colspan="2">
+                                        <p><strong>Condicion de Pago :</strong> {{ $invoice->payment_condition }}</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -107,8 +112,8 @@
                                         <td>{{ $details['category']['name'] }}</td>
                                         <td>{{ $details['product']['name']}}</td>
                                         <td>{{ $details->selling_qty }}</td>
-                                        <td>$ {{ number_format($details->unit_price, 2) }}</td>
-                                        <td>$ {{ number_format($details->selling_price, 2) }}</td>
+                                        <td>{{ number_format($details->unit_price, 2) }}</td>
+                                        <td>{{ number_format($details->selling_price, 2) }}</td>
                                     </tr>
                                     @php
                                     $total_sum += $details->selling_price;
@@ -128,7 +133,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="6" class="text-right">Monto Adeudado</td>
-                                        <td class="text-center"><strong>{{ number_format($payment->due_amount, 2) }}</strong></td>
+                                        <td class="text-center"><strong>$ {{ number_format($payment->due_amount, 2) }}</strong></td>
                                     </tr>
                                     <tr>
                                         <td colspan="6" class="text-right">Total</td>
