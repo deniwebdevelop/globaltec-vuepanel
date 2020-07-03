@@ -38,16 +38,20 @@
                         </div>
                     </div><!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example1" class="table table-striped">
+                        <table id="example1" class="table table-striped table-responsive" width="100%">
                             <thead class="thead">
                                 <tr>
                                     <th style="display: none">Codigo</th>
                                     <th>Categoria</th>
-                                    <th>Nombre</th>
+                                    <th>Tipo de Producto</th>
+                                    <th>Modelo</th>
                                     <th>Marca</th>
-                                    <th>Moneda</th>
-                                    
-                                    <th style="width: 15%;">Action</th>
+                                    <th>Descripcion</th>
+                                    <th>Costo FOB</th>
+                                    <th width="30%">Moneda de Compra</th>
+                                    <th width="30%">Moneda de Venta</th>
+                                    <th width="30%">Precio de Venta</th>
+                                    <th style="width: 60%;">Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,9 +59,14 @@
                                 <tr>
                                     <td style="display: none">{{ $key+1 }}</td>
                                     <td>{{ $product['category']['name']}}</td>
+                                    <td>{{ $product['category']['name']}}</td>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->brand }}</td>
+                                    <td>{{ $product->description }}</td>
+                                    <td>{{ $product->fob }}</td>
                                     <td>{{ $product->coin }}</td>
+                                    <td>{{ $product->sale_coin }}</td>
+                                    <td>{{ $product->sale_price }}</td>
                                     @php
                                     $count_product = App\Model\Purchase::where('product_id',$product->id)->count();
                                     @endphp

@@ -36,7 +36,7 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-striped">
+                <table id="example1" class="table table-striped table-responsive" width="100%">
                     <thead style="font-size: 14px">
                         <tr>
                             <th style="display: none">Codigo</th>
@@ -44,12 +44,14 @@
                             <th>Ingreso</th>
                             <th>Envio</th>
                             <th>Devolucion</th>
-                            <th>Cliente</th>
-                            <th>Lab</th>
-                            <th>Producto</th>
-                            <th>Total</th>
+                            <th>Entrega</th>
+                            <th>Laboratorio</th>
+                            <th>Falla</th>
+                            <th>Reparacion</th>
+                            <th>S/N</th>
+                            <th>Accesorios</th>
                             <th>Estado</th>
-                            <th>Accion</th>
+                            <th width="15%">Accion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,8 +64,10 @@
                             <td>{{$data->labreturn}}</td>
                             <td>{{$data->deliver}}</td>
                             <td>{{ $data->laboratory }}</td>
-                            <td>{{ $data->product_id}}</td>
-                            <td>{{ $data->repair_total }}</td>
+                            <td>{{ $data->fail_description }}</td>
+                            <td>{{ $data->repair_description }}</td>
+                            <td>{{ $data->serial_number }}</td>
+                            <td>{{ $data->accesories }}</td>
                             <td>{{ $data->status }}</td>
                             <td>
                                 <a title="View" target="_blank" class="btn btn-sm btn-warning" href="{{ route('repair.show', $data->id) }}"><i

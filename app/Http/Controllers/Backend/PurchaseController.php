@@ -23,7 +23,8 @@ class PurchaseController extends Controller
     public function add(){
         $data['customers'] = Customer::all();
         $data['products'] = Product::all();
-    	$data['categories'] = Category::all();
+        $data['categories'] = Category::all();
+        $data['purchase'] = Purchase::all();
     	return view('backend.purchase.add-purchase',$data);
     }
 
@@ -32,6 +33,7 @@ class PurchaseController extends Controller
             return redirect()->back();
         }else{
             $count_category = count($request->category_id);
+         
             for ($i=0; $i <$count_category ; $i++) { 
                 $purchase = new Purchase();
                 $purchase->date = date('Y-m-d',strtotime($request->date[$i]));
@@ -39,6 +41,8 @@ class PurchaseController extends Controller
                 $purchase->customer_id = $request->customer_id[$i];
                 $purchase->category_id = $request->category_id[$i];
                 $purchase->product_id = $request->product_id[$i];
+                $purchase->coin = $request->coin;
+                $purchase->origin = $request->origin;
                 $purchase->buying_qty = $request->buying_qty[$i];
                 $purchase->unit_price = $request->unit_price[$i];
                 $purchase->buying_price = $request->buying_price[$i];

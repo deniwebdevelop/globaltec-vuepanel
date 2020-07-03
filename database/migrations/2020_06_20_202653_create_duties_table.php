@@ -16,6 +16,7 @@ class CreateDutiesTable extends Migration
         Schema::create('duties', function (Blueprint $table) {
             $table->id();
             $table->date('date');
+            $table->integer('customer_id');
             $table->longText('descripcion')->nullable();
             $table->string('status');
             $table->integer('created_by')->nullable();

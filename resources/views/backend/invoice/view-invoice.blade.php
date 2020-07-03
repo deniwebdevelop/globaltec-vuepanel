@@ -43,6 +43,7 @@
                             <th>Cliente</th>
                             <th>Numero</th>
                             <th>Fecha</th>
+                            <th>Condicion De pago</th>
                             <th>Descripcion</th>
                             <th>Monto</th>
                             <th width="20%">Estado</th>
@@ -57,6 +58,7 @@
                         </td>
                         <td>{{ $invoice->invoice_no}}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
+                        <td>{{ $invoice->payment_condition }}</td>
                         <td>{{ $invoice->description }}</td>
                         <td>{{ number_format($invoice['payment']['total_amount'], 2) }}</td>
                         <td>

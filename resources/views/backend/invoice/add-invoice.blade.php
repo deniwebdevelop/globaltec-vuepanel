@@ -51,7 +51,7 @@
  
                     <div class="form-group col-md-3">
                       <label>Categoria</label>
-                      <select name="category_id" id="category_id" class="form-control select2">
+                      <select name="category_id" id="category_id" class="form-control select2" required>
                         <option value="">Seleccionar Categoria</option>
                         @foreach($categories as $category)
                         <option value="{{$category->id}}">{{$category->name}}</option>
@@ -61,7 +61,7 @@
 
                     <div class="form-group col-md-3">
                       <label>Producto</label>
-                      <select name="product_id" id="product_id" class="form-control select2">
+                      <select name="product_id" id="product_id" class="form-control select2" required>
                         <option value="">Seleccionar Producto</option>
                       </select>
                     </div>
@@ -108,13 +108,14 @@
                         <td class="text-right" colspan="4">Precio Final</td>
                         <td>
                           <input type="text" name="estimated_amount" value="$0" id="estimated_amount"
-                           class="form-control form-control-sm text-right  text-white estimated_amount" style="background:#030335e8" readonly>
+                           class="form-control form-control-sm text-right text-white estimated_amount" style="background:#030335e8" readonly>
                         </td>
                         <td></td>
                     </tr>
                     </tbody>
                   </table>
                   <br/>
+
                   <div class="form-row">
                     <div class="form-group col-md-12">
                       <textarea name="description" class="form-control" id="description" placeholder="Agregar Descripcion"></textarea>
@@ -122,6 +123,14 @@
                   </div>
 
                   <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <label>Cliente</label>
+                      <select name="customer_id" id="customer_id" class="form-control form-control-sm" required>
+                        <option value="">Seleccionar Cliente</option>
+
+                      </select>
+                    </div>
+
                     <div class="form-group col-md-3">
                       <label>Estado de Pago</label>
                       <select name="paid_status" id="paid_status" class="form-control form-control-sm" required>
@@ -132,22 +141,17 @@
                       </select>
                       <input type="text" name="paid_amount" class="form-control form-control-sm paid_amount" placeholder="Ingresar Monto Pagado" style="display:none;">
                     </div>
-                    <div class="form-group col-md-9">
-                      <label>Cliente</label>
-                      <select name="customer_id" id="customer_id" class="form-control form-control-sm" required>
-                        <option value="">Seleccionar Cliente</option>
-                        @foreach ($customers as $customer)
-                        <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->company }})</option>
-                        @endforeach
-                        <option value="0">Nuevo Cliente</option>
-                      </select>
+                    
+                  <div class="form-group col-md-3">
+                    <label for="payment_condition">Condicion de Pago</label>
+                    <input type="text" name="payment_condition" id="payment_condition" class="form-control form-control-sm payment_condition" required placeholder="Ingresar Condicion de Pago">
                     </div>
                   </div>
                  
                   <div class="form-row new_customer" style="display: none;">
                     <div class="form-group col-md-4">
                       <input type="text" name="name" id="name" class="form-control form-control-sm"
-                      placeholder="Nombre">
+                      placeholder="Nombre (Obligatorio)">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="company" id="company" class="form-control form-control-sm"
@@ -155,7 +159,7 @@
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="mobile_no" id="mobile_no" class="form-control form-control-sm"
-                      placeholder="Telefono">
+                      placeholder="Telefono (Obligatorio)">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="mobile_two" id="mobile_two" class="form-control form-control-sm"
@@ -167,7 +171,7 @@
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="email" id="email" class="form-control form-control-sm"
-                      placeholder="E-mail">
+                      placeholder="E-mail (Obligatorio)">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="position" id="position" class="form-control form-control-sm"
@@ -187,7 +191,7 @@
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="cuit" id="cuit" class="form-control form-control-sm"
-                      placeholder="Cuit">
+                      placeholder="Cuit (Obligatorio)">
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" name="website" id="website" class="form-control form-control-sm"
@@ -211,10 +215,10 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+<!-- /.content-wrapper -->
 
-  <!-- Extra HTML for If exist Event -->
-  <script id="document-template" type="text/x-handlebars-template">
+<!-- Extra HTML for If exist Event -->
+<script id="document-template" type="text/x-handlebars-template">
     <tr class="delete_add_more_item" id="delete_add_more_item">
       <input type="hidden" name="date" value="@{{date}}">
       <input type="hidden" name="invoice_no" value="@{{invoice_no}}">
@@ -227,7 +231,7 @@
         @{{product_name}}
       </td>
       <td>
-        <input type="integer" min="1" class="form-control form-control-sm text-right selling_qty" name="selling_qty[]"  value="1">
+        <input type="number" min="1" class="form-control form-control-sm text-right selling_qty" name="selling_qty[]"  value="1">
       </td> 
       <td>
       
@@ -367,6 +371,39 @@ $(document).on('change','#customer_id',function(){
 });
 </script>
 <script>
+  <script type="text/javascript">
+    $(document).ready(function (){
+      $('#myForm').validate({
+        rules:{
+          invoice_no: {
+            required: true,
+          },
+          date: {
+            required:true,
+          }
+        },
+        messages: {
+          invoice_no: {
+            required: "Debe ingresar un nombre",
+          },
+          date: {
+            required: "Debe ingresar un telefono",
+          }
+        },
+        errorElement: 'span',
+        errorPlacement: function(error, element){
+          error.addClass('invalid-feedback');
+          element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass){
+          $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass){
+          $(element).removeClass('is-invalid');
+        }
+      });
+    });
+    </script>
       $('.datepicker').datepicker({
           uiLibrary: 'bootstrap4',
           format :'yyyy-mm-dd'

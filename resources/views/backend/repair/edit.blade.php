@@ -72,7 +72,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <label for="product_id">Producto</label>
+                            <label for="product_id">Modelo</label>
                             <input type="text" name="product_id" value="{{ $data->product_id }}" class="form-control">
                         </div>
                     </div>
@@ -92,10 +92,6 @@
                         <div class="form-group col-md-3">
                             <label for="markup">MarkUp</label>
                             <input type="decimal" name="markup" value="{{ $data->markup }}" class="form-control">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="repair_total">Total</label>
-                            <input type="decimal" name="repair_total" value="{{ $data->repair_total }}" class="form-control">
                         </div>
                     </div>
                     <div class="form-row">

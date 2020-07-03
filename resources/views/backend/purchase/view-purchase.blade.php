@@ -37,14 +37,17 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-hover" width="100%">
+                <table id="example1" class="table table-hover table-responsive" width="100%">
                   <thead style="font-size: 14px">
                         <tr>
+                            <th>Nro</th>
                             <th>OC</th>
                             <th>Fecha</th>
                             <th>Proveedor</th>
                             <th>Categoria</th>
-                            <th>Producto</th>
+                            <th>Modelo</th>
+                            <th>Origen</th>
+                            <th>Moneda</th>
                             <th>Descripcion</th>
                             <th>Cantidad</th>
                             <th>Precio Unitario</th>
@@ -55,12 +58,15 @@
                     </thead>
                     <tbody>
                     @foreach($allData as $key => $purchase)
-                        <tr>
+                        <tr> 
+                            <th>{{ $key+1 }}</th>
                             <td>{{ $purchase->purchase_no }}</td>
                             <td>{{ date('d/m/Y',strtotime($purchase->date)) }}</td>
                             <td>{{ $purchase['customer']['company'] }}</td>
                             <td>{{ $purchase['category']['name']}}</td>
                             <td>{{ $purchase['product']['name']}}</td>
+                            <td>{{ $purchase->origin }}</td>
+                            <td>{{ $purchase->coin }}</td>
                             <td>{{ $purchase->description}}</td>
                             <td>
                               {{ $purchase->buying_qty }}
