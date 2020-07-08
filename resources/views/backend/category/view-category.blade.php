@@ -36,12 +36,12 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover table-responsive">
+                <table id="example1" class="table table-bordered table-hover table-responsive text-center">
                     <thead class="thead">
                         <tr>
                             <th style="display: none">Codigo</th>
-                            <th width="30%">Tipo Categoria</th>
-                            <th width="70%">Nombre</th>
+                            <th width="40%">Tipo de Categoria</th>
+                            <th width="60%">Tipo de Producto</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -49,7 +49,7 @@
                     @foreach($allData as $key => $category)
                         <tr>
                             <td style="display: none">{{$key+1}}</td>
-                            <td class="text-center">{{$category->type}}</td>
+                            <td>{{$category->type}}</td>
                             <td>{{$category->name}}</td>
                             <td>
                               @php

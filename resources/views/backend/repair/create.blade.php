@@ -133,7 +133,7 @@
                        
                         <div class="form-row mt-5 text-center">
                             <div class="form-group col-md-2">
-                                <label for="labcost">Laboratorio</label>
+                                <label for="labcost">Costo Laboratorio</label>
                                 <input type="decimal" name="labcost" id="labcost"
                                     class="form-control form-control-sm">
                             </div>
@@ -150,7 +150,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="repaircost">Repuesto</label>
+                                <label for="repaircost">Costo Repuesto</label>
                                 <input type="decimal" name="repaircost" id="repaircost"
                                     class="form-control form-control-sm">
                             </div>
@@ -169,7 +169,7 @@
                         </div>
                         <div class="form-row text-center">
                             <div class="form-group col-md-2">
-                                <label for="transportcost">Transporte</label>
+                                <label for="transportcost">Costo Transporte</label>
                                 <input type="decimal" name="transportcost" id="transportcost"
                                     class="form-control form-control-sm">
                             </div>
