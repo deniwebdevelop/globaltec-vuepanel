@@ -12,7 +12,7 @@ use PDF;
 class StockController extends Controller
 {
     public function stockReport(){ 
-        $allData = Product::orderBy('name','asc')->orderBy('category_id','asc')->get();
+        $allData = Product::orderBy('model','asc')->orderBy('category_id','asc')->get();
         return view('backend.stock.stock-report', compact('allData'));
     }
 

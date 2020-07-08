@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Stock</li> 
+              <li class="breadcrumb-item active">Categorias</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -30,33 +30,33 @@
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="font-weight-light text-white">Stock
+                 <h3 class="font-weight-light text-white">Tipo de Producto
+                     <a class="btn bg-white float-right btn-sm" href="{{ route('ptype.add') }}"><i class="fa fa-plus-circle"></i> Agregar</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-bordered table-hover text-center">
                     <thead class="thead">
                         <tr>
-                            <th>Categoria</th>
-                            <th>Modelo</th>
-                            <th>Entrante</th>
-                            <th>Saliente</th>
-                            <th>Stock</th>
+                            <th style="display: none">Codigo</th>
+                            <th width="60%">Tipo de Producto</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($allData as $key => $product)
-                    @php
-                        $buying_total = App\Model\Purchase::where('category_id',$product->category_id)->where('product_id',$product->id)->where('status','1')->sum('buying_qty');
-                        $selling_total = App\Model\InvoiceDetail::where('category_id',$product->category_id)->where('product_id',$product->id)->where('status','1')->sum('selling_qty');
-                    @endphp
+                    @foreach($allData as $key => $ptype)
                         <tr>
-                            <td>{{ $product['category']['name']}}</td>
-                            <td>{{ $product->model }}</td>
-                            <td>{{ $buying_total }}</td>
-                            <td>{{ $selling_total }}</td>
-                            <td>{{ $product->quantity }}</td>
+                            <td style="display: none">{{$key+1}}</td>
+                            <td>{{$ptype->name}}</td>
+                            <td>
+                                <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('ptype.delete', $ptype->id) }}"><i
+                                    class="fa fa-trash"></i></a>
+                                    <a title="Edit" class="btn btn-sm text-white"
+                                    style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);"
+                                    href="{{ route('ptype.edit', $ptype->id) }}"><i
+                                        class="fa fa-edit"></i></a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

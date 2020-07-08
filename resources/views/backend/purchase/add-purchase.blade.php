@@ -71,20 +71,38 @@
                       <select name="product_id" id="product_id" class="form-control select2">
                         <option value="">Seleccionar Producto</option>
                         @foreach($products as $data)
-                        <option value="{{$data->id}}">{{ $data->brand }} | {{$data->name}} </option>
+                        <option value="{{$data->id}}">{{ $data->brand }} | {{$data->model}} </option>
                         @endforeach 
                       </select>
                     </div>
-                    
-                    <div class="form-group col-md-2" style="padding-top: 30px;">
-                      <a class="btn text-white addeventmore btn-sm" style="background:#030335e8"><i class="fa fa-plus-circle"></i> Agregar Producto</a>
-                    </div>
                   </div>
+
+              
               </div><!-- /.card-body -->
 
               <div class="card-body">
                 <form method="post" action="{{route('purchase.store')}}" id="myForm">
                   @csrf
+                  <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="coin">Moneda</label>
+                    <select name="coin" class="form-control select2">
+                      <option value="">Seleccionar Moneda</option>
+                      <option value="ARS">ARS</option>
+                      <option value="USD">USD-W</option>
+                      <option value="USDB">USD-B</option>
+                      <option value="USDT">USD-T</option>
+                      <option value="EUR">EUR</option>
+                      <option value="GBP">GBP</option>
+                      <option value="RBL">Real</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="origin">Origen</label>
+                  <input type="text" name="origin" id="origin" class="form-control form-control-sm">
+                </div>
+              </div>
                   <table class="table-sm table-bordered" width="100%">
                     <thead>
                       <tr>
@@ -97,25 +115,13 @@
                         <th>Action</th>
                       </tr>
                     </thead>
+                    
+                 
+                  <div class="form-group col-md-2" style="padding-top: 30px;">
+                    <a class="btn text-white addeventmore btn-sm" style="background:#030335e8"><i class="fa fa-plus-circle"></i> Agregar Producto</a>
+                  </div>
                     <tbody id="addRow" class="addRow">
-                      <div class="form-group col-md-4">
-                        <label for="coin">Moneda</label>
-                        <select name="coin" class="form-control select2">
-                          <option value="">Seleccionar Moneda</option>
-                          <option value="ARS">ARS</option>
-                          <option value="USD">USD-W</option>
-                          <option value="USDB">USD-B</option>
-                          <option value="USDT">USD-T</option>
-                          <option value="EUR">EUR</option>
-                          <option value="GBP">GBP</option>
-                          <option value="RBL">Real</option>
-                        </select>
-                    </div>
-    
-                    <div class="form-group col-md-4">
-                      <label for="origin">Origen</label>
-                      <input type="text" name="origin" id="origin" class="form-control form-control-sm">
-                    </div>
+   
                     </tbody>
                     <tbody>
                       <tr>

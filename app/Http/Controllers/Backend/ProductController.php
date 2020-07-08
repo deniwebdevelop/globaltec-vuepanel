@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Product;
 use App\Model\Category;
+use App\Model\Ptype;
 use Auth;
 use Session;
 
@@ -18,6 +19,7 @@ class ProductController extends Controller
 
     public function add(){
         $product['categories'] = Category::all();
+        $product['ptypes'] = Ptype::all();
         return view('backend.product.add-product', $product);
     }
 
@@ -30,12 +32,13 @@ class ProductController extends Controller
             $product->file = $filename;
         }
         $product->category_id = $request->category_id;
-        $product->name = $request->name;
+        $product->ptype_id = $request->ptype_id;
+        $product->model = $request->model;
         $product->brand = $request->brand;
         $product->description = $request->description;
         $product->fob = $request->fob;
         $product->sale_price = $request->sale_price;
-        $product->coin = $request->coin;
+        $product->buy_coin = $request->buy_coin;
         $product->sale_coin = $request->sale_coin;
         $product->quantity = '0';
         $product->created_by = Auth::user()->id;
@@ -57,6 +60,7 @@ class ProductController extends Controller
     public function edit($id){
         $data['editData'] = Product::find($id);
         $data['categories'] = Category::all();
+        $data['ptypes'] = Ptype::all();
         return view('backend.product.edit-product', $data);
     }
 
@@ -69,12 +73,13 @@ class ProductController extends Controller
             $product->file = $filename;
         }
         $product->category_id = $request->category_id;
-        $product->name = $request->name;
+        $product->ptype_id = $request->ptype_id;
+        $product->model = $request->model;
         $product->brand = $request->brand;
         $product->description = $request->description;
         $product->fob = $request->fob;
         $product->sale_price = $request->sale_price;
-        $product->coin = $request->coin;
+        $product->buy_coin = $request->buy_coin;
         $product->sale_coin = $request->sale_coin;
         $product->quantity = '0';
         $product->updated_by = Auth::user()->id;

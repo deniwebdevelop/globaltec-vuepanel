@@ -44,24 +44,24 @@
                         <div class="form-group col-md-3">
                             <label for="category_id">Categoria</label>
                             <select name="category_id" class="form-control">
-                              <option value="">Seleccionar Categoria</option>
-                              @foreach ($categories as $category)
-                              <option value="{{ $category->id }}">{{ $category->type }}</option>
-                              @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="category_id">Tipo de Producto</label>
-                            <select name="category_id" class="form-control">
                               <option value="">Seleccionar</option>
                               @foreach ($categories as $category)
-                              <option value="{{ $category->id }}">{{ $category->name }}</option>
+                              <option value="{{ $category->id }}">{{ $category->type }} - {{ $category->name }}</option>
                               @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                          <label for="name">Modelo</label>
-                          <input type="text" name="name" class="form-control">
+                            <label for="ptype_id">Tipo de Producto</label>
+                            <select name="ptype_id" class="form-control">
+                              <option value="">Seleccionar</option>
+                              @foreach ($ptypes as $ptype)
+                              <option value="{{ $ptype->id }}">{{ $ptype->name }}</option>
+                              @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="model">Modelo</label>
+                          <input type="text" name="model" class="form-control">
                       </div>
                         <div class="form-group col-md-3">
                           <label for="brand">Marca</label>
@@ -75,9 +75,9 @@
                     </div>
 
                         <div class="form-group col-md-3">
-                          <label for="coin">Moneda de Compra</label>
-                          <select name="coin" class="form-control">
-                            <option value="">Seleccionar Moneda</option>
+                          <label for="buy_coin">Moneda de Compra</label>
+                          <select name="buy_coin" class="form-control">
+                            <option value="">Moneda de Compra</option>
                             <option value="ARS">ARS</option>
                             <option value="USD">USD-W</option>
                             <option value="USDB">USD-B</option>
@@ -90,7 +90,7 @@
                       <div class="form-group col-md-3">
                         <label for="sale_coin">Moneda de Venta</label>
                         <select name="sale_coin" class="form-control">
-                          <option value="">Seleccionar Moneda</option>
+                          <option value="">Moneda de Venta</option>
                           <option value="ARS">ARS</option>
                           <option value="USD">USD-W</option>
                           <option value="USDB">USD-B</option>

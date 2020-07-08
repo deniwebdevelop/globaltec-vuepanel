@@ -32,6 +32,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('ptype.view') }}" class="nav-link text-white">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Tipo de Producto</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('products.view') }}" class="nav-link text-white">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Productos</p>

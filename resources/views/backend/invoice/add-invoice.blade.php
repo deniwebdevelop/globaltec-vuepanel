@@ -231,7 +231,7 @@
       </td>
       <td>
         <input type="hidden" name="product_id[]" value="@{{product_id}}">
-        @{{product_name}}
+        @{{product_model}}
       </td>
       <td>
         <input type="number" min="1" class="form-control form-control-sm text-right selling_qty" name="selling_qty[]"  value="1">
@@ -255,7 +255,7 @@
         var category_id  = $('#category_id').val();
         var category_name = $('#category_id').find('option:selected').text();
         var product_id  = $('#product_id').val();
-        var product_name  = $('#product_id').find('option:selected').text();
+        var product_model  = $('#product_id').find('option:selected').text();
 
         if(date==''){
           $.notify("Date is required", {globalPosition: 'top right',className: 'error'});
@@ -278,7 +278,7 @@
                   category_id:category_id,
                   category_name:category_name,
                   product_id:product_id,
-                  product_name:product_name
+                  product_model:product_model
             };
         var html = template(data);
         $("#addRow").append(html);
@@ -330,7 +330,7 @@
           success:function(data){
             var html = '<option value="">Seleccionar Producto</option>';
             $.each(data,function(key,v){
-              html +='<option value="'+v.id+'">'+v.name+'</option>';
+              html +='<option value="'+v.id+'">'+v.model+'</option>';
             });
             $('#product_id').html(html);
           }
