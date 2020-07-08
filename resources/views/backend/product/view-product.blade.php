@@ -28,8 +28,7 @@
                 <!-- Left col -->
                 <section class="col-md-12">
                     <!-- Custom tabs (Charts with tabs)-->
-                    <div class="card"
-                        style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
+                    <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
                         <div class="card-header">
                             <h3 class="font-weight-light text-white">Productos
                                 <a class="btn bg-white float-right btn-sm" href="{{ route('products.add') }}"><i
@@ -59,12 +58,12 @@
                                 <tr>
                                     <td style="display: none">{{ $key+1 }}</td>
                                     <td>{{ $product['category']['name']}}</td>
-                                    <td>{{ $product['category']['name']}}</td>
-                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product['ptype']['name']}}</td>
+                                    <td>{{ $product->model }}</td>
                                     <td>{{ $product->brand }}</td>
                                     <td>{{ $product->description }}</td>
                                     <td>{{ $product->fob }}</td>
-                                    <td>{{ $product->coin }}</td>
+                                    <td>{{ $product->buy_coin }}</td>
                                     <td>{{ $product->sale_coin }}</td>
                                     <td>{{ $product->sale_price }}</td>
                                     @php

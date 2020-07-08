@@ -52,17 +52,17 @@
                         </div>
 
                         <div class="form-group col-md-3">
-                          <label for="category_id">Tipo de Producto</label>
-                          <select name="category_id" class="form-control">
-                            <option value="">Seleccionar Tipo</option>
-                            @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" {{ ($editData->category_id==$category->id)?"selected":'' }}>{{ $category->name }}</option>
+                          <label for="ptype_id">Tipo de Producto</label>
+                          <select name="ptype_idx" class="form-control">
+                            <option value="">Seleccionar</option>
+                            @foreach ($ptypes as $ptype)
+                            <option value="{{ $ptype->id }}" {{ ($editData->ptype_id==$ptype->id)?"selected":'' }}>{{ $ptype->name }}</option>
                             @endforeach
                           </select>
                       </div>
                         <div class="form-group col-md-3">
-                          <label for="name">Modelo</label>
-                          <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
+                          <label for="model">Modelo</label>
+                          <input type="text" name="model" value="{{ $editData->model }}" class="form-control">
                       </div>
                         <div class="form-group col-md-3">
                           <label for="brand">Marca</label>
@@ -74,9 +74,9 @@
                         <input type="text" name="fob" class="form-control" value="{{ $editData->fob }}">
                     </div>
            
-                        <div class="form-group col-md-6">
-                          <label for="coin">Moneda de Compra</label>
-                          <select name="coin" class="form-control">
+                        <div class="form-group col-md-3">
+                          <label for="buy_coin">Moneda de Compra</label>
+                          <select name="buy_coin" class="form-control">
                             <option value="">Seleccionar Moneda</option>
                             <option value="ARS">ARS</option>
                             <option value="USD">USD-W</option>
@@ -88,7 +88,7 @@
                           </select>
                       </div>
 
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-3">
                         <label for="sale_coin">Moneda de Venta</label>
                         <select name="sale_coin" class="form-control">
                           <option value="">Seleccionar Moneda</option>

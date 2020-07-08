@@ -76,6 +76,15 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/delete/{id}','Backend\CategoryController@delete')->name('categories.delete');
 	});
 
+	Route::prefix('ptype')->group(function(){
+		Route::get('/view','Backend\PtypeController@view')->name('ptype.view');
+		Route::get('/add','Backend\PtypeController@add')->name('ptype.add');
+		Route::post('/store','Backend\PtypeController@store')->name('ptype.store');
+		Route::get('/edit/{id}','Backend\PtypeController@edit')->name('ptype.edit');
+		Route::post('/update/{id}','Backend\PtypeController@update')->name('ptype.update');
+		Route::get('/delete/{id}','Backend\PtypeController@delete')->name('ptype.delete');
+	});
+
 	Route::prefix('products')->group(function(){
 		Route::get('/view','Backend\ProductController@view')->name('products.view');
 		Route::get('/add','Backend\ProductController@add')->name('products.add');

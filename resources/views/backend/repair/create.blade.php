@@ -49,25 +49,25 @@
                                     </div>
                                 </div>
                                 <div class="form-row py-2">    
-                                    <div class="form-group col-md-3">
+                                    <div class="form-group col-md-2">
                                         <label for="admission">Ingreso</label> 
                                           <input type="text" name="admission" id="admission"
                                         class="form-control form-control-sm" placeholder="Fecha De Ingreso" readonly>
                                      </div>
 
-                                    <div class="form-group col-md-3">
+                                    <div class="form-group col-md-2">
                                         <label for="labsent">Envio Laboratorio</label>
                                         <input type="text" name="labsent" id="labsent" class="form-control form-control-sm"
                                         placeholder="Envio a Laboratorio" readonly>
                                     </div>
 
-                                    <div class="form-group col-md-3">
+                                    <div class="form-group col-md-2">
                                         <label for="labreturn">Devolucion Laboratorio</label>
                                         <input type="text" name="labreturn" id="labreturn"
                                         class="form-control form-control-sm" placeholder="Devolución Laboratorio" readonly>
                                     </div>
 
-                                    <div class="form-group col-md-3">
+                                    <div class="form-group col-md-2">
                                         <label for="deliver">Entrega Cliente</label>
                                         <input type="text" name="deliver" id="deliver" class="form-control form-control-sm"
                                         placeholder="Entrega al Cliente" readonly>
@@ -75,7 +75,7 @@
                                 </div>
 
                         <div class="form-row py-3">
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="laboratory">Nombre Laboratorio</label>
                                 <input type="text" name="laboratory" id="laboratory"
                                     class="form-control form-control-sm" placeholder="Nombre Laboratorio">
@@ -88,17 +88,17 @@
                             <select name="product_id" id="product_id" class="form-control select2">
                               <option value="">Seleccionar Producto</option>
                               @foreach($products as $data)
-                              <option value="{{$data->id}}">{{ $data->name }} - {{$data->brand}} </option>
+                              <option value="{{$data->id}}">{{ $data->brand }} - {{$data->model}} </option>
                               @endforeach
                             </select>
                           </div> 
                    
-                          <div class="form-group col-md-3">
+                          <div class="form-group col-md-2">
                             <label>S/N</label>
-                            <input type="text" name="serial_number" id="serial_number" class="form-control form-control-sm">
+                            <input type="text" name="serial_number" id="serial_number" class="form-control form-control-sm" placeholder="Numero de Serie">
                           </div> 
 
-                          <div class="form-group col-md-3">
+                          <div class="form-group col-md-2">
                             <label>Accesorios</label>
                             <input type="text" name="accesories" id="accesories" class="form-control form-control-sm">
                           </div> 
@@ -132,8 +132,8 @@
                         </div>
                        
                         <div class="form-row mt-5 text-center">
-                            <div class="form-group col-md-2">
-                                <label for="labcost">Costo Laboratorio</label>
+                            <div class="form-group col-md-1">
+                                <label for="labcost">Laboratorio</label>
                                 <input type="decimal" name="labcost" id="labcost"
                                     class="form-control form-control-sm">
                             </div>
@@ -149,8 +149,8 @@
                                   <option value="RBL">Real</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-2">
-                                <label for="repaircost">Costo Repuesto</label>
+                            <div class="form-group col-md-1">
+                                <label for="repaircost">Repuesto</label>
                                 <input type="decimal" name="repaircost" id="repaircost"
                                     class="form-control form-control-sm">
                             </div>
@@ -166,10 +166,10 @@
                                   <option value="RBL">Real</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-row text-center">
-                            <div class="form-group col-md-2">
-                                <label for="transportcost">Costo Transporte</label>
+                  
+                      
+                            <div class="form-group col-md-1">
+                                <label for="transportcost">Transporte</label>
                                 <input type="decimal" name="transportcost" id="transportcost"
                                     class="form-control form-control-sm">
                             </div>
@@ -185,7 +185,7 @@
                                   <option value="RBL">Real</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="markup">Mark Up</label>
                                 <input type="decimal" name="markup" id="markup"
                                     class="form-control form-control-sm">

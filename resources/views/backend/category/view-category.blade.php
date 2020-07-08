@@ -41,7 +41,7 @@
                         <tr>
                             <th style="display: none">Codigo</th>
                             <th width="40%">Tipo de Categoria</th>
-                            <th width="60%">Tipo de Producto</th>
+                            <th width="60%">Nombre</th>
                             <th>Action</th>
                         </tr>
                     </thead>
