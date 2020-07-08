@@ -127,7 +127,10 @@
                       <label>Cliente</label>
                       <select name="customer_id" id="customer_id" class="form-control form-control-sm" required>
                         <option value="">Seleccionar Cliente</option>
-
+                        @foreach ($customers as $customer)
+                        <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->company }})</option>
+                        @endforeach
+                        <option value="0">Nuevo Cliente</option>
                       </select>
                     </div>
 
@@ -370,7 +373,6 @@ $(document).on('change','#customer_id',function(){
     }
 });
 </script>
-<script>
   <script type="text/javascript">
     $(document).ready(function (){
       $('#myForm').validate({
@@ -404,6 +406,8 @@ $(document).on('change','#customer_id',function(){
       });
     });
     </script>
+
+    <script>
       $('.datepicker').datepicker({
           uiLibrary: 'bootstrap4',
           format :'yyyy-mm-dd'
