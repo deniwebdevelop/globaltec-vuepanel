@@ -129,9 +129,11 @@
                             <label>Repuesto 5</label>
                             <input type="text" name="spare_5" id="spare_5" class="form-control form-control-sm">
                         </div> 
+                        
                         </div>
-                       
-                        <div class="form-row mt-5 text-center">
+                        <h3 class="font-weight-lighter pt-5">Costos:</h3>
+                  
+                        <div class="form-row text-center">
                             <div class="form-group col-md-1">
                                 <label for="labcost">Laboratorio</label>
                                 <input type="decimal" name="labcost" id="labcost"
