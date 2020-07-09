@@ -53,7 +53,7 @@
 
                         <div class="form-group col-md-3">
                           <label for="ptype_id">Tipo de Producto</label>
-                          <select name="ptype_idx" class="form-control">
+                          <select name="ptype_id" class="form-control">
                             <option value="">Seleccionar</option>
                             @foreach ($ptypes as $ptype)
                             <option value="{{ $ptype->id }}" {{ ($editData->ptype_id==$ptype->id)?"selected":'' }}>{{ $ptype->name }}</option>
