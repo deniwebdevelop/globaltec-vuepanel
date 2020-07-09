@@ -72,8 +72,10 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <label for="product_id">Modelo</label>
-                            <input type="text" name="product_id" value="{{ $data->product_id }}" class="form-control">
+                            <label for="model">Modelo</label>
+                            @foreach ($products as $products)
+                            <input type="text" name="product_id" value="{{ $product['products']['model'] }}" class="form-control" readonly>
+                            @endforeach
                         </div>
                     </div>
                     <div class="form-row">

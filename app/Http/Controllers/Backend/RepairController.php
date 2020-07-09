@@ -118,7 +118,8 @@ class RepairController extends Controller
     public function edit($id)
     {
         $data = Repair::find($id);
-        return view('backend.repair.edit', compact('data'));
+        $product = Product::all();
+        return view('backend.repair.edit', compact('data','product'));
     }
 
     /**
