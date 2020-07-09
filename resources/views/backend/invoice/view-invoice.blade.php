@@ -46,7 +46,7 @@
                             <th>Condicion De pago</th>
                             <th>Descripcion</th>
                             <th>Monto</th>
-                            <th width="20%">Estado</th>
+                            <th>Estado</th>
                             <th>Accion</th>
                         </tr>
                     </thead>
