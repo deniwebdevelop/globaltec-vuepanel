@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Pendientes</li> 
+              <li class="breadcrumb-item active">Presupuestos</li> 
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -30,10 +30,10 @@
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
-                 <h3 class="font-weight-light text-white">Presupuestos
-                   <!-- <a class="btn btn-success float-right btn-sm"
-                    href="{{ route('invoice.add') }}"><i class="fa fa-plus-circle p-2"></i>Nueva Factura</a> -->
-                 </h3>
+                <h3 class="font-weight-light text-white">Presupuestos
+                  <a class="btn bg-white float-right btn-sm"
+                  href="{{ route('invoice.add') }}"><i class="fa fa-plus-circle"></i> Nuevo Presupuesto</a>
+               </h3>
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
@@ -63,10 +63,21 @@
                             @if($invoice->status=='0')
                             <span style="color: #FC4236;padding:5px">Pendiente de Venta</span>
                             @elseif($invoice->status=='1')
-                            <span style="color: #5EAB00;pagging:5px">Pagado</span>
+                            <span style="color: #5EAB00;pagging:5px">Venta Generada</span>
                             @endif
                           </td>
-                          <td>
+                                   <td>
+                            @if($invoice['payment']['paid_status'] =='partial_paid')
+                            <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
+                              class="fa fa-edit"></i></a>
+                              @endif
+                              @if($invoice['payment']['paid_status'] =='full_due')
+                              <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
+                                class="fa fa-edit"></i></a>
+                                @endif
+                            <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
+                              <i class="fa fa-eye"></i></a>
+                         
                             @if($invoice->status=='0')
                           <a title="Venta" class="btn btn-sm btn-success" href="{{ route('invoice.approve', $invoice->id) }}"><i
                           class="fa fa-check-circle"></i></a>

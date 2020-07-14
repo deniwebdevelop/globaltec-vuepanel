@@ -98,11 +98,6 @@ class RepairController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $data = Repair::find($id);
-        return view('backend.repair.details', compact('data'));
-    }
 
 
     public function download($file){
@@ -120,6 +115,13 @@ class RepairController extends Controller
         $data['editData'] = Repair::find($id);
         $data['products'] = Product::all();
         return view('backend.repair.edit', $data);
+    }
+
+    public function review($id)
+    {
+        $data['reviewData'] = Repair::find($id);
+        $data['products'] = Product::all();
+        return view('backend.repair.details', $data);
     }
 
     /**

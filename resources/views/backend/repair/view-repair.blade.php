@@ -70,7 +70,7 @@
                             <td>{{ $data->accesories }}</td>
                             <td>{{ $data->status }}</td>
                             <td>
-                                <a title="View" target="_blank" class="btn btn-sm btn-warning" href="{{ route('repair.show', $data->id) }}"><i
+                                <a title="View" target="_blank" class="btn btn-sm btn-warning" href="{{ route('repair.review', $data->id) }}"><i
                                 class="fa fa-eye"></i></a>
 
                                 <a title="Download" id="download" class="btn btn-sm btn-success"

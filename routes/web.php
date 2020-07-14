@@ -41,6 +41,7 @@ Route::group(['middleware'=>'auth'],function(){
 
 	Route::prefix('agenda')->group(function(){
 		Route::get('/view','Backend\CustomerController@view')->name('customers.view');
+		Route::get('/detail/{id}','Backend\CustomerController@detail')->name('customers.detail');
 		Route::get('/add','Backend\CustomerController@add')->name('customers.add');
 		Route::post('/store','Backend\CustomerController@store')->name('customers.store');
 		Route::get('/edit/{id}','Backend\CustomerController@edit')->name('customers.edit');
@@ -133,7 +134,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('create', 'Backend\RepairController@create')->name('repair.create');
 		Route::post('', 'Backend\RepairController@store')->name('repair.store');;
 		Route::get('', 'Backend\RepairController@index')->name('repair.index');;
-		Route::get('/{id}', 'Backend\RepairController@show')->name('repair.show');
+		Route::get('review/{id}', 'Backend\RepairController@review')->name('repair.review');
 		Route::get('/download/{file}', 'Backend\RepairController@download')->name('repair.download');
 		Route::get('/edit/{id}','Backend\RepairController@edit')->name('repair.edit');
 		Route::post('/update/{id}','Backend\RepairController@update')->name('repair.update');

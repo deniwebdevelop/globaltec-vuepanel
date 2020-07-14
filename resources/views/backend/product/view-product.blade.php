@@ -47,10 +47,10 @@
                                     <th>Marca</th>
                                     <th>Descripcion</th>
                                     <th>Costo FOB</th>
-                                    <th width="30%">Moneda de Compra</th>
-                                    <th width="30%">Moneda de Venta</th>
-                                    <th width="30%">Precio de Venta</th>
-                                    <th style="width: 60%;">Accion</th>
+                                    <th>Moneda de Compra</th>
+                                    <th>Moneda de Venta</th>
+                                    <th>Precio de Venta</th>
+                                    <th style="width: 12%">Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,8 +70,7 @@
                                     $count_product = App\Model\Purchase::where('product_id',$product->id)->count();
                                     @endphp
                                     <td>
-                                        <a title="View" target="_blank" class="btn btn-sm btn-warning"
-                                            href="/products/{{ $product->id }}"><i class="fa fa-eye"></i></a>
+
 
                                         <a title="Download" id="download" class="btn btn-sm btn-success"
                                             href="/products/download/{{ $product->file }}"><i
