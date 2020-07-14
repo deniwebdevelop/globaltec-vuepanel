@@ -31,8 +31,6 @@
             <div class="card" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
               <div class="card-header">
                  <h3 class="font-weight-light text-white">Ventas
-                    <a class="btn bg-white float-right btn-sm"
-                    href="{{ route('invoice.add') }}"><i class="fa fa-plus-circle"></i> Nuevo Presupuesto</a>
                  </h3>
                 </div>
               </div><!-- /.card-header -->
@@ -47,7 +45,6 @@
                             <th>Descripcion</th>
                             <th>Monto</th>
                             <th>Estado</th>
-                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,18 +66,6 @@
                             @elseif($invoice['payment']['paid_status'] =='full_due')
                             <a href="{{ route('customers.credit') }}"><span style="color: #d61b0d;padding:5px">Monto Total Pendiente</span></a>
                             @endif
-                          </td>
-                          <td>
-                            @if($invoice['payment']['paid_status'] =='partial_paid')
-                            <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
-                              class="fa fa-edit"></i></a>
-                              @endif
-                              @if($invoice['payment']['paid_status'] =='full_due')
-                              <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
-                                class="fa fa-edit"></i></a>
-                                @endif
-                            <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
-                              <i class="fa fa-eye"></i></a>
                           </td>
                     </tr>                          
                       @endforeach

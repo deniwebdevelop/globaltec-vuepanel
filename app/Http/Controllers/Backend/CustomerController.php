@@ -57,6 +57,11 @@ class CustomerController extends Controller
         return view('backend.customer.edit-customer', compact('editData'));
     }
 
+    public function detail($id){
+        $detailData = Customer::find($id);
+        return view('backend.customer.detail', compact('detailData'));
+    }
+
     public function update(Request $request, $id){
         $customer = Customer::find($id);
         $customer->name = $request->name;

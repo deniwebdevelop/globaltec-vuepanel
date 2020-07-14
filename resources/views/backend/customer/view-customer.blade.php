@@ -72,6 +72,8 @@
                             <td>{{$customer->cuit}}</td>
                             <td>{{$customer->website}}</td>
                             <td>
+                              <a title="Edit" class="btn btn-sm bg-gradient-yellow"  href="{{ route('customers.detail', $customer->id) }}"><i
+                                class="fa fa-eye"></i></a>
                                 <a title="Edit" class="btn btn-sm text-white" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);" href="{{ route('customers.edit', $customer->id) }}"><i
                                 class="fa fa-edit"></i></a>
                                 <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('customers.delete', $customer->id) }}"><i

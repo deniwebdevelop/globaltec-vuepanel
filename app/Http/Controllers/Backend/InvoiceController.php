@@ -132,7 +132,7 @@ class InvoiceController extends Controller
 
 
     public function pendingList(){
-        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->where('status','0')->get();
+        $allData = Invoice::all();
         return view('backend.invoice.pending-invoice-list', compact('allData'));
     }
 
@@ -158,7 +158,7 @@ class InvoiceController extends Controller
             }
             $invoice->save();
         });
-        return redirect()->route('invoice.view');
+        return redirect()->route('invoice.pending');
     }
 
     public function printInvoiceList(){
