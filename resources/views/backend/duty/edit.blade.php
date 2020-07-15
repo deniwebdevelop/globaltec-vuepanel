@@ -51,6 +51,17 @@
                                 </div>
 
                                 <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                      <label>Cliente</label>
+                                      <select name="customer_id" id="customer_id" class="form-control form-control-sm select2" required>
+                                        <option value="">Seleccionar Cliente</option>
+                                        @foreach ($data as $customer)
+                                        <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->company }})</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="descripcion">Descripcion</label> 
                                         <input type="text" name="descripcion" id="descripcion" value="{{ $duty->descripcion }}"
