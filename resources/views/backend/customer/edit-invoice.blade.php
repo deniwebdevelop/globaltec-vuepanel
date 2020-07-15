@@ -72,7 +72,7 @@
                             <tr class="text-center">
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $details['category']['name'] }}</td>
-                                <td>{{ $details['product']['name']}}</td>
+                                <td>{{ $details['product']['model']}}</td>
                                 <td>{{ $details->selling_qty }}</td>
                                 <td>{{ $details->unit_price }}</td>
                                 <td>{{ $details->selling_price }}</td>

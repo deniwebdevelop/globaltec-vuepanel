@@ -42,7 +42,7 @@
                             <th style="display:none ">Codigo</th>
                             <th>Nombre</th>
                             <th>Empresa</th>
-                            <th width="10%">Telefonos</th>
+                            <th>Telefonos</th>
                             <th>Email</th>
                             <th>Puesto</th>
                             <th>Pais</th>

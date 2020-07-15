@@ -75,8 +75,7 @@
                               <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
                                 class="fa fa-edit"></i></a>
                                 @endif
-                            <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
-                              <i class="fa fa-eye"></i></a>
+                            
                          
                             @if($invoice->status=='0')
                           <a title="Venta" class="btn btn-sm btn-success" href="{{ route('invoice.approve', $invoice->id) }}"><i

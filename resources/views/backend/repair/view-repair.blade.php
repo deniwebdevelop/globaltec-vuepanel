@@ -73,10 +73,15 @@
                                 <a title="View" target="_blank" class="btn btn-sm btn-warning" href="{{ route('repair.review', $data->id) }}"><i
                                 class="fa fa-eye"></i></a>
 
-                                <a title="Download" id="download" class="btn btn-sm btn-success"
-                                href="/repair/download/{{ $data->file }}"><i
-                                    class="fa fa-download"></i></a>
-                        
+                                @if($data->file)
+                              <a title="Download" id="download" class="btn btn-sm btn-success"
+                              href="/repair/download/{{ $data->file }}"><i
+                                  class="fa fa-download"></i></a>
+                                  @else
+                                  <a title="Download" id="download" class="btn btn-sm btn-success" style="display: none"
+                                  href="/repair/download/{{ $data->file }}"><i
+                                      class="fa fa-download"></i></a>
+@endif
                               <a title="Edit" class="btn btn-sm text-white" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);" href="{{ route('repair.edit', $data->id) }}"><i
                                 class="fa fa-edit"></i></a>
                                 <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('repair.delete', $data->id) }}"><i
@@ -97,5 +102,14 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->     
+  <!-- /.content-wrapper -->    
+  <script type="text/javascript">
+var buttons = document.querySelectorAll('btn');
+
+buttons.forEach(function(btn) {
+  if (!btn.value) {
+    btn.style.display = "none"
+  }
+});
+</script>
 @endsection
