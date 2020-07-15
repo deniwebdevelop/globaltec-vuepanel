@@ -41,8 +41,8 @@
                         <tr>
                             <th style="display: none">Codigo</th>
                             <th width="40%">Tipo de Categoria</th>
-                            <th width="60%">Nombre</th>
-                            <th>Action</th>
+                            <th width="40%">Nombre</th>
+                            <th width="5%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,9 +55,11 @@
                               @php
                               $count_category = App\Model\Product::where('category_id',$category->id)->count(); 
                               @endphp
-                                <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('categories.delete', $category->id) }}"><i
-                                    class="fa fa-trash"></i></a>
-                         
+                           
+                                    <a title="Edit" id="edit" class="btn btn-sm btn-dark" href="{{ route('categories.edit', $category->id) }}"><i
+                                      class="fa fa-edit"></i></a>
+                                      <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('categories.delete', $category->id) }}"><i
+                                        class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

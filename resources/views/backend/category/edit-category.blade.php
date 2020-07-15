@@ -29,9 +29,9 @@
         <section class="col-md-12">
             <!-- Custom Tabs -->
             <div class="card">
-                <div class="card-header">
+              <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
                     <h3>Editar Categoria
-                        <a href="{{ route('categories.view') }}" class="btn btn-success float-right btn-sm">
+                        <a href="{{ route('categories.view') }}" class="btn btn float-right btn-sm">
                             Lista de Categorias
                         </a>
                     </h3>
@@ -41,11 +41,15 @@
                         @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="name">Nombre de Categoria</label>
-                            <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
+                            <label for="type">Tipo de Categoria</label>
+                            <input type="text" name="type" value="{{ $editData->type }}" class="form-control">
                         </div>
+                        <div class="form-group col-md-6">
+                          <label for="name">Nombre de Categoria</label>
+                          <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
+                      </div>
                         <div class="form-group col-md-12">
-                        <input type="submit" value="Actualizar" class="btn btn-primary">
+                        <input type="submit" value="Actualizar" class="btn btn-md text-white" style="background:#030335e8">
                         </div>
                     </div>
                     </form>

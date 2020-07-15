@@ -53,7 +53,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-3">
                                       <label>Cliente</label>
-                                      <select name="customer_id" id="customer_id" class="form-control form-control-sm" required>
+                                      <select name="customer_id" id="customer_id" class="form-control form-control-sm select2" required>
                                         <option value="">Seleccionar Cliente</option>
                                         @foreach ($customers as $customer)
                                         <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->company }})</option>
@@ -128,5 +128,10 @@
         }
       });
     });
+    </script>
+    <script>
+        $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+})
     </script>
 @endsection

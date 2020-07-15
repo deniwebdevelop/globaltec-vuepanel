@@ -45,6 +45,7 @@
                             <th>Descripcion</th>
                             <th>Monto</th>
                             <th>Estado</th>
+                            <th>PDF</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,6 +68,8 @@
                             <a href="{{ route('customers.credit') }}"><span style="color: #d61b0d;padding:5px">Monto Total Pendiente</span></a>
                             @endif
                           </td>
+                          <td>   <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
+                            <i class="fa fa-eye"></i></a></td>
                     </tr>                          
                       @endforeach
                     </tbody>

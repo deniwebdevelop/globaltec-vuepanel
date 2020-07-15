@@ -142,29 +142,32 @@
         category_id: {
             required: true,
         },
-        name: {
+        ptype_id: {
+            required: true,
+        },
+        model: {
             required: true,
         },
         brand: {
             required: true,
         },
-        coin: {
-            required: true,
-        }
       },
       messages: {
 
           category_id: {
               required: "Debe ingresar una categoria",
           },
-          name: {
-              required: "Debe ingresar un nombre",
+          ptype_id: {
+              required: "Debe ingresar tipo de producto",
+          },
+          model: {
+              required: "Debe ingresar un modelo",
           },
           brand: {
               required: "Debe ingresar una marca",
           },
-          coin: {
-              required: "Debe ingresar una moneda",
+          brand: {
+              required: "Debe ingresar una marca",
           }
       },
       errorElement: 'span',
