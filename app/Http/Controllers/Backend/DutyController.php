@@ -73,7 +73,8 @@ class DutyController extends Controller
     public function edit($id)
     {
         $duty = Duty::find($id);
-        return view('backend.duty.edit', compact('duty'));
+        $data = Customer::all();
+        return view('backend.duty.edit', compact('duty','data'));
     }
 
     /**
