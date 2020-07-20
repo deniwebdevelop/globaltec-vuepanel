@@ -149,7 +149,7 @@
                     </div>
            
                   <div class="form-group col-md-3">
-                    <label for="description">Vigencia</label>
+                    <label for="description">Descripcion</label>
                     <input type="text" name="description" id="description" placeholder="Vigencia" class="form-control form-control-sm">
                     </div>
                   </div>

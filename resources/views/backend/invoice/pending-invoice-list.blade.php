@@ -45,7 +45,7 @@
                             <th>Empresa</th>
                             <th>Fecha</th>
                             <th>Condicion Pago</th>
-                            <th>Vigencia</th>
+                            <th>Descripcion</th>
                             <th>Monto</th>
                             
                             <th>Estado de Venta</th>

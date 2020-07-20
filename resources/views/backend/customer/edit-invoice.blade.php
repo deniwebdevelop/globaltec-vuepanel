@@ -52,7 +52,7 @@
                         <td><strong>Telefono : </strong>{{ $payment['customer']['mobile_no'] }}</td>
                         <td><strong>Direccion : </strong>{{ $payment['customer']['address'] }}</td>
                         <td><strong>Cuit: </strong>{{ $payment['customer']['cuit'] }}</td>
-                        <td><strong>Vigencia : </strong>{{ $payment['invoice']['description'] }}</td>
+                        <td><strong>Descripcion : </strong>{{ $payment['invoice']['description'] }}</td>
                       </tr>
                     </tbody>
                 </table>
