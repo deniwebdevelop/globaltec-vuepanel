@@ -70,36 +70,36 @@
                         </div>
                     </div>
                     <div class="form-row text-center mt-5">
-                        <div class="form-group col-md-2 offset-2">
+                        <div class="form-group col-md-3">
                             <label for="laboratory">Laboratorio</label>
                             <input type="text" name="laboratory" value="{{ $reviewData->laboratory }}" class="form-control form-control-sm" readonly>
                         </div>
                    
                 
                         <div class="form-group col-md-3">
-                            <label for="product_id">Tipo de Producto</label>
-                            <select name="product_id" class="form-control" readonly>
+                            <label for="product_id">Modelo</label>
+                            <select name="product_id" class="form-control select2">
                               <option value="">Seleccionar</option>
                               @foreach ($products as $data)
-                              <option value="{{ $data->id }}" {{ ($reviewData->product_id==$data->id)?"selected":'' }}>{{ $data->model }}</option>
+                              <option value="{{ $data->id }}" {{ ($reviewData->product_id==$data->id)?"selected":'' }}>{{ $data->brand }} - {{ $data->model }}</option>
                               @endforeach
                             </select>
                         </div>
 
 
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label for="serial_number">S/N</label>
                         <input type="text" name="serial_number" id="serial_number" class="form-control form-control-sm" value="{{ $reviewData->serial_number }}" readonly>
                       </div> 
 
-                      <div class="form-group col-md-2">
+                      <div class="form-group col-md-3">
                         <label>Accesorios</label>
                         <input type="text" name="accesories" id="accesories" class="form-control form-control-sm" value="{{ $reviewData->accesories }}" readonly>
                       </div> 
                     </div>
        
                       <div class="form-row text-center mt-5">
-                    <div class="form-group col-md-2 offset-1">
+                    <div class="form-group col-md-3">
                         <label>Repuesto 1</label>
                         <input type="text" name="spare_1" id="spare_1" class="form-control form-control-sm" value="{{ $reviewData->spare_1 }}" readonly>
                     </div> 
@@ -119,35 +119,47 @@
                         <input type="text" name="spare_4" id="spare_4" class="form-control form-control-sm" value="{{ $reviewData->spare_4 }}" readonly>
                     </div> 
                    
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>Repuesto 5</label>
                         <input type="text" name="spare_5" id="spare_5" class="form-control form-control-sm" value="{{ $reviewData->spare_5 }}" readonly>
                     </div> 
                 </div>
 
-                <h4 class="font-weight-lighter text-center mt-5">Costos</h4>
-                    <div class="form-row text-center">
-                        <div class="form-group col-md-2 offset-2">
+  
+                    <div class="form-row text-center mt-5">
+                        <div class="form-group col-md-3">
                             <label for="labcost">Laboratorio</label>
                             <input type="decimal" name="labcost" value="{{ $reviewData->labcost }}" class="form-control form-control-sm" readonly>
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-3">
                             <label for="repaircost">Repuesto</label>
                             <input type="decimal" name="repaircost" value="{{ $reviewData->repaircost }}" class="form-control form-control-sm" readonly>
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-3">
                             <label for="transportcost">Transporte</label>
                             <input type="decimal" name="transportcost" value="{{ $reviewData->transportcost }}" class="form-control form-control-sm" readonly>
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-3">
                             <label for="markup">MarkUp</label>
                             <input type="decimal" name="markup" value="{{ $reviewData->markup }}" class="form-control form-control-sm" readonly>
                         </div>
                     </div>
+              
+                    <div class="form-row mt-5">
+                        <div class="form-group col-md-12">
+                            <label for="fail_description">Descripcion Falla</label>
+                            <input type="text" name="fail_description" id="fail_description" class="form-control" value="{{ $reviewData->fail_description }}" readonly>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="repair_description">Descripcion Reparacion</label>
+                            <input type="text" name="repair_description" class="form-control " id="repair_description" value="{{ $reviewData->repair_description }}" readonly>
+                        </div>
+                    </div>
+
                     <div class="form-row">
-                        <div class="form-group col-md-3 mt-5">
+                        <div class="form-group col-md-6">
                             <label for="status">Estado</label>
-                      <input type="text" name="status" value="{{ $reviewData->status }}" class="form-control form-control-sm" readonly>
+                      <input type="text" name="status" value="{{ $reviewData->status }}" class="form-control" readonly>
                         </div>
                     </div>
                     </form>
