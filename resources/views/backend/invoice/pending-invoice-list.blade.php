@@ -47,7 +47,7 @@
                             <th>Descripcion</th>
                             <th>Monto</th>
                             <th>Estado</th>
-                            <th width="10%">Action</th>
+                            <th>Action</th>
                             <th>PDF</th>
                         </tr>
                     </thead>
