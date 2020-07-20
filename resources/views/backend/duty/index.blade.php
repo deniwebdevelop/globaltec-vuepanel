@@ -47,10 +47,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach ($duty as $key => $duty)
+                      @foreach ($data as $key => $duty)
                       <tr>
                         <td>{{ date('d-m-Y'),strtotime($duty->date) }}</td>
-                        <td>{{ $duty->customer_id }}</td>
+                        <td>{{ $duty['customer']['name'] }}</td>
                         <td>{{ $duty->descripcion }}</td>
                         <td>
                           @if($duty->status!='Finalizado')
@@ -58,6 +58,7 @@
                           @elseif($duty->status=='Finalizado')
                           <span style="color: #5EAB00;pagging:5px">Finalizado</span>
                           @endif
+
                         </td>
                         <td><a title="Edit" class="btn btn-sm text-white" style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);" href="{{ route('duty.edit', $duty->id) }}"><i
                           class="fa fa-edit"></i></a>
