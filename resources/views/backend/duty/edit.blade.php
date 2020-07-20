@@ -30,7 +30,7 @@
                     <!-- Custom Tabs -->
                     <div class="card">
                         <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
-                            <h3 class="font-weight-lighter text-white">Agregar Tarea
+                            <h3 class="font-weight-lighter text-white">Editar Tarea
                                 <a href="{{ route('duty.index') }}" class="btn bg-white float-right btn-sm">
                                     <i class="fa fa-list"></i>
                                     Lista de Tareas
@@ -38,13 +38,13 @@
                             </h3>
                         </div><!-- /.Card Header -->
                         <div class="card-body">
-                            <form method="post" action="{{ route('duty.update',$duty->id) }}" id="myForm"
+                            <form method="post" action="{{ route('duty.update',$editData->id) }}" id="myForm"
                                 enctype="multipart/form-data" class="bg-white">
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-3">
                                         <label for="date">Fecha</label>
-                                        <input type="text" name="date" id="date" value="{{ $duty->date }}"
+                                        <input type="text" name="date" id="date" value="{{ $editData->date }}"
                                             class="form-control datepicker form-control-sm" placeholder="Fecha"
                                             readonly>
                                     </div>
@@ -55,8 +55,8 @@
                                       <label>Cliente</label>
                                       <select name="customer_id" id="customer_id" class="form-control form-control-sm select2" required>
                                         <option value="">Seleccionar Cliente</option>
-                                        @foreach ($data as $customer)
-                                        <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->company }})</option>
+                                        @foreach ($customers as $customer)
+                                        <option value="{{ $customer->id }}" {{ ($editData->customer_id==$customer->id)?"selected":'' }}>{{ $customer->name }}</option>
                                         @endforeach
                                       </select>
                                     </div>
@@ -64,13 +64,13 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="descripcion">Descripcion</label> 
-                                        <input type="text" name="descripcion" id="descripcion" value="{{ $duty->descripcion }}"
+                                        <input type="text" name="descripcion" id="descripcion" value="{{ $editData->descripcion }}"
                                             class="form-control form-control-sm py-5">
                                     </div>
 
                                     <div class="form-group col-md-12">
                                         <label for="status">Estado</label>
-                                        <select name="status" id="status" class="form-control form-control-sm" value="{{ $duty->status }}">
+                                        <select name="status" id="status" class="form-control form-control-sm" value="{{ $editData->status }}">
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Iniciado">Iniciado</option>
                                             <option value="Avanzado">Avanzado</option>

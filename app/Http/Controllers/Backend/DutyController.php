@@ -18,8 +18,8 @@ class DutyController extends Controller
      */
     public function index()
     {
-        $duty = Duty::all();
-        return view('backend.duty.index', compact('duty'));
+        $data = Duty::all();
+        return view('backend.duty.index', compact('data'));
     }
 
     /**
@@ -70,11 +70,12 @@ class DutyController extends Controller
      * @param  \App\Model\Duty  $duty
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $duty = Duty::find($id);
-        $data = Customer::all();
-        return view('backend.duty.edit', compact('duty','data'));
+   
+        public function edit($id){
+            $data['editData'] = Duty::find($id);
+            $data['customers'] = Customer::all();
+    
+            return view('backend.duty.edit', $data);
     }
 
     /**

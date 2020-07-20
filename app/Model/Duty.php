@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Duty extends Model
 {
     public function customer(){
-        return $this->hasMany(Customer::class,'customer','id');
+        return $this->belongsTo(Customer::class,'customer_id','id'); 
     }
 }
