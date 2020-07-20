@@ -231,7 +231,6 @@
                                         <div class="form-group col-md-3">
                                             <label for="status">Estado</label>
                                             <select name="status" id="status" class="form-control form-control-sm">
-                                                <option value="Actual">{{ $editData->status }}</option>
                                                 <option value="Recibido">Recibido De Cliente</option>
                                                 <option value="Enviado">Enviado a Laboratorio</option>
                                                 <option value="Reparado">Reparado</option>

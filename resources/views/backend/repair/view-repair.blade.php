@@ -36,7 +36,7 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-striped table-responsive" width="100%">
+                <table id="example1" class="table table-striped">
                     <thead style="font-size: 14px">
                         <tr>
                             <th style="display: none">Codigo</th>
@@ -49,7 +49,7 @@
                             <th>S/N</th>
                             <th>Accesorios</th>
                             <th>Estado</th>
-                            <th width="15%">Accion</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
