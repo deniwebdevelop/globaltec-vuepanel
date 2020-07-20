@@ -70,14 +70,10 @@
                             @endif
                           </td>
                                    <td>
-                            @if($invoice['payment']['paid_status'] =='partial_paid')
-                            <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
-                              class="fa fa-edit"></i></a>
-                              @endif
-                              @if($invoice['payment']['paid_status'] =='full_due')
+              
                               <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
                                 class="fa fa-edit"></i></a>
-                                @endif
+                       
                                 <td>   <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
                                   <i class="fa fa-eye"></i></a></td>
                          
