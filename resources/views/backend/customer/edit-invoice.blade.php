@@ -40,23 +40,28 @@
               <div class="card-body">
                 <table width="100%">
                     <tbody>
-                        <tr>
-                            <td colspan="3"><strong>Informacion del Cliente</strong></td>
-                        </tr>
+                      <td><strong>Numero Presupuesto: </strong> {{ $payment['invoice']['invoice_no'] }}</strong></td>
+           
+         
+                        <td><strong>Cliente : </strong>{{ $payment['customer']['name'] }}</td>
+                        <td><strong>Empresa : </strong>{{ $payment['customer']['company'] }}</td>
+                        <td><strong>Condicion de Pago: </strong> {{ $payment['invoice']['payment_condition'] }}</td>
+     
+                    
                       <tr>
-                        <td width="30%"><strong>Cliente : </strong>{{ $payment['customer']['name'] }}</td>
-                        <td width="30%"><strong>Telefono : </strong>{{ $payment['customer']['mobile_no'] }}</td>
-                        <td width="40%"><strong>Direccion : </strong>{{ $payment['customer']['address'] }}</td>
+                        <td><strong>Telefono : </strong>{{ $payment['customer']['mobile_no'] }}</td>
+                        <td><strong>Direccion : </strong>{{ $payment['customer']['address'] }}</td>
+                        <td><strong>Cuit: </strong>{{ $payment['customer']['cuit'] }}</td>
+                        <td><strong>Vigencia : </strong>{{ $payment['invoice']['description'] }}</td>
                       </tr>
                     </tbody>
                 </table>
-                  <form method="POST" action="{{ route('customers.update.invoice', $payment->invoice_id) }}" id="myForm">
+                  <form class="mt-5" method="POST" action="{{ route('customers.update.invoice', $payment->invoice_id) }}" id="myForm">
                     @csrf
                     <table border="1" width="100%" style="margin-bottom: 10px">
                         <thead>
                             <tr class="text-center">
-                                <th>SL.</th>
-                                <th>Categoria</th>
+                                <th>Item</th>
                                 <th>Producto</th>
                                 <th>Cantidad</th>
                                 <th>Precio Unitario</th>
@@ -71,11 +76,10 @@
                             @foreach ($invoice_details as $key => $details)
                             <tr class="text-center">
                                 <td>{{ $key+1 }}</td>
-                                <td>{{ $details['category']['name'] }}</td>
                                 <td>{{ $details['product']['model']}}</td>
                                 <td>{{ $details->selling_qty }}</td>
-                                <td>{{ $details->unit_price }}</td>
-                                <td>{{ $details->selling_price }}</td>
+                                <td>${{ $details->unit_price }}</td>
+                                <td>${{ $details->selling_price }}</td>
                             </tr>
                             @php
                             $total_sum += $details->selling_price;
@@ -85,10 +89,7 @@
                                 <td colspan="5" class="text-right"><strong>Sub Total</strong></td>
                                 <td class="text-center"><strong>{{ $total_sum }}</strong></td>
                             </tr>
-                            <tr>
-                                <td colspan="5" class="text-right">Descuento</td>
-                                <td class="text-center"><strong>{{ $payment->discount_amount }}</strong></td>
-                            </tr>
+                    
                             <tr>
                                 <td colspan="5" class="text-right">Monto Pagado</td>
                                 <td class="text-center"><strong>{{ $payment->paid_amount }}</strong></td>
@@ -100,7 +101,7 @@
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right"><strong>Total</strong></td>
-                                <td class="text-center"><strong>{{ $payment->total_amount }}</strong></td>
+                                <td class="text-center"><strong>${{ $payment->total_amount }}</strong></td>
                             </tr>
                         </tbody>   
                     </table> 

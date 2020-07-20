@@ -38,24 +38,26 @@
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
+                             <th>Presupuesto Nro</th>
                             <th>Cliente</th>
                             <th>Empresa</th>
-                            <th>Presupuesto Nro</th>
+                        
                             <th>Fecha</th>
                             <th>Condicion De pago</th>
-                            <th>Descripcion</th>
+                            <th>Vigencia</th>
                             <th>Monto</th>
-                            <th>Estado</th>
+                            <th>Estado de Pago</th>
                             <th>PDF</th>
                         </tr>
                     </thead>
                     <tbody>
                       @foreach ($allData as $key => $invoice)
                       <tr>
+                        <td>{{ $invoice->invoice_no}}</td>
                         <td>{{ $invoice['payment']['customer']['name'] }}</td>
                          <td>  {{ $invoice['payment']['customer']['company'] }} </td> 
                         </td>
-                        <td>{{ $invoice->invoice_no}}</td>
+ 
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
                         <td>{{ $invoice->payment_condition }}</td>
                         <td>{{ $invoice->description }}</td>

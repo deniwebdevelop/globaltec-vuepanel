@@ -44,10 +44,12 @@
                             <th>Cliente</th>
                             <th>Empresa</th>
                             <th>Fecha</th>
-                            <th>Descripcion</th>
+                            <th>Condicion Pago</th>
+                            <th>Vigencia</th>
                             <th>Monto</th>
-                            <th>Estado</th>
-                            <th>Action</th>
+                            
+                            <th>Estado de Venta</th>
+                            <th>Accion</th>
                             <th>PDF</th>
                         </tr>
                     </thead>
@@ -56,9 +58,9 @@
                       <tr>
                         <td class="text-center">{{ $invoice->invoice_no}}</td>
                         <td>{{ $invoice['payment']['customer']['name'] }}</td>
-                          <td>  {{ $invoice['payment']['customer']['company'] }} </td>
-                  
+                        <td>  {{ $invoice['payment']['customer']['company'] }}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
+                        <td>{{ $invoice->payment_condition }}</td>
                         <td>{{ $invoice->description }}</td>
                         <td>{{ number_format($invoice['payment']['total_amount'], 2) }}</td>
                         <td>
@@ -67,20 +69,21 @@
                             @elseif($invoice->status=='1')
                             <span style="color: #5EAB00;pagging:5px">Venta Generada</span>
                             @endif
-                          </td>
-                                   <td>
+                        </td>
+                        <td>
                             <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
                               class="fa fa-edit"></i></a>
-                 
                             @if($invoice->status=='0')
-                          <a title="Venta" class="btn btn-sm btn-success" href="{{ route('invoice.approve', $invoice->id) }}"><i
-                          class="fa fa-check-circle"></i></a>
-                          <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('invoice.delete', $invoice->id) }}"><i
+                            <a title="Venta" class="btn btn-sm btn-success" href="{{ route('invoice.approve', $invoice->id) }}"><i
+                            class="fa fa-check-circle"></i></a>
+                            <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('invoice.delete', $invoice->id) }}"><i
                             class="fa fa-trash"></i></a>
-                          @endif
+                            @endif
                           </td>
-                          <td>   <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
-                            <i class="fa fa-eye"></i></a></td>
+                          <td>  
+                            <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
+                            <i class="fa fa-eye"></i></a>
+                          </td>
                     </tr>                          
                       @endforeach
                     </tbody>
