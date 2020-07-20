@@ -92,6 +92,7 @@ $.widget.bridge('uibutton', $.ui.button)
     $("#example1").DataTable();
     $('#example2').DataTable({
       "paging": true,
+      "serverSide": true,
       "lengthChange": false,
       "searching": false,
       "ordering": true,
