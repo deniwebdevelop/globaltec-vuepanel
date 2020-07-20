@@ -116,11 +116,9 @@
                   </table>
                   <br/>
 
-                  <div class="form-row">
-                    <div class="form-group col-md-12">
-                      <textarea name="description" class="form-control" id="description" placeholder="Agregar Descripcion"></textarea>
-                    </div>
-                  </div>
+           
+                 
+  
 
                   <div class="form-row">
                     <div class="form-group col-md-3">
@@ -149,8 +147,15 @@
                     <label for="payment_condition">Condicion de Pago</label>
                     <input type="text" name="payment_condition" id="payment_condition" class="form-control form-control-sm payment_condition" required placeholder="Ingresar Condicion de Pago">
                     </div>
+           
+                  <div class="form-group col-md-3">
+                    <label for="description">Vigencia</label>
+                    <input type="text" name="description" id="description" placeholder="Vigencia" class="form-control form-control-sm">
+                    </div>
                   </div>
+                  
                  
+
                   <div class="form-row new_customer" style="display: none;">
                     <div class="form-group col-md-4">
                       <input type="text" name="name" id="name" class="form-control form-control-sm"

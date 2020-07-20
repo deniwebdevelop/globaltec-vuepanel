@@ -104,7 +104,9 @@ class CustomerController extends Controller
 
     public function editInvoice($invoice_id){
         $payment = Payment::where('invoice_id', $invoice_id)->first();
-        return view('backend.customer.edit-invoice', compact('payment'));
+        $categories = Category::all();
+        $customers = Customer::all();
+        return view('backend.customer.edit-invoice', compact('payment','categories','customers'));
     }
 
     public function updateInvoice(Request $request,$invoice_id){
