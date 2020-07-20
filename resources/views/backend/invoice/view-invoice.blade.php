@@ -39,7 +39,8 @@
                     <thead>
                         <tr>
                             <th>Cliente</th>
-                            <th>Numero</th>
+                            <th>Empresa</th>
+                            <th>Presupuesto Nro</th>
                             <th>Fecha</th>
                             <th>Condicion De pago</th>
                             <th>Descripcion</th>
@@ -51,8 +52,8 @@
                     <tbody>
                       @foreach ($allData as $key => $invoice)
                       <tr>
-                        <td>{{ $invoice['payment']['customer']['name'] }} - 
-                            {{ $invoice['payment']['customer']['company'] }} 
+                        <td>{{ $invoice['payment']['customer']['name'] }}</td>
+                         <td>  {{ $invoice['payment']['customer']['company'] }} </td> 
                         </td>
                         <td>{{ $invoice->invoice_no}}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>

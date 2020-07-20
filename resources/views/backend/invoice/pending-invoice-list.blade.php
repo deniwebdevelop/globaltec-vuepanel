@@ -37,26 +37,29 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-striped" width="100%">
                     <thead>
                         <tr>
-                            <th>Cliente</th>
-                            <th>Numero</th>
+                            <th>Presupuesto</th>
                             <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Empresa</th>
                             <th>Descripcion</th>
                             <th>Monto</th>
-                            <th>Estado</th>
+                            <th>Estado de Venta</th>
                             <th width="10%">Action</th>
+                            <th>PDF</th>
                         </tr>
                     </thead>
                     <tbody>
                       @foreach ($allData as $key => $invoice)
                       <tr>
-                        <td>{{ $invoice['payment']['customer']['name'] }} - 
-                            {{ $invoice['payment']['customer']['company'] }} 
-                        </td>
-                        <td>{{ $invoice->invoice_no}}</td>
+                        <td class="text-center">{{ $invoice->invoice_no}}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
+                        <td>{{ $invoice['payment']['customer']['name'] }}</td>
+                          <td>  {{ $invoice['payment']['customer']['company'] }} </td>
+                        </td>
+               
                         <td>{{ $invoice->description }}</td>
                         <td>{{ number_format($invoice['payment']['total_amount'], 2) }}</td>
                         <td>
@@ -75,7 +78,8 @@
                               <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
                                 class="fa fa-edit"></i></a>
                                 @endif
-                            
+                                <td>   <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
+                                  <i class="fa fa-eye"></i></a></td>
                          
                             @if($invoice->status=='0')
                           <a title="Venta" class="btn btn-sm btn-success" href="{{ route('invoice.approve', $invoice->id) }}"><i

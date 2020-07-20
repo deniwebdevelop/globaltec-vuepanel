@@ -46,8 +46,6 @@
                             <th>Devolucion</th>
                             <th>Entrega</th>
                             <th>Laboratorio</th>
-                            <th>Falla</th>
-                            <th>Reparacion</th>
                             <th>S/N</th>
                             <th>Accesorios</th>
                             <th>Estado</th>
@@ -64,8 +62,6 @@
                             <td>{{$data->labreturn}}</td>
                             <td>{{$data->deliver}}</td>
                             <td>{{ $data->laboratory }}</td>
-                            <td>{{ $data->fail_description }}</td>
-                            <td>{{ $data->repair_description }}</td>
                             <td>{{ $data->serial_number }}</td>
                             <td>{{ $data->accesories }}</td>
                             <td>{{ $data->status }}</td>

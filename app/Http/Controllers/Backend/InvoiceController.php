@@ -128,7 +128,7 @@ class InvoiceController extends Controller
         Payment::where('invoice_id',$invoice->id)->delete();
         PaymentDetail::where('invoice_id',$invoice->id)->delete();
         return redirect()->route('invoice.pending.list');
-    }
+    }  
 
 
     public function pendingList(){

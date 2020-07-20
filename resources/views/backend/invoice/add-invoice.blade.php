@@ -32,7 +32,7 @@
             <div class="card">
               <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
                 <h3 class="font-weight-lighter">Agregar Presupuesto
-                  <a class="btn float-right btn-sm bg-white" href="{{route('invoice.view')}}"><i class="fa fa-list"></i> Ver Presupuestos</a>
+                  <a class="btn float-right btn-sm bg-white" href="{{route('invoice.pending.list')}}"><i class="fa fa-list"></i> Ver Presupuestos</a>
                 </h3>
               </div><!-- /.card-header -->
 
