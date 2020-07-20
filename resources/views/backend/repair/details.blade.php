@@ -75,13 +75,17 @@
                             <input type="text" name="laboratory" value="{{ $reviewData->laboratory }}" class="form-control form-control-sm" readonly>
                         </div>
                    
-                    <div class="form-group col-md-2">
-                        <label for="product_id">Producto</label>
-                        @foreach ($products as $product)
-                      <input type="text" name="product_id" id="product_id" class="form-control form-control-sm" value="{{ $product->model }}" readonly>
-                          @endforeach
-                        </select>
-                    </div>
+                
+                        <div class="form-group col-md-3">
+                            <label for="product_id">Tipo de Producto</label>
+                            <select name="product_id" class="form-control" readonly>
+                              <option value="">Seleccionar</option>
+                              @foreach ($products as $data)
+                              <option value="{{ $data->id }}" {{ ($reviewData->product_id==$data->id)?"selected":'' }}>{{ $data->model }}</option>
+                              @endforeach
+                            </select>
+                        </div>
+
 
                     <div class="form-group col-md-2">
                         <label for="serial_number">S/N</label>
