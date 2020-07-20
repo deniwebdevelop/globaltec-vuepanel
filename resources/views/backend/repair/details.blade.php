@@ -80,11 +80,13 @@
                    
                  <div class="form-group col-md-3">
                             <label>Producto</label>
-                            <select name="product_id" id="product_id" class="form-control select2">
+                            <select name="product_id" id="product_id" class="form-control form-control-sm" readonly>
                               <option value="">Seleccionar Producto</option>
                               @foreach($products as $data)
-                              <option value="{{$data->id}}">{{ $data->brand }} - {{$data->model}} </option>
-                              @endforeach
+                
+                              <option value="{{ $data->id }}" {{ ($reviewData->product_id==$data->id)?"selected":'' }}>{{ $data->model }}</option>
+                            @endforeach
+                       
                             </select>
                           </div> 
 
