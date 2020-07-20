@@ -29,10 +29,10 @@
              <!-- Custom Tabs -->
              <div class="card">
                <div class="card-header text-white"  style="background-image: linear-gradient(200deg, #070525ce 1%, rgb(1, 0, 5)100%);">
-                     <h3 class="font-weight-lighter">Actualizar Venta
-                         <a href="{{ route('products.view') }}" class="btn bg-white float-right btn-sm">
+                     <h3 class="font-weight-lighter">Editar Presupuesto
+                         <a href="{{ route('invoice.pending.list') }}" class="btn bg-white float-right btn-sm">
                            <i class="fa fa-list"></i>
-                              Ventas
+                              Presupuestos
                          </a>
                      </h3>
                  </div><!-- /.Card Header -->

@@ -131,8 +131,7 @@
                         </div> 
                         
                         </div>
-                        <h3 class="font-weight-lighter pt-5">Costos:</h3>
-                  
+
                         <div class="form-row text-center">
                             <div class="form-group col-md-1">
                                 <label for="labcost">Laboratorio</label>
@@ -141,7 +140,7 @@
                             </div>
                             <div class="form-group col-md-2 text-center">
                                 <label for="labcost_coin">Moneda</label>
-                                <select name="labcost_coin" class="form-control select2">
+                                <select name="labcost_coin" class="form-control form-control-sm">
                                   <option value="ARS">ARS</option>
                                   <option value="USD">USD-W</option>
                                   <option value="USDB">USD-B</option>
@@ -252,31 +251,55 @@
     $(document).ready(function (){
       $('#myForm').validate({
         rules:{
+          admission: {
+            required: true,
+          },
+          labsent: {
+            required: true,
+          },
+          labreturn: {
+            required: true,
+          },
+          deliver: {
+            required: true,
+          },
           laboratory: {
             required: true,
           },
-          producto: {
+          product_id: {
             required:true,
           },
-          marca: {
+          serial_number: {
             required:true,
           },
-          modelo: {
+          status: {
             required: true,
           }
         },
         messages: {
+            admission: {
+            required: "Ingresar fecha ingreso",
+          },
+          labsent: {
+            required: "Ingresar fecha envio laboratorio",
+          },
+          labreturn: {
+            required: "Ingresar fecha devolucion laboratorio",
+          },
+          deliver: {
+            required: "Ingresar fecha entrega cliente",
+          },
             laboratory: {
                 required: "Debe ingresar un nombre",
             },
-            producto: {
-                required: "Debe ingresar un telefono",
+            product_id: {
+                required: "Debe ingresar un producto",
             },
-            marca: {
-                required: "Debe ingresar un e-mail",
+            serial_number: {
+                required: "Debe ingresar un s/n",
             },
-            modelo: {
-                required: "Debe ingresar un cuit",
+            status: {
+                required: "Debe ingresar un estado",
             },                
         },
         errorElement: 'span',

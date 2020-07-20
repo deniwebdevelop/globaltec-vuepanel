@@ -37,69 +37,71 @@
                 <div class="card-body">
                     <form method="post" action="{{ route('repair.update',$reviewData->id) }}" id="myForm" enctype="multipart/form-data">
                         @csrf
-                    <div class="form-row text-center">
-                        <div class="form-group col-md-3 mb-5">
+                    <div class="form-row">
+                        <div class="form-group col-md-1">
                             <label for="repair_no">Numero</label>
-                              <input type="text" name="admission" id="repair_no" value="{{ $reviewData->repair_no }}"
-                            class="form-control form-control-sm bg-gradient-navy text-white text-center" placeholder="Nro" readonly>
+                            <input type="text" name="repair_no" id="repair_no"
+                            class="form-control form-control-sm text-center text-white" value="{{ $reviewData->repair_no }}"
+                            readonly style="background-color: #030335e8">
                          </div>
                     </div>
-                    <div class="form-row text-center">
-                        <div class="form-group col-md-3">
+
+                    <div class="form-row py-2">
+                        <div class="form-group col-md-2">
                             <label for="admission">Ingreso</label>
                               <input type="text" name="admission" id="admission" value="{{ $reviewData->admission }}"
-                            class="form-control form-control-sm text-center" placeholder="Fecha De Ingreso" readonly>
+                            class="form-control form-control-sm" placeholder="Fecha De Ingreso" readonly>
                          </div>
 
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                             <label for="laboratory">Envio Laboratorio</label>
-                            <input type="text" name="labsent" id="labsent" class="form-control form-control-sm text-center" value="{{ $reviewData->labsent }}"
+                            <input type="text" name="labsent" id="labsent" class="form-control form-control-sm" value="{{ $reviewData->labsent }}"
                             placeholder="Envio a Laboratorio" readonly>
                         </div>
 
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                             <label for="laboratory">Devolucion Laboratorio</label>
                             <input type="text" name="labreturn" id="labreturn" value="{{ $reviewData->labreturn }}"
-                            class="form-control form-control-sm text-center" placeholder="Devolución Laboratorio" readonly>
+                            class="form-control form-control-sm" placeholder="Devolución Laboratorio" readonly>
                         </div>
 
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                             <label for="laboratory">Entrega Cliente</label>
-                            <input type="text" name="deliver" id="deliver" class="form-control form-control-sm text-center" value="{{ $reviewData->deliver }}"
+                            <input type="text" name="deliver" id="deliver" class="form-control form-control-sm" value="{{ $reviewData->deliver }}"
                             placeholder="Entrega al Cliente" readonly>
                         </div>
                     </div>
-                    <div class="form-row text-center mt-5">
-                        <div class="form-group col-md-3">
-                            <label for="laboratory">Laboratorio</label>
+
+                    <div class="form-row py-3">
+                        <div class="form-group col-md-2">
+                            <label for="laboratory">Nombre Laboratorio</label>
                             <input type="text" name="laboratory" value="{{ $reviewData->laboratory }}" class="form-control form-control-sm" readonly>
                         </div>
                    
-                
-                        <div class="form-group col-md-3">
-                            <label for="product_id">Modelo</label>
-                            <select name="product_id" class="form-control select2">
-                              <option value="">Seleccionar</option>
-                              @foreach ($products as $data)
-                              <option value="{{ $data->id }}" {{ ($reviewData->product_id==$data->id)?"selected":'' }}>{{ $data->brand }} - {{ $data->model }}</option>
+                 <div class="form-group col-md-3">
+                            <label>Producto</label>
+                            <select name="product_id" id="product_id" class="form-control select2">
+                              <option value="">Seleccionar Producto</option>
+                              @foreach($products as $data)
+                              <option value="{{$data->id}}">{{ $data->brand }} - {{$data->model}} </option>
                               @endforeach
                             </select>
-                        </div>
+                          </div> 
 
 
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-2">
                         <label for="serial_number">S/N</label>
                         <input type="text" name="serial_number" id="serial_number" class="form-control form-control-sm" value="{{ $reviewData->serial_number }}" readonly>
                       </div> 
 
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label>Accesorios</label>
                         <input type="text" name="accesories" id="accesories" class="form-control form-control-sm" value="{{ $reviewData->accesories }}" readonly>
                       </div> 
                     </div>
        
-                      <div class="form-row text-center mt-5">
-                    <div class="form-group col-md-3">
+                      <div class="form-row">
+                    <div class="form-group col-md-2">
                         <label>Repuesto 1</label>
                         <input type="text" name="spare_1" id="spare_1" class="form-control form-control-sm" value="{{ $reviewData->spare_1 }}" readonly>
                     </div> 
@@ -119,40 +121,56 @@
                         <input type="text" name="spare_4" id="spare_4" class="form-control form-control-sm" value="{{ $reviewData->spare_4 }}" readonly>
                     </div> 
                    
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-2">
                         <label>Repuesto 5</label>
                         <input type="text" name="spare_5" id="spare_5" class="form-control form-control-sm" value="{{ $reviewData->spare_5 }}" readonly>
                     </div> 
                 </div>
 
   
-                    <div class="form-row text-center mt-5">
-                        <div class="form-group col-md-3">
+                    <div class="form-row text-center">
+                        <div class="form-group col-md-1">
                             <label for="labcost">Laboratorio</label>
                             <input type="decimal" name="labcost" value="{{ $reviewData->labcost }}" class="form-control form-control-sm" readonly>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-1">
+                            <label for="labcost_coin">Moneda</label>
+                   <input class="form-control form-control-sm text-center" type="text" id="labcost_coin" name="labcoist_coin" value="{{ $reviewData->transportcost_coin }}" readonly>
+                        </div>
+                        <div class="form-group col-md-1">
                             <label for="repaircost">Repuesto</label>
                             <input type="decimal" name="repaircost" value="{{ $reviewData->repaircost }}" class="form-control form-control-sm" readonly>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-1">
+                            <label for="repaircost_coin">Moneda</label>
+                   <input class="form-control form-control-sm text-center" type="text" id="repaircost_coin" name="repaircost_coin" value="{{ $reviewData->transportcost_coin }}" readonly>
+                        </div>
+                        <div class="form-group col-md-2">
                             <label for="transportcost">Transporte</label>
                             <input type="decimal" name="transportcost" value="{{ $reviewData->transportcost }}" class="form-control form-control-sm" readonly>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-1">
+                            <label for="transportcost_coin">Moneda</label>
+                   <input class="form-control form-control-sm text-center" type="text" id="transportcost_coin" name="transportcost_coin" value="{{ $reviewData->transportcost_coin }}" readonly>
+                        </div>
+                        <div class="form-group col-md-2">
                             <label for="markup">MarkUp</label>
                             <input type="decimal" name="markup" value="{{ $reviewData->markup }}" class="form-control form-control-sm" readonly>
                         </div>
+                        <div class="form-group col-md-1">
+                            <label for="markup_coin">Moneda</label>
+                   <input class="form-control form-control-sm text-center" type="text" id="markup_coin" name="markup_coin" value="{{ $reviewData->transportcost_coin }}" readonly>
+                        </div>
                     </div>
               
-                    <div class="form-row mt-5">
+                    <div class="form-row mt-2">
                         <div class="form-group col-md-12">
                             <label for="fail_description">Descripcion Falla</label>
-                            <input type="text" name="fail_description" id="fail_description" class="form-control" value="{{ $reviewData->fail_description }}" readonly>
+                            <input type="text" name="fail_description" id="fail_description" class="form-control form-control-sm" value="{{ $reviewData->fail_description }}" readonly>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="repair_description">Descripcion Reparacion</label>
-                            <input type="text" name="repair_description" class="form-control " id="repair_description" value="{{ $reviewData->repair_description }}" readonly>
+                            <input type="text" name="repair_description" class="form-control form-control-sm" id="repair_description" value="{{ $reviewData->repair_description }}" readonly>
                         </div>
                     </div>
 
