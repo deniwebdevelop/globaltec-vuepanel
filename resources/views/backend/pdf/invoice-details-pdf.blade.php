@@ -5,12 +5,17 @@
     <title>Presupuesto</title>
     
 <style>
+    header{
+        background-color:skyblue;
+        height:40px;
+        width:100%;
+    }
     .invoice-box {
-        max-width: 800px;
-        margin: auto;
-        padding: 30px;
-        border: 1px solid #eee;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        width: 100%;
+        
+        
+       
+ 
         font-size: 16px;
         line-height: 24px;
         font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
@@ -18,6 +23,7 @@
     }
     
     .invoice-box table {
+    
         width: 100%;
         line-height: inherit;
         text-align: left;
@@ -67,6 +73,7 @@
     .invoice-box table tr.total td:nth-child(2) {
         border-top: 2px solid #eee;
         font-weight: bold;
+     
     }
     
     @media only screen and (max-width: 600px) {
@@ -100,6 +107,9 @@
 </head>
 
 <body>
+    <header>
+ 
+    </header>
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
@@ -107,12 +117,10 @@
                     <table>
                         <tr>
                             <td class="title">
-                              <h5 style="font-size: 25px">Global Tec Trade S.R.L</h5>
+                                <h5 style="font-size: 25px;font-weight:lighter;">Global Tec Trade S.R.L</h5>
                             </td>
-                            <br>
-                            <td>
-                                Presupuesto #:{{ $payment['invoice']['invoice_no'] }}
-                            </td>
+                          
+                         
                         </tr>
                     </table>
                 </td>
@@ -122,15 +130,20 @@
                 <td colspan="4">
                     <table>
                         <tr>
-                            <td>{{ $payment['customer']['company'] }}.<br>
-                                {{ $payment['customer']['cuit'] }}<br>
-                                {{ $payment['customer']['address'] }}</td>
+                            <td>
+                                Presupuesto #:{{ $payment['invoice']['invoice_no'] }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Empresa: {{ $payment['customer']['company'] }}.<br>
+                                Cuit: {{ $payment['customer']['cuit'] }}<br>
+                                Direccion: {{ $payment['customer']['address'] }}</td>
 
                             <td>
                              
-                                {{ $payment['customer']['name'] }}<br>
-                                {{ $payment['customer']['mobile_no'] }}<br>
-                                {{ $payment['customer']['email'] }}
+                                Nombre: {{ $payment['customer']['name'] }}<br>
+                                Telefono: {{ $payment['customer']['mobile_no'] }}<br>
+                                E-mail: {{ $payment['customer']['email'] }}
                             </td>
                         </tr>
                     </table>
@@ -148,6 +161,7 @@
                     Precio
                 </td>
                 <td>Cantidad</td>
+                <br>
                 <td>Total</td>
             </tr>
             <br>
@@ -173,14 +187,26 @@
 
             
             <tr>
-                <td colspan="3"><strong>Sub Total</strong></td>
+                <td colspan="3"><strong>Sub Total</strong></td><br>
                 <td class="text-right"><strong>$ {{ number_format($total_sum, 2) }}</strong></td>
-            </tr><br>
+            </tr><br><br>
             <tr>
                 <td colspan="3"><strong>Total</strong></td>
                 <td><strong>$ {{ number_format($payment->total_amount, 2) }}</strong></td>
             </tr>
+<br>
+            <tr>
+                <td>Condicion de Pago: {{ $payment['invoice']['payment_condition'] }}</td>
 
+
+            </tr>
+            <br>
+            <tr>
+                <td>Los precios indicados incluyen Iva del 21%</td>
+            </tr>
+            <tr>
+                <td>Vigencia: </td>
+            </tr>
         </table>
     </div>
 </body>
