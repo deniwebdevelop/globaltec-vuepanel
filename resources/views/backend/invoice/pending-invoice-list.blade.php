@@ -47,7 +47,7 @@
                             <th>Descripcion</th>
                             <th>Monto</th>
                             <th>Estado de Venta</th>
-                            <th width="10%">Action</th>
+                            <th>Accion</th>
                             <th>PDF</th>
                         </tr>
                     </thead>
@@ -57,9 +57,7 @@
                         <td class="text-center">{{ $invoice->invoice_no}}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
                         <td>{{ $invoice['payment']['customer']['name'] }}</td>
-                          <td>  {{ $invoice['payment']['customer']['company'] }} </td>
-                        </td>
-               
+                        <td>  {{ $invoice['payment']['customer']['company'] }}</td>
                         <td>{{ $invoice->description }}</td>
                         <td>{{ number_format($invoice['payment']['total_amount'], 2) }}</td>
                         <td>
@@ -69,13 +67,9 @@
                             <span style="color: #5EAB00;pagging:5px">Venta Generada</span>
                             @endif
                           </td>
-                                   <td>
-              
+                          <td>
                               <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
                                 class="fa fa-edit"></i></a>
-                       
-                                <td>   <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
-                                  <i class="fa fa-eye"></i></a></td>
                          
                             @if($invoice->status=='0')
                           <a title="Venta" class="btn btn-sm btn-success" href="{{ route('invoice.approve', $invoice->id) }}"><i
@@ -84,6 +78,9 @@
                             class="fa fa-trash"></i></a>
                           @endif
                           </td>
+
+                          <td>   <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
+                            <i class="fa fa-eye"></i></a></td>
                     </tr>                          
                       @endforeach
                     </tbody>
