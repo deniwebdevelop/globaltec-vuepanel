@@ -158,9 +158,9 @@
                 </td>
                 
                 <td>
-                    Precio
+                    Cantidad
                 </td>
-                <td>Cantidad</td>
+                <td>Precio</td>
                 <br>
                 <td>Total</td>
             </tr>
