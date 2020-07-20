@@ -37,27 +37,26 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-striped" width="100%">
+                <table id="example1" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Presupuesto</th>
-                            <th>Fecha</th>
                             <th>Cliente</th>
-                            <th>Empresa</th>
+                            <th>Numero</th>
+                            <th>Fecha</th>
                             <th>Descripcion</th>
                             <th>Monto</th>
-                            <th>Estado de Venta</th>
-                            <th>Accion</th>
-                            <th>PDF</th>
+                            <th>Estado</th>
+                            <th width="10%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                       @foreach ($allData as $key => $invoice)
                       <tr>
-                        <td class="text-center">{{ $invoice->invoice_no}}</td>
+                        <td>{{ $invoice['payment']['customer']['name'] }} - 
+                            {{ $invoice['payment']['customer']['company'] }} 
+                        </td>
+                        <td>{{ $invoice->invoice_no}}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
-                        <td>{{ $invoice['payment']['customer']['name'] }}</td>
-                        <td>  {{ $invoice['payment']['customer']['company'] }}</td>
                         <td>{{ $invoice->description }}</td>
                         <td>{{ number_format($invoice['payment']['total_amount'], 2) }}</td>
                         <td>
@@ -67,9 +66,16 @@
                             <span style="color: #5EAB00;pagging:5px">Venta Generada</span>
                             @endif
                           </td>
-                          <td>
+                                   <td>
+                            @if($invoice['payment']['paid_status'] =='partial_paid')
+                            <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
+                              class="fa fa-edit"></i></a>
+                              @endif
+                              @if($invoice['payment']['paid_status'] =='full_due')
                               <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
                                 class="fa fa-edit"></i></a>
+                                @endif
+                            
                          
                             @if($invoice->status=='0')
                           <a title="Venta" class="btn btn-sm btn-success" href="{{ route('invoice.approve', $invoice->id) }}"><i
@@ -78,9 +84,6 @@
                             class="fa fa-trash"></i></a>
                           @endif
                           </td>
-
-                          <td>   <a title="details" class="btn btn-sm btn-success" href="{{ route('invoice.details.pdf',$invoice['payment']['invoice_id']) }}" target="_blank">
-                            <i class="fa fa-eye"></i></a></td>
                     </tr>                          
                       @endforeach
                     </tbody>
