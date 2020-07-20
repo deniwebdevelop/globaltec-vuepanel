@@ -44,7 +44,7 @@
                         
                             <th>Fecha</th>
                             <th>Condicion De pago</th>
-                            <th>Vigencia</th>
+                            <th>Descripcion</th>
                             <th>Monto</th>
                             <th>Estado de Pago</th>
                             <th>PDF</th>
