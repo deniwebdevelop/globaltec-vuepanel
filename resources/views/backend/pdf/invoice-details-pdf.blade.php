@@ -5,25 +5,20 @@
     <title>Presupuesto</title>
     
 <style>
-    header{
-        background-color:skyblue;
-        height:40px;
-        width:100%;
+    body {
+        background-image:url('/upload/modelo.jpg');
+   
+    background-repeat: no-repeat;
+    background-position: center center;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
     }
-    .invoice-box {
-        width: 100%;
-        
-        
-       
- 
-        font-size: 16px;
-        line-height: 24px;
-        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-        color: #555;
-    }
-    
+   
     .invoice-box table {
-    
+
         width: 100%;
         line-height: inherit;
         text-align: left;
@@ -53,7 +48,7 @@
     }
     
     .invoice-box table tr.heading td {
-        background: #eee;
+        
         border-bottom: 1px solid #ddd;
         font-weight: bold;
     }
@@ -63,7 +58,7 @@
     }
     
     .invoice-box table tr.item td{
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid black;
     }
     
     .invoice-box table tr.item.last td {
@@ -71,9 +66,8 @@
     }
     
     .invoice-box table tr.total td:nth-child(2) {
-        border-top: 2px solid #eee;
+        border-top: 2px solid black;
         font-weight: bold;
-     
     }
     
     @media only screen and (max-width: 600px) {
@@ -107,45 +101,34 @@
 </head>
 
 <body>
-    <header>
- 
-    </header>
+    <br><br><br><br>
+    <div style="text-align: left">
+     
+    </div>
+    <br><br><br><br><br>
+    
+    <div style="text-align: center">
+    <strong style="font-size: 16px;">Número de Presupuesto: <br><br>  {{ $payment['invoice']['invoice_no'] }}</strong>
+</div>
+<br><br><br>
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
-            <tr class="top">
-                <td colspan="4">
-                    <table>
-                        <tr>
-                            <td class="title">
-                                <h5 style="font-size: 25px;font-weight:lighter;">Global Tec Trade S.R.L</h5>
-                            </td>
-                          
-                         
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
+     
+          
             <tr class="information">
-                <td colspan="4">
+                <td colspan="2">
                     <table>
                         <tr>
+                 
                             <td>
-                                Presupuesto #:{{ $payment['invoice']['invoice_no'] }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Empresa: {{ $payment['customer']['company'] }}.<br>
-                                Cuit: {{ $payment['customer']['cuit'] }}<br>
-                                Direccion: {{ $payment['customer']['address'] }}</td>
-
-                            <td>
-                             
-                                Nombre: {{ $payment['customer']['name'] }}<br>
-                                Telefono: {{ $payment['customer']['mobile_no'] }}<br>
-                                E-mail: {{ $payment['customer']['email'] }}
-                            </td>
-                        </tr>
+                            <strong>Fecha de Presupuesto: </strong>{{ $payment['invoice']['date'] }}<br><br>
+                            <strong>Razon Social:</strong> {{ $payment['customer']['company'] }} <br><br>
+                            <strong>Cuit: </strong>{{ $payment['customer']['cuit'] }}<br><br>
+                            <strong> Telefono: </strong>{{ $payment['customer']['mobile_no'] }}<br><br>
+                            <strong> Direccion: </strong> {{ $payment['customer']['address'] }}<br><br>
+                            <strong>Contacto: </strong>{{ $payment['customer']['name'] }}<br><br>
+                            <strong>E-mail: </strong> {{ $payment['customer']['email'] }}</td><br>
+                            </tr>
                     </table>
                 </td>
             </tr>
@@ -158,11 +141,11 @@
                 </td>
                 
                 <td>
-                    Cantidad
+                    Precio
                 </td>
-                <td>Precio</td>
+                <td>Cantidad</td>
                 <br>
-                <td>Total</td>
+                <td style="text-align: center;">Total</td><br>
             </tr>
             <br>
             <tr class="item">
@@ -205,7 +188,7 @@
                 <td>Los precios indicados incluyen Iva del 21%</td>
             </tr>
             <tr>
-                <td>Vigencia: </td>
+                <td>Vigencia:</td>
             </tr>
         </table>
     </div>
