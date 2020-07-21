@@ -141,9 +141,9 @@
                 </td>
                 
                 <td>
-                    Precio
+                    Cantidad
                 </td>
-                <td>Cantidad</td>
+                <td>Precio</td>
                 <br>
                 <td style="text-align: center;">Total</td><br>
             </tr>
