@@ -185,7 +185,7 @@
             </tr>
             <br>
             <tr>
-                <td>Los precios indicados incluyen Iva del 21%</td>
+                <td>Los precios indicados incluyen Iva</td>
             </tr>
             <tr>
                 <td>Vigencia:</td>
