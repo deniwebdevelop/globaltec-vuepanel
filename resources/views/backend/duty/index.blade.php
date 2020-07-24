@@ -49,7 +49,7 @@
                     <tbody>
                       @foreach ($data as $key => $duty)
                       <tr>
-                        <td>{{ date('d-m-Y'),strtotime($duty->date) }}</td>
+                        <td>{{ $duty->date }}</td>
                         <td>{{ $duty['customer']['name'] }}</td>
                         <td>{{ $duty->descripcion }}</td>
                         <td>
