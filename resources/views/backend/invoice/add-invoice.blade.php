@@ -146,7 +146,17 @@
                   <div class="form-group col-md-3">
                     <label for="payment_condition">Condicion de Pago</label>
                     <input type="text" name="payment_condition" id="payment_condition" class="form-control form-control-sm payment_condition" required placeholder="Ingresar Condicion de Pago">
-                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label for="deliver">Plazo de Entrega</label>
+                    <input type="text" name="deliver" id="deliver" class="form-control form-control-sm validity" required placeholder="Plazo de Entrega">
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label for="validity">Vigencia</label>
+                    <input type="text" name="validity" id="validity" class="form-control form-control-sm validity" required placeholder="Ingresar Vigencia">
+                  </div>
            
                   <div class="form-group col-md-3">
                     <label for="description">Descripcion</label>
