@@ -43,7 +43,7 @@ class InvoiceController extends Controller
 
     public function store(Request $request){
         if($request->category_id == null){
-            return redirect()->back();
+           return redirect()->route('invoice.pending.list')->with('success');
     }else{
         if($request->paid_amount>$request->estimated_amount){
             return redirect()->back();
@@ -52,7 +52,10 @@ class InvoiceController extends Controller
             $invoice->invoice_no = $request->invoice_no;
             $invoice->date = date('Y-m-d',strtotime($request->date));
             $invoice->payment_condition = $request->payment_condition;
+            $invoice->deliver = $request->deliver;
+            $invoice->validity = $request->payment_condition;
             $invoice->description = $request->description;
+            $invoice->tax = '0';
             $invoice->status = '0';
             $invoice->created_by = Auth::user()->id;
             DB::transaction(function() use($request,$invoice){

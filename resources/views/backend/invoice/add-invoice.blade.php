@@ -46,7 +46,7 @@
 
                     <div class="form-group col-md-2">
                       <label>Fecha</label>
-                      <input type="text" name="date" id="date" class="form-control datepicker form-control-sm" value="{{ $date }}" placeholder="DD-MM-YYY" readonly>
+                      <input type="text" name="date" id="date" class="form-control datepicker form-control-sm" placeholder="DD-MM-YYY" readonly>
                     </div>
  
                     <div class="form-group col-md-3">
@@ -96,10 +96,10 @@
                     </tbody>
                     <tbody>
                     <tr>
-                      <td class="text-right" colspan="4">Descuento<td>
+                      <td class="text-right" colspan="4"><td>
                 
-                      <input type="text" name="discount_amount" id="discount_amount"
-                       class="form-control form-control-sm discount_amount text-right" placeholder="Ingresar Descuento">
+                      <input type="text" name="discount_amount" id="discount_amount" 
+                       class="form-control form-control-sm discount_amount text-right" style="display: none">
           
                       <td>
                       </td>
@@ -160,10 +160,12 @@
            
                   <div class="form-group col-md-3">
                     <label for="description">Descripcion</label>
-                    <input type="text" name="description" id="description" placeholder="Vigencia" class="form-control form-control-sm">
+                    <input type="text" name="description" id="description" placeholder="Descripcion" class="form-control form-control-sm">
                     </div>
                   </div>
                   
+                  <input name="tax" type="checkbox" {{$invoice->tax == 0 ? 'checked' : ''}}>
+
                  
 
                   <div class="form-row new_customer" style="display: none;">
@@ -425,7 +427,7 @@ $(document).on('change','#customer_id',function(){
     <script>
       $('.datepicker').datepicker({
           uiLibrary: 'bootstrap4',
-          format :'yyyy-mm-dd'
+          format :'dd-mm-yyyy'
       });
   </script>
 @endsection

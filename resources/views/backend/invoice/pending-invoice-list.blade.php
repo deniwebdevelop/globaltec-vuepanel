@@ -37,17 +37,18 @@
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-striped">
+                <table id="example1" class="table table-striped table-responsive" width="100%">
                     <thead>
                         <tr>
-                          <th>Numero</th>
+                            <th>Nro</th>
                             <th>Cliente</th>
                             <th>Empresa</th>
                             <th>Fecha</th>
                             <th>Condicion Pago</th>
-                            <th>Descripcion</th>
                             <th>Monto</th>
-                            
+                            <th>Plazo de Entrega</th>
+                            <th>Vigencia</th>
+                            <th>Descripcion</th>
                             <th>Estado de Venta</th>
                             <th>Accion</th>
                             <th>PDF</th>
@@ -61,8 +62,10 @@
                         <td>  {{ $invoice['payment']['customer']['company'] }}</td>
                         <td>{{ date('d-m-Y'),strtotime($invoice->date) }}</td>
                         <td>{{ $invoice->payment_condition }}</td>
-                        <td>{{ $invoice->description }}</td>
                         <td>{{ number_format($invoice['payment']['total_amount'], 2) }}</td>
+                        <td>{{ $invoice->deliver }}</td>
+                        <td>{{ $invoice->validity }}</td>
+                        <td>{{ $invoice->description }}</td>
                         <td>
                             @if($invoice->status=='0')
                             <span style="color: #FC4236;padding:5px">Pendiente de Venta</span>
@@ -71,6 +74,7 @@
                             @endif
                         </td>
                         <td>
+                          
                             <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('customers.edit.invoice', $invoice['payment']['invoice_id']) }}"><i
                               class="fa fa-edit"></i></a>
                             @if($invoice->status=='0')
