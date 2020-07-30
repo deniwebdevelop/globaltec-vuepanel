@@ -46,7 +46,7 @@
 
                     <div class="form-group col-md-2">
                       <label>Fecha</label>
-                      <input type="text" name="date" id="date" class="form-control datepicker form-control-sm" value="{{ $date }}" placeholder="DD-MM-YYY" readonly>
+                      <input type="text" name="date" id="date" class="form-control datepicker form-control-sm" placeholder="DD-MM-YYY" readonly>
                     </div>
  
                     <div class="form-group col-md-3">
@@ -96,10 +96,10 @@
                     </tbody>
                     <tbody>
                     <tr>
-                      <td class="text-right" colspan="4">Descuento<td>
+                      <td class="text-right" colspan="4"><td>
                 
-                      <input type="text" name="discount_amount" id="discount_amount"
-                       class="form-control form-control-sm discount_amount text-right" placeholder="Ingresar Descuento">
+                      <input type="text" name="discount_amount" id="discount_amount" 
+                       class="form-control form-control-sm discount_amount text-right" style="display: none">
           
                       <td>
                       </td>
@@ -123,7 +123,7 @@
                   <div class="form-row">
                     <div class="form-group col-md-3">
                       <label>Cliente</label>
-                      <select name="customer_id" id="customer_id" class="form-control form-control-sm" required>
+                      <select name="customer_id" id="customer_id" class="form-control form-control-sm select2" required>
                         <option value="">Seleccionar Cliente</option>
                         @foreach ($customers as $customer)
                         <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->company }})</option>
@@ -146,14 +146,26 @@
                   <div class="form-group col-md-3">
                     <label for="payment_condition">Condicion de Pago</label>
                     <input type="text" name="payment_condition" id="payment_condition" class="form-control form-control-sm payment_condition" required placeholder="Ingresar Condicion de Pago">
-                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label for="deliver">Plazo de Entrega</label>
+                    <input type="text" name="deliver" id="deliver" class="form-control form-control-sm validity" required placeholder="Plazo de Entrega">
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label for="validity">Vigencia</label>
+                    <input type="text" name="validity" id="validity" class="form-control form-control-sm validity" required placeholder="Ingresar Vigencia">
+                  </div>
            
                   <div class="form-group col-md-3">
                     <label for="description">Descripcion</label>
-                    <input type="text" name="description" id="description" placeholder="Vigencia" class="form-control form-control-sm">
+                    <input type="text" name="description" id="description" placeholder="Descripcion" class="form-control form-control-sm">
                     </div>
                   </div>
                   
+                  <input name="tax" type="checkbox" {{$invoice->tax == 0 ? 'checked' : ''}}>
+
                  
 
                   <div class="form-row new_customer" style="display: none;">
@@ -415,7 +427,7 @@ $(document).on('change','#customer_id',function(){
     <script>
       $('.datepicker').datepicker({
           uiLibrary: 'bootstrap4',
-          format :'yyyy-mm-dd'
+          format :'dd-mm-yyyy'
       });
   </script>
 @endsection

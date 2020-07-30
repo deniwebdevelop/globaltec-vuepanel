@@ -3,7 +3,7 @@
 <head>
 @include('backend.layouts.head')
 </head>
-<body class="hold-transition sidebar-fixed bg-white">
+<body class="hold-transition sidebar-mini bg-white">
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand border-0 navbar-white text-dark">

@@ -42,17 +42,19 @@
                     <tbody>
                       <td><strong>Numero Presupuesto: </strong> {{ $payment['invoice']['invoice_no'] }}</strong></td>
            
-         
+         <tr><br>
                         <td><strong>Cliente : </strong>{{ $payment['customer']['name'] }}</td>
                         <td><strong>Empresa : </strong>{{ $payment['customer']['company'] }}</td>
                         <td><strong>Condicion de Pago: </strong> {{ $payment['invoice']['payment_condition'] }}</td>
-     
+                        <td><strong>Vigencia : </strong>{{ $payment['invoice']['validity'] }}</td>
+                      </tr>
                     
                       <tr>
                         <td><strong>Telefono : </strong>{{ $payment['customer']['mobile_no'] }}</td>
                         <td><strong>Direccion : </strong>{{ $payment['customer']['address'] }}</td>
                         <td><strong>Cuit: </strong>{{ $payment['customer']['cuit'] }}</td>
                         <td><strong>Descripcion : </strong>{{ $payment['invoice']['description'] }}</td>
+                  
                       </tr>
                     </tbody>
                 </table>
@@ -125,6 +127,7 @@
                                  Actualizar</button>
                           </div>
                     </div>
+                
                   </form>
               </div><!-- /.card-body -->
             </div>

@@ -107,10 +107,10 @@
     </div>
     <br><br><br><br><br>
     
-    <div style="text-align: center">
-    <strong style="font-size: 16px;">Número de Presupuesto: <br><br>  {{ $payment['invoice']['invoice_no'] }}</strong>
+    <div style="margin-left:10px">
+    <strong style="font-size: 16px;">Nro Presupuesto:  {{ $payment['invoice']['invoice_no'] }}</strong>
 </div>
-<br><br><br>
+ <br>
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
      
@@ -184,11 +184,15 @@
 
             </tr>
             <br>
+      
             <tr>
-                <td>Los precios indicados incluyen Iva</td>
+                <td>Vigencia: {{ $payment['invoice']['validity'] }}</td>
+                
             </tr>
             <tr>
-                <td>Vigencia:</td>
+  
+                <td>Los precios indicados incluyen Iva</td>
+            
             </tr>
         </table>
     </div>
