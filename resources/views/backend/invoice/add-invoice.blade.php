@@ -164,8 +164,7 @@
                     </div>
                   </div>
                   
-                  <input name="tax" type="checkbox" {{$invoice->tax == 0 ? 'checked' : ''}}>
-
+   
                  
 
                   <div class="form-row new_customer" style="display: none;">
