@@ -53,7 +53,7 @@ class InvoiceController extends Controller
             $invoice->date = date('Y-m-d',strtotime($request->date));
             $invoice->payment_condition = $request->payment_condition;
             $invoice->deliver = $request->deliver;
-            $invoice->validity = $request->payment_condition;
+            $invoice->validity = $request->validity;
             $invoice->description = $request->description;
             $invoice->tax = '0';
             $invoice->status = '0';
